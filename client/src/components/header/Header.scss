@@ -1,0 +1,67 @@
+
+$dark_color: black;
+$white_color: white;
+$primary_green: rgb(62, 153, 62);
+
+
+@mixin flexspacebetweencenter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flexcenter{
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+
+
+.header{
+    @include flexspacebetweencenter;
+    padding: 0.6rem 5%;
+    background: #333;
+    color: $white_color;
+    min-height: 3rem;
+}
+
+
+.arch_logo{
+    @include flexcenter;
+    // border: 2px solid white;
+    border-radius: 50%;
+    padding: 0.2rem;
+    overflow: hidden;
+    height: 4rem;
+    width: 4rem;
+
+    img{
+        height: 100%;
+    }
+}
+
+.arch_header_nav{
+    @include flexcenter;
+    gap: 1rem;
+
+    .arch_nav_ul{
+        @include flexcenter;
+        gap: 0.6rem;
+        padding: 0;
+
+        li{
+            cursor: pointer;
+            list-style: none;
+        }
+    }
+}
+
+.arch_contact_btn{
+    height: 2.4rem;
+    width: 6rem;
+    border: none;
+    border-radius: 2rem;
+    color: $white_color;
+    background: $primary_green;
+}
