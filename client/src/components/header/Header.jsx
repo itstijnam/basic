@@ -36,7 +36,7 @@ function Header() {
     if(text === 'Home'){
       navigate('/')
     } else if( text === 'Service'){
-      navigate('/')
+      navigate('/service')
       
     }else if( text === 'About'){
       navigate('/')
