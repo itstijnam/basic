@@ -39,7 +39,7 @@ function Header() {
       navigate('/service')
       
     }else if( text === 'About'){
-      navigate('/')
+      navigate('/about')
       
     }else if( text === 'Portfolio'){
       navigate('/')
