@@ -13,6 +13,7 @@ function Layout() {
         <div className="layout_header">
             <Outlet/>
         </div>
+        <Footer/>
     </div>
   )
 }

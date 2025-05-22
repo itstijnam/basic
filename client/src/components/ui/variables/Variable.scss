@@ -1,0 +1,17 @@
+
+$dark_color: black;
+$white_color: white;
+$primary_green: rgb(62, 153, 62);
+
+
+@mixin flexspacebetweencenter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flexcenter{
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
