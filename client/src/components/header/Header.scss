@@ -2,7 +2,7 @@
 $dark_color: black;
 $white_color: white;
 $primary_green: rgb(62, 153, 62);
-
+$cream : #FFEEDB;
 
 @mixin flexspacebetweencenter{
     display: flex;
@@ -20,14 +20,17 @@ $primary_green: rgb(62, 153, 62);
 
 .header{
     @include flexspacebetweencenter;
+    position: fixed;
+    width: 90%;
     padding: 0.2rem 5%;
     background: #333;
     backdrop-filter: blur(12px);
     // background: transparent;
     color: $white_color;
+    // color: $cream;
     min-height: 2rem;
-    border-bottom-left-radius: 5rem;
-    border-bottom-right-radius: 5rem;
+    // border-bottom-left-radius: 5rem;
+    // border-bottom-right-radius: 5rem;
     box-shadow: 0px 3px 7px $white_color
 }
 

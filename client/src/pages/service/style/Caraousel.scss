@@ -1,0 +1,116 @@
+@use '../../../components/ui/variables/Variable.scss' as *;
+
+$cream : #FFEEDB;
+
+.caraousel {
+    // border: 1px solid magenta;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    background: linear-gradient(180deg, transparent 50%, $cream 50%);
+    background: linear-gradient(180deg, $dark_cover_color 50%, $cream 50%);
+    padding: 3rem 0rem;
+
+}
+
+.caraouselbox1 {
+
+    // border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem 0rem;
+
+    .box1_image {
+        @include flexcenter;
+        // border: 1px solid orange;
+        height: 15rem;
+        width: 11rem;
+        border-radius: 8rem 8rem 8rem 8rem;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+        }
+    }
+}
+
+.caraouselbox2 {
+    @include flexspacebetweencenter;
+    // border: 1px solid green;
+    width: 22rem;
+    display: flex;
+    padding: 0 1rem;
+    flex-direction: column;
+
+    .box2_image {
+        @include flexcenter;
+        // border: 1px solid orange;
+        height: 25rem;
+        width: 80%;
+        border-radius: 12rem 12rem 0rem 0rem;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .caraousel_action {
+        @include flexspacebetweencenter;
+        // border: 1px solid red;
+        width: 80%;
+
+        button {
+            @include flexcenter;
+            cursor: pointer;
+            height: 3rem;
+            width: 3rem;
+            border-radius: 50%;
+            background: transparent;
+            border: 2px solid $dark_green_color;
+            color: $dark_green_color;
+            font-size: 1.3rem;
+            // font-weight: 800;
+        }
+        span{
+            font-size: 2rem;
+            color: $dark_green_color;
+        }
+    }
+}
+
+.caraouselbox3 {
+    // border: 1px solid yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    .box3_image {
+        @include flexcenter;
+        // border: 1px solid orange;
+        height: 16rem;
+        width: 11rem;
+        border-radius: 8rem 8rem 8rem 8rem;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .for_box2_content{
+        // border: 1px solid yellow;
+        width: 11rem;
+        font-size: 1rem;
+        color: $dark_green_color;
+    }
+}
+
+.CB13 {
+    width: 15rem;
+
+}

@@ -1,41 +1,10 @@
 import React from 'react'
 import './style/Service.scss'
 import BACKIMAGE from './components/assets/houseview.jpg'
+import Caraousel from './components/caraousel/Caraousel'
+
 
 function Service() {
-
-  const sampleImages = [
-    {
-      cardId: 0,
-      heading: 'Oberoi House',
-      img: '',
-      shortDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum saepe provident natus voluptas repellendus, excepturi nobis quae, voluptatibus, nesciunt atque molestias rem? Voluptates obcaecati explicabo corporis rerum dolores totam nobis aut enim ipsam ut.'
-    },
-    {
-      cardId: 1,
-      heading: 'Taj Hotel',
-      img: '',
-      shortDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum saepe provident natus voluptas repellendus, excepturi nobis quae, voluptatibus, nesciunt atque molestias rem? Voluptates obcaecati explicabo corporis rerum dolores totam nobis aut enim ipsam ut.'
-    },
-    {
-      cardId: 2,
-      heading: 'Kashmir',
-      img: '',
-      shortDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum saepe provident natus voluptas repellendus, excepturi nobis quae, voluptatibus, nesciunt atque molestias rem? Voluptates obcaecati explicabo corporis rerum dolores totam nobis aut enim ipsam ut.'
-    },
-    {
-      cardId: 3,
-      heading: 'Gangtok',
-      img: '',
-      shortDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum saepe provident natus voluptas repellendus, excepturi nobis quae, voluptatibus, nesciunt atque molestias rem? Voluptates obcaecati explicabo corporis rerum dolores totam nobis aut enim ipsam ut.'
-    },
-    {
-      cardId: 4,
-      heading: 'Red Fort',
-      img: '',
-      shortDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum saepe provident natus voluptas repellendus, excepturi nobis quae, voluptatibus, nesciunt atque molestias rem? Voluptates obcaecati explicabo corporis rerum dolores totam nobis aut enim ipsam ut.'
-    },
-  ]
 
   const serviceCategories = [
     {
@@ -53,7 +22,7 @@ function Service() {
   ]
 
   return (
-    <div className="service_container">
+    <div className="service_container"  style={{backgroundImage: `url(${BACKIMAGE})`}}>
       <div className='service_page_heading'>
         <h1>Our Serivices</h1>
       </div>
@@ -69,7 +38,7 @@ function Service() {
 
       </div>
 
-      
+      <Caraousel/>
 
     </div>
   )
