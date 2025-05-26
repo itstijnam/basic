@@ -3,7 +3,6 @@ import './style/Service.scss'
 import BACKIMAGE from './components/assets/houseview.jpg'
 import Caraousel from './components/caraousel/Caraousel'
 
-
 function Service() {
 
   const serviceCategories = [
