@@ -295,3 +295,16 @@
         max-width: 21rem;
     }
 }
+
+
+.testimonial_action_btn{
+    display: flex;
+    margin-top: 0.3rem;
+    gap: 1rem;
+    
+    button{
+        cursor: pointer;
+        min-width: 5rem;
+        height: 2rem;
+    }
+}

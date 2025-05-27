@@ -22,6 +22,14 @@ function Customers() {
         }
     ]
 
+
+    const [form, setForm] = useState({
+        name: '',
+        image: '',
+        city: '',
+        country: '',
+        quote: ''
+    })
     const [dialogue, setDialogue] = useState(false)
 
 
@@ -73,7 +81,7 @@ function Customers() {
                             </footer>
                         </div>
 
-                        <div className="testimonial_add_section" onClick={()=>setDialogue(!dialogue)} > <h3>+</h3> </div>
+                        <div className="testimonial_add_section" onClick={() => setDialogue(!dialogue)} > <h3>+</h3> </div>
 
                     </div>
                 </div>
@@ -82,9 +90,11 @@ function Customers() {
             {dialogue &&
 
                 <div className='testimonial_add'>
-                    <div className="profileImage"> <img src={addIcon} alt="" /> </div>
-                    
-                    
+                    <div className="profileImage"> <img src={addIcon} alt="" />
+
+                    </div>
+
+
                     <div className="userbox">
 
                         <div className="user_details">
@@ -104,6 +114,10 @@ function Customers() {
                         <div className="user_quote">
                             <span>Quote</span>
                             <textarea name="" id="" placeholder='Quote' ></textarea>
+                            <div className="testimonial_action_btn">
+                                <button>cancel</button>
+                                <button>add</button>
+                            </div>
                         </div>
 
                     </div>
