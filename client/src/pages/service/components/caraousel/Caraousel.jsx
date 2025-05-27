@@ -176,7 +176,7 @@ function Caraousel() {
 
         {/* dialogue  start */}
 
-        {!dialogueBox &&
+        {dialogueBox &&
           <div className='add_caraousel_form'>
             <div className="add_craousel_image" onClick={() => ref.current.click()}>
               {form.imagePreview ? (

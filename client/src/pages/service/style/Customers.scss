@@ -1,0 +1,297 @@
+
+
+.customers {
+    background: black;
+    padding: 2rem 5%;
+    position: relative;
+
+    @media (min-width: 1024px) {
+        height: 40rem;
+        padding: 4rem 5%;
+    }
+}
+
+.customer_section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    @media (min-width: 1024px) {
+        flex-direction: row;
+        padding: 0 5%;
+    }
+
+    .bacground_image_section {
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-between;
+
+        @media (min-width: 1024px) {
+            width: 40%;
+        }
+    }
+
+    .image_section {
+        width: 100%;
+        height: 20rem;
+        overflow: hidden;
+
+        @media (min-width: 1024px) {
+            width: 40rem;
+            height: 90%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            @media (min-width: 1024px) {
+                object-fit: contain;
+            }
+        }
+    }
+
+    .action_btn {
+        display: flex;
+        gap: 1rem;
+        z-index: 10;
+        margin-top: 0.2rem;
+
+        button {
+            height: 3rem;
+            width: 3rem;
+            color: black;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: #555;
+            }
+        }
+    }
+}
+
+.customer_testimonial_section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 2rem;
+
+    @media (min-width: 1024px) {
+        margin-top: 0;
+    }
+
+    .cutomer_header {
+        margin-top: 0;
+        text-align: center;
+        color: white;
+
+        @media (min-width: 1024px) {
+            margin-top: 2rem;
+        }
+    }
+}
+
+.customer_testimonial_box {
+    position: relative;
+    height: auto;
+    width: 100%;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+    margin-top: 1rem;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    @media (min-width: 1024px) {
+        position: absolute;
+        height: 31.5rem;
+        width: 65rem;
+        right: 0;
+        top: 8rem;
+        gap: 3rem;
+        padding: 0;
+    }
+
+    .testimonial_card {
+        cursor: pointer;
+        background-color: rgb(34, 34, 34);
+        height: auto;
+        width: 90%;
+        display: flex;
+        padding: 2rem;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @media (min-width: 480px) {
+            width: 80%;
+        }
+
+        @media (min-width: 768px) {
+            width: 45%;
+            height: 18rem;
+        }
+
+        @media (min-width: 1024px) {
+            width: 18rem;
+            padding: 4rem;
+        }
+
+        .inverted_comma {
+            font-size: 3rem;
+            color: white;
+
+            h1 {
+                font-weight: 400;
+                margin: 0;
+            }
+        }
+
+        .customer-card__quote {
+            color: #ddd;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 1rem 0;
+
+            @media (min-width: 768px) {
+                font-size: 1rem;
+            }
+        }
+
+        .customer-card__footer {
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            @media (min-width: 1024px) {
+                margin-top: 1rem;
+            }
+
+            .customer-card__avatar {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+
+                @media (min-width: 768px) {
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+
+            div {
+                .customer-card__name {
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    margin: 0;
+                    color: #fff;
+
+                    @media (min-width: 768px) {
+                        font-size: 1rem;
+                    }
+                }
+
+                .customer-card__location {
+                    font-size: 0.8rem;
+                    color: #bbb;
+                    margin: 0;
+
+                    @media (min-width: 768px) {
+                        font-size: 0.875rem;
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            box-shadow: 0px 0px 10px blue;
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+    }
+}
+
+
+.testimonial_add{
+    position: absolute;
+    // border: 2px solid red;
+    border-radius: 0.4rem;
+    height: 20rem;
+    width: 35rem;
+    overflow: hidden;
+    backdrop-filter: blur(122px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 2%;
+
+
+}
+
+.profileImage{
+    // border: 2px solid red;
+    box-shadow: 0px 0px 10px red;
+    border-radius: 50%;
+    height: 8rem;
+    width: 8rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+
+    img{
+        height: 100%;
+    }
+}
+
+.userbox{
+    // border: 2px solid red;
+    box-shadow: 0px 0px 10px red;
+    padding: 1rem 2%;
+    border-radius: 5px;
+    height: auto;
+    max-width: 22rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.user_details{
+    display: flex;
+    flex-direction: column;
+}
+
+.user_location{
+    display: flex;
+    gap: 1rem;
+
+    .user_area{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.user_quote{
+    display: flex;
+    flex-direction: column;
+
+    textarea{
+        max-width: 21rem;
+    }
+}

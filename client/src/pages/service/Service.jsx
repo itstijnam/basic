@@ -2,6 +2,8 @@ import React from 'react'
 import './style/Service.scss'
 import BACKIMAGE from './components/assets/houseview.jpg'
 import Caraousel from './components/caraousel/Caraousel'
+import Customers from './components/customers/Customers'
+import Subscription from './components/subscription/Subscription'
 
 function Service() {
 
@@ -21,7 +23,7 @@ function Service() {
   ]
 
   return (
-    <div className="service_container"  style={{backgroundImage: `url(${BACKIMAGE})`}}>
+    <div className="service_container" style={{ backgroundImage: `url(${BACKIMAGE})` }}>
       <div className='service_page_heading'>
         <h1>Our Serivices</h1>
       </div>
@@ -37,7 +39,9 @@ function Service() {
 
       </div>
 
-      <Caraousel/>
+      <Caraousel />
+      <Customers/>
+      <Subscription/>
 
     </div>
   )
