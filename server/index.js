@@ -1,12 +1,14 @@
 import dotenv from 'dotenv'
 import express from 'express';
 import cors from 'cors';
-import authRoutes from './routes/authRoutes.js';
-import mediaRoutes from './routes/mediaRoutes.js'
-import serviceRoutes from './routes/service.route.js'
 import cookieParser from 'cookie-parser';
 import path from 'path';
 import connectDB from './utils/db.js';
+import authRoutes from './routes/authRoutes.js';
+import mediaRoutes from './routes/mediaRoutes.js'
+import serviceRoutes from './routes/service.route.js'
+import testimonialRoutes from './routes/testimonialRoute.js';
+
 
 dotenv.config();
 const app = express();
@@ -34,6 +36,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/auth', authRoutes);
 app.use('/api/media', mediaRoutes); // Adjust path if your route file name changes
 app.use('/api/service', serviceRoutes);
+app.use('/testimonials', testimonialRoutes)
 
 app.listen(PORT, ()=>{
   connectDB();

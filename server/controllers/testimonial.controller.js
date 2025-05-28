@@ -1,3 +1,4 @@
+import sharp from "sharp";
 import { Testimonial } from "../models/testimonial.model.js";
 import cloudinary from "../utils/cloudinary.js";
 
@@ -5,7 +6,7 @@ import cloudinary from "../utils/cloudinary.js";
 export const createTestimonial = async (req, res) => {
     try {
 
-        const { testimonial_name, quote, city, country } = req.body;
+        const { name: testimonial_name, quote, city, country } = req.body;
         const image = req.file;
         // const { id } = req.user;
 
@@ -13,6 +14,9 @@ export const createTestimonial = async (req, res) => {
         if (!quote) return res.status(400).json({ success: false, message: 'Quote is required' });
         if (!city) return res.status(400).json({ success: false, message: 'City is required' });
         if (!country) return res.status(400).json({ success: false, message: 'Country is required' });
+
+        if (!image) return res.status(400).json({ success: false, message: 'Image is requried' });
+
 
         // const currentUser = await User.findById(id);
         // if (!currentUser) return res.status(400).json({ success: false, message: 'No user found' })
@@ -49,12 +53,12 @@ export const createTestimonial = async (req, res) => {
     }
 }
 
-export const getAllTestimonial = async (req, res)=>{
+export const getAllTestimonial = async (req, res) => {
     try {
 
         const testimonials = await Testimonial.find()
             .populate('author');
-        
+
         return res.status(200).json({
             success: true,
             testimonials
@@ -69,4 +73,4 @@ export const getAllTestimonial = async (req, res)=>{
     }
 }
 
-export const deleteTestimonial = async (req, res)=>{}
+export const deleteTestimonial = async (req, res) => { }
