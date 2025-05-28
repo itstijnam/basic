@@ -26,6 +26,10 @@ function Header() {
       text: 'Portfolio',
       url: '',
     },
+    {
+      text: 'Log In',
+      url: '',
+    }
   ]
 
   const getCapName = (text)=>{
@@ -39,11 +43,13 @@ function Header() {
       navigate('/service')
       
     }else if( text === 'About'){
-      navigate('/')
+      navigate('/about')
       
     }else if( text === 'Portfolio'){
       navigate('/')
       
+    }else if(text === 'Log In'){
+      navigate('/login')
     }
   }
 

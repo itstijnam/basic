@@ -1,0 +1,120 @@
+.login-container {
+    display: flex;
+    height: 99vh;
+    box-sizing: border-box;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+}
+
+.left-container {
+    width: 40vw;
+    background-image: url('../../about/bg.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.left-container .heading {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 99vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: xx-large;
+}
+
+.right-container {
+    width: 60vw;
+    background-image: linear-gradient(to right, rgb(0, 238, 255), rgb(166, 0, 255));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-container .form-container {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    width: 30vw;
+    height: 50vh;
+    box-sizing: border-box;
+    padding: 2rem;
+}
+
+.form-container .login-form {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.5rem;
+    row-gap: 1rem;
+}
+
+.login-form input {
+    font-size: large;
+    padding: 3px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgb(32, 32, 32); 
+}
+
+.login-form button {
+    font-size: larger;
+    padding: 3px 5px;
+    background-color: black;
+    border: none;
+    color: white;
+    margin-top: 5px;
+}
+
+.login-form button:hover {
+    border: 2px solid white;
+}
+
+@media (max-width: 600px) {
+    .login-container {
+        flex-direction: column;
+    }
+
+    .left-container {
+        width: 100vw;
+        height: 50vh;
+    }
+
+    .left-container .heading {
+        width: 100vw;
+        height: 50vh;
+    }
+
+    .right-container {
+        width: 100vw;
+        height: 50vh;
+        padding: 15px 0;
+    }
+
+    .right-container .form-container {
+        border-radius: 10px;
+        width: 80vw;
+        height: 80%;
+        padding: 1rem;
+    }
+
+    .form-container .login-form {
+        padding-top: 1rem;
+        row-gap: 0.7rem;
+    }
+
+    .login-form input {
+        font-size: medium;
+        padding: 2px 3px;
+    }
+
+    .login-form button {
+        font-size: medium;
+        padding: 2px 3px;
+    }
+}
