@@ -9,8 +9,16 @@ import ADDICON from '/icon/addImage.png'
 
 import axios from 'axios'
 import { baseUrl } from '../../../../utils/baseUrl';
+import { useSelector } from 'react-redux';
 
 function Caraousel() {
+
+
+  const { currentAuthUser } = useSelector(store => store.auth)
+
+  // checking auth user
+  const isAdmin = currentAuthUser?.role === 'admin'
+
 
   const sampleImages = [
     {
@@ -161,7 +169,7 @@ function Caraousel() {
           onMouseEnter={() => setAddBtn(true)}
           onMouseLeave={() => setAddBtn(false)}
         >
-          {addBtn && (
+          {addBtn && isAdmin && (
             <button className="add_caraousel_form_btn" onClick={() => setDialogueBox(!dialogueBox)} >
               Add +
             </button>
@@ -218,10 +226,12 @@ function Caraousel() {
                   onChange={(e) => setForm(prev => ({ ...prev, desc: e.target.value }))}
                 />
               </div>
-              <div className="form_action_btn">
-                <button className='action_cancel' onClick={() => cancelHandler()} >Cancel</button>
-                <button className='action_add' onClick={handleSubmit}>Add</button>
-              </div>
+              {isAdmin &&
+                <div className="form_action_btn">
+                  <button className='action_cancel' onClick={() => cancelHandler()} >Cancel</button>
+                  <button className='action_add' onClick={handleSubmit}>Add</button>
+                </div>
+              }
             </div>
           </div>
         }

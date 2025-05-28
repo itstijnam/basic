@@ -58,8 +58,19 @@ export const login = async (req, res) => {
       { expiresIn: '1d' }
     );
 
-    res.status(200).json({ token, user: { id: user._id, name: user.name, role: user.role } });
+    const currentUser = {
+      _id: user._id,
+      name: user.name,
+      role: user.role
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: `Logged In successfully`,
+      token,
+      currentUser
+    })
   } catch (error) {
-    res.status(500).json({ message: 'Login failed', error: error.message });
+    return res.status(500).json({ message: 'Login failed', error: error.message });
   }
 };

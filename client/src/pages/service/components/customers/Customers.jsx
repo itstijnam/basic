@@ -5,8 +5,16 @@ import avatar2 from '../assets/houseview.jpg'
 import addIcon from '/icon/addImage.png'
 import axios from 'axios';
 import { baseUrl } from '../../../../utils/baseUrl'
+import { useSelector } from 'react-redux'
 
 function Customers() {
+
+    const { currentAuthUser } = useSelector(store => store.auth)
+
+    const isAdmin = currentAuthUser?.role === 'admin'
+    console.log(isAdmin)
+
+
     const testimonials = [
         {
             quote: 'Exceptional service! From the initial consultation to the final reveal, your team demonstrated professionalism & a keen eye for design. Highly recommend!',
@@ -139,9 +147,12 @@ function Customers() {
 
                         {/* testimonial card 2 end */}
 
-                        <div className="testimonial_add_section" onClick={() => setDialogue(!dialogue)}>
-                            <h3>+</h3>
-                        </div>
+                        {isAdmin &&
+                            <div className="testimonial_add_section" onClick={() => setDialogue(!dialogue)}>
+                                <h3>+</h3>
+                            </div>
+                        }
+
 
                     </div>
                 </div>
@@ -150,7 +161,7 @@ function Customers() {
             {/* dialogue start */}
 
 
-            {dialogue &&
+            {dialogue && isAdmin &&
                 <div className='testimonial_add'>
                     <div className="profileImage" onClick={() => ref.current.click()} >
                         {form.image ? <img src={URL.createObjectURL(form.image)} alt="Preview" /> : <img src={addIcon} alt="Add" />}
@@ -205,10 +216,12 @@ function Customers() {
                                 value={form.quote}
                                 onChange={handleChange}
                             />
-                            <div className="testimonial_action_btn">
-                                <button onClick={cancelHandler}>Cancel</button>
-                                <button onClick={submitHandler}>Add</button>
-                            </div>
+                            {isAdmin &
+                                <div className="testimonial_action_btn">
+                                    <button onClick={cancelHandler}>Cancel</button>
+                                    <button onClick={submitHandler}>Add</button>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>

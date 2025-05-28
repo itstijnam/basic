@@ -2,8 +2,8 @@ import React from 'react'
 import './style/Service.scss'
 import BACKIMAGE from './components/assets/houseview.jpg'
 import Caraousel from './components/caraousel/Caraousel'
-import Customers from './components/customers/Customers'
 import Subscription from './components/subscription/Subscription'
+import Customers from './components/customers/Customers'
 
 function Service() {
 
@@ -40,7 +40,9 @@ function Service() {
       </div>
 
       <Caraousel />
+      
       <Customers/>
+
       <Subscription/>
 
     </div>

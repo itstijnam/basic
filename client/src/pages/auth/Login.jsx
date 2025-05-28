@@ -1,6 +1,11 @@
 import React from 'react'
 import './style/Login.css'
 import { useState } from 'react';
+import axios from 'axios';
+import { baseUrl } from '../../utils/baseUrl';
+import { setAuthUser } from '../../redux/authSlice';
+import {useDispatch} from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -8,12 +13,30 @@ function Login() {
     password: "",
   })
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  function handleSubmit(){
-    
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    try {
+      const res = await axios.post(`${baseUrl}/api/auth/login`, {
+        email: formData.email,
+        password: formData.password
+      });
+
+      if (res.data.success) {
+        console.log(res.data.message)
+        dispatch(setAuthUser(res.data.currentUser));
+        navigate('/');
+      }
+    } catch (error) {
+      console.error(error?.respnose?.data?.message);
+    }
   }
 
   return (

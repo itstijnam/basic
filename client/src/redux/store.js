@@ -1,6 +1,4 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-
-
 import {
     persistReducer,
     FLUSH,
@@ -12,6 +10,10 @@ import {
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
+
+// slice
+import authSlice from './authSlice.js'
+
 const persistConfig = {
     key: 'root',
     version: 1,
@@ -20,6 +22,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
     //---------slices----------
+    auth: authSlice
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
