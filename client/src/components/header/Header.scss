@@ -1,77 +1,99 @@
-
-$dark_color: black;
-$white_color: white;
+$dark_color: rgb(0, 0, 0);
+$white_color: rgb(255, 255, 255);
 $primary_green: rgb(62, 153, 62);
-$cream : #FFEEDB;
 
-@mixin flexspacebetweencenter{
+// Mixins
+@mixin flexspacebetweencenter {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-@mixin flexcenter{
+@mixin flexcenter {
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
 }
 
-
-
-.header{
+// Header container
+.header {
     @include flexspacebetweencenter;
-    position: fixed;
-    width: 90%;
-    padding: 0.2rem 5%;
-    background: #333;
-    // backdrop-filter: blur(12px);
-    // background: transparent;
+    padding: 0.5rem 5%;
+    backdrop-filter: blur(12.7px);
+    background: rgb(11, 11, 11, 1);
     color: $white_color;
-    // color: $cream;
-    min-height: 2rem;
-    // border-bottom-left-radius: 5rem;
-    // border-bottom-right-radius: 5rem;
-    box-shadow: 0px 3px 7px $white_color;
-    z-index: 11;
-    
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3rem;
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+    box-shadow: -3px 4px 4px 0px rgba(0, 0, 0, 1);
+    // box-shadow: -3px 4px 4px 0px white;
+    // 10px -4px 12.7px -4px rgba(0, 0, 0, 1);
+    -webkit-backdrop-filter: blur(13.8px);
+    justify-content: flex-end;
 }
 
-
-.arch_logo{
+// Navigation container
+.arch_header_nav {
     @include flexcenter;
-    // border: 2px solid white;
-    border-radius: 50%;
-    padding: 0.2rem;
-    overflow: hidden;
-    height: 4rem;
-    width: 4rem;
+    gap: 92px;
 
-    img{
-        height: 100%;
-    }
-}
-
-.arch_header_nav{
-    @include flexcenter;
-    gap: 1rem;
-
-    .arch_nav_ul{
+    .arch_nav_ul {
         @include flexcenter;
         gap: 0.6rem;
         padding: 0;
 
-        li{
+        li {
             cursor: pointer;
             list-style: none;
+            padding: 0.5rem 1.4rem;
+            border-radius: 999px;
+            background: rgb(2, 2, 2, 1);
+            color: rgba(255, 238, 219, 1);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease-in-out;
+            //Inner shadow (neumorphic)
+            box-shadow:
+                inset 2px 2px 5px rgb(53, 53, 53),
+                inset -2px -2px 5px rgba(255, 255, 255, 0.05),
+                0 2px 4px rgba(0, 0, 0, 0.4);
+
+            &:hover {
+                background: #1A1A1A;
+                color: #FFF5E0;
+                transform: translateY(-2px);
+                box-shadow:
+                    inset 2px 2px 5px rgba(0, 0, 0, 0.5),
+                    inset -2px -2px 5px rgba(255, 255, 255, 0.08),
+                    0 4px 6px rgba(0, 0, 0, 0.6);
+            }
         }
     }
 }
 
-.arch_contact_btn{
+// Contact button
+.arch_contact_btn {
     height: 2.4rem;
     width: 6rem;
     border: none;
     border-radius: 2rem;
     color: $dark_color;
     background: $white_color;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.3),
+        inset -2px -2px 6px rgba(255, 255, 255, 0.1);
+
+    &:hover {
+        background: #B0A1A1;
+        box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.5),
+            inset -1px -1px 4px rgba(255, 255, 255, 0.15);
+    }
 }
+
+@media screen and (max-width:768) {}

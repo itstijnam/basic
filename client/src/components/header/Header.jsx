@@ -1,7 +1,7 @@
 import React from 'react'
 import './Header.scss'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch }  from 'react-redux'
+import { useDispatch } from 'react-redux'
 import LOGO from '../../assets/arch_space.png'
 
 function Header() {
@@ -32,40 +32,44 @@ function Header() {
     }
   ]
 
-  const getCapName = (text)=>{
+  const getCapName = (text) => {
     return text.charAt(0).toUpperCase() + text.slice(1);
   }
 
-  const navHandler = (text)=>{
-    if(text === 'Home'){
+  const navHandler = (text) => {
+    if (text === 'Home') {
       navigate('/')
-    } else if( text === 'Service'){
+    } else if (text === 'Service') {
       navigate('/service')
-      
-    }else if( text === 'About'){
+
+    } else if (text === 'About') {
       navigate('/about')
-      
-    }else if( text === 'Portfolio'){
+
+    } else if (text === 'Portfolio') {
       navigate('/')
-      
-    }else if(text === 'Log In'){
+
+    } else if (text === 'Log In') {
       navigate('/login')
     }
   }
 
   return (
     <div className='header'>
-        <div className="arch_logo">
+      <div className="header_box">
+        
+        {/* <div className="arch_logo">
           <img src={LOGO} alt="" />
-        </div>
+        </div> */}
         <div className="arch_header_nav">
-            <ul className='arch_nav_ul'>
-              {archNav.map((arch, i)=>(
-                <li key={i} onClick={()=>navHandler(arch.text)} >{getCapName(arch.text)}</li>
-              ))}
-            </ul>
-            <button className='arch_contact_btn'>Contact Us</button>
+          <ul className='arch_nav_ul'>
+            {archNav.map((arch, i) => (
+              <li key={i} onClick={() => navHandler(arch.text)} >{getCapName(arch.text)}</li>
+            ))}
+          </ul>
+          <button className='arch_contact_btn'>Contact Us</button>
         </div>
+
+      </div>
     </div>
   )
 }
