@@ -8,3 +8,9 @@
     padding: 6rem;
     color: white;
 }
+
+@media screen and (max-width: 768px) {
+    .home_main_container{
+        padding: 6rem 0.2rem !important;
+    }
+}

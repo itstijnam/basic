@@ -4,6 +4,7 @@ import BACKIMAGE from './components/assets/houseview.jpg'
 import Caraousel from './components/caraousel/Caraousel'
 import Subscription from './components/subscription/Subscription'
 import Customers from './components/customers/Customers'
+import ServiceCom from './components/service/ServiceCom'
 
 function Service() {
 
@@ -24,26 +25,18 @@ function Service() {
 
   return (
     <div className="service_container" style={{ backgroundImage: `url(${BACKIMAGE})` }}>
+
       <div className='service_page_heading'>
         <h1>Our Serivices</h1>
       </div>
 
-      <div className="service_design_details_sections">
-
-        {serviceCategories?.map((cat, i) => (
-          <div className="display_section" key={i}>
-            <h2>{cat?.heading}</h2>
-            <p>{cat?.text}</p>
-          </div>
-        ))}
-
-      </div>
+      <ServiceCom />
 
       <Caraousel />
-      
-      <Customers/>
 
-      <Subscription/>
+      <Customers />
+
+      <Subscription />
 
     </div>
   )
