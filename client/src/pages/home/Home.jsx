@@ -17,10 +17,8 @@ function Home() {
       }}
     >
       <div className='home_main_container'>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum maiores facere officiis! Tempora omnis illo mollitia, quos cumque in qui. Veritatis tempora aperiam explicabo architecto, ullam fuga, ducimus sequi laudantium ex voluptas tempore quo atque nisi placeat repellat dignissimos? Facere suscipit optio reprehenderit ad repudiandae eius minus ex vero nesciunt, eos eaque debitis repellendus est! Nemo eveniet quae eaque animi magnam placeat quos totam asperiores eum. Minus, natus, aut nihil hic voluptatem consequatur molestias quia non impedit facere, dignissimos voluptate odit. Tempore quos est atque delectus at quae aspernatur, quidem eligendi sunt ipsam officia eaque libero labore. Recusandae, itaque quidem.
+        <Hero />
       </div>
-
-      <Hero />
     </div>
   )
 }

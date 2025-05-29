@@ -26,10 +26,10 @@ function Header() {
       text: 'Portfolio',
       url: '',
     },
-    {
-      text: 'Log In',
-      url: '',
-    }
+    // {
+    //   text: 'Log In',
+    //   url: '',
+    // }
   ]
 
   const getCapName = (text) => {
