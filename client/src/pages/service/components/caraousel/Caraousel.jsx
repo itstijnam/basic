@@ -10,6 +10,7 @@ import ADDICON from '/icon/addImage.png'
 import axios from 'axios'
 import { baseUrl } from '../../../../utils/baseUrl';
 import { useSelector } from 'react-redux';
+import useGetAllServices from '../../../../hooks/GetAllServices';
 
 function Caraousel() {
 
@@ -19,43 +20,15 @@ function Caraousel() {
   // checking auth user
   const isAdmin = currentAuthUser?.role === 'admin'
 
+  const { services } = useSelector(store => store.service)
 
-  const sampleImages = [
-    {
-      cardId: 0,
-      heading: 'Oberoi House',
-      img: Interior,
-      shortDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum saepe provident natus voluptas repellendus, excepturi nobis quae, voluptatibus, nesciunt atque molestias rem? Voluptates obcaecati explicabo corporis rerum dolores totam nobis aut enim ipsam ut.'
-    },
-    {
-      cardId: 1,
-      heading: 'Taj Hotel',
-      img: Outdoor,
-      shortDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum saepe provident natus voluptas repellendus, excepturi nobis quae, voluptatibus, nesciunt atque molestias rem? Voluptates obcaecati explicabo corporis rerum dolores totam nobis aut enim ipsam ut.'
-    },
-    {
-      cardId: 2,
-      heading: 'Kashmir',
-      img: LightHouse,
-      shortDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum saepe provident natus voluptas repellendus, excepturi nobis quae, voluptatibus, nesciunt atque molestias rem? Voluptates obcaecati explicabo corporis rerum dolores totam nobis aut enim ipsam ut.'
-    },
-    {
-      cardId: 3,
-      heading: 'Gangtok',
-      img: backImage,
-      shortDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum saepe provident natus voluptas repellendus, excepturi nobis quae, voluptatibus, nesciunt atque molestias rem? Voluptates obcaecati explicabo corporis rerum dolores totam nobis aut enim ipsam ut.'
-    },
-    {
-      cardId: 4,
-      heading: 'Red Fort',
-      img: HouseImage,
-      shortDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum saepe provident natus voluptas repellendus, excepturi nobis quae, voluptatibus, nesciunt atque molestias rem? Voluptates obcaecati explicabo corporis rerum dolores totam nobis aut enim ipsam ut.'
-    },
-  ]
+
+  useGetAllServices()
 
   const [currentIndex, setCurrentIndex] = useState(1);
   const [addBtn, setAddBtn] = useState(false);
   const [dialogueBox, setDialogueBox] = useState(false);
+  const [animating, setAnimating] = useState(false);
   const [form, setForm] = useState({
     title: '',
     image: '',
@@ -65,26 +38,42 @@ function Caraousel() {
   const ref = useRef();
 
 
+  const triggerAnimation = (callback) => {
+    setAnimating(true);
+    setTimeout(() => {
+      callback();
+      setAnimating(false);
+    }, 500); // Match with CSS animation duration
+  };
+
   const goPrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? sampleImages.length - 1 : prev - 1));
+    triggerAnimation(() => {
+      setCurrentIndex((prev) => (prev === 0 ? services.length - 1 : prev - 1));
+    });
   };
+
   const goNext = () => {
-    setCurrentIndex((prev) => (prev === sampleImages.length - 1 ? 0 : prev + 1));
+    triggerAnimation(() => {
+      setCurrentIndex((prev) => (prev === services.length - 1 ? 0 : prev + 1));
+    });
   };
+
+
+
   const getLeftImageNumber = () => {
     if (currentIndex === 0) {
-      return sampleImages.length - 1;
+      return services.length - 1;
     }
     return currentIndex - 1;
   }
   const getRightImageNumber = () => {
-    if (currentIndex === sampleImages.length - 1) {
+    if (currentIndex === services.length - 1) {
       return 0;
     }
     return currentIndex + 1;
   }
 
-  const isLastImage = currentIndex === sampleImages.length - 1
+  const isLastImage = currentIndex === services.length - 1
 
   const cancelHandler = () => {
     setDialogueBox(!dialogueBox)
@@ -139,23 +128,28 @@ function Caraousel() {
     }
   };
 
+  const deleteHandler = () => { }
   return (
 
     <>
 
 
       <div className='caraousel'  >
-        <div className="caraouselbox1 CB13">
+        {/* <div className="caraouselbox1 CB13"> */}
+        <div className={`caraouselbox1 CB13 `}>
+
           <div className="for_Box1_CB2_heading">
-            <h2>Heading 2</h2>
+            <h2> {services[currentIndex]?.heading} </h2>
           </div>
-          <div className="box1_image">
-            <img src={sampleImages[getLeftImageNumber()].img} alt="" />
+          <div className={`box1_image ${animating ? 'slide-left' : ''} `}>
+            <img src={services[getLeftImageNumber()]?.image} alt="" />
           </div>
         </div>
-        <div className="caraouselbox2">
-          <div className="box2_image">
-            <img src={sampleImages[currentIndex].img} alt="" />
+        {/* <div className="caraouselbox2"> */}
+        <div className={`caraouselbox2`}>
+
+          <div className={`box2_image  ${animating ? 'slide-left' : ''} `}>
+            <img src={services[currentIndex]?.image} alt="" />
           </div>
           <div className="caraousel_action">
             {/* <button onClick={() => goPrev()} disabled={currentIndex === 0} >←</button> */}
@@ -165,20 +159,25 @@ function Caraousel() {
             <button onClick={() => goNext()}>→</button>
           </div>
         </div>
-        <div className="caraouselbox3 CB13"
+        {/* <div className="caraouselbox3 CB13" */}
+        <div className={`caraouselbox3 CB13`}
           onMouseEnter={() => setAddBtn(true)}
           onMouseLeave={() => setAddBtn(false)}
         >
           {addBtn && isAdmin && (
-            <button className="add_caraousel_form_btn" onClick={() => setDialogueBox(!dialogueBox)} >
-              Add +
-            </button>
+            <>
+
+              <button className="add_caraousel_form_btn" onClick={() => setDialogueBox(!dialogueBox)} >
+                Add +
+              </button>
+              <button className="add_caraousel_form_btn" style={{ color: 'red', cursor: 'pointer' }} onClick={() => deleteHandler()} >Delete</button>
+            </>
           )}
-          <div className="box3_image">
-            <img src={sampleImages[getRightImageNumber()].img} alt="" />
+          <div className={`box3_image  ${animating ? 'slide-left-down' : ''} `}>
+            <img src={services[getRightImageNumber()]?.image} alt="" />
           </div>
           <div className="for_box2_content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias atque consequatur consectetur! </p>
+            <p>{services[currentIndex]?.short_desc}</p>
           </div>
         </div>
 

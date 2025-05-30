@@ -3,9 +3,10 @@
 
 .hero_container {
     height: auto;
-    width: 100%;
+    // width: 100%;
     max-width: 1920px; // Added maximum width to maintain proportions on large screens
     margin: 0 auto;
+    padding: 0rem 6rem;
 }
 
 .hero_top {
@@ -124,6 +125,9 @@
 }
 
 @media screen and (max-width: 768px) {
+    .hero_container{
+        padding: 0rem !important;
+    }
     .HT_content {
         flex-direction: column;
         align-items: center;
