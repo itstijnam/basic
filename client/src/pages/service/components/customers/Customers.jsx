@@ -6,38 +6,26 @@ import addIcon from '/icon/addImage.png'
 import axios from 'axios';
 import { baseUrl } from '../../../../utils/baseUrl'
 import { useSelector } from 'react-redux'
+import GetAllTestimonials from '../../../../hooks/GetAllTestimonials'
 
 function Customers() {
 
     const { currentAuthUser } = useSelector(store => store.auth)
+    const { testimonials } = useSelector(store => store.service)
+    const [currentIndex, setCurrentIndex] = useState(1);
 
+    console.log(testimonials)
     const isAdmin = currentAuthUser?.role === 'admin'
-    console.log(isAdmin)
 
+    GetAllTestimonials()
 
-    const testimonials = [
-        {
-            quote: 'Exceptional service! From the initial consultation to the final reveal, your team demonstrated professionalism & a keen eye for design. Highly recommend!',
-            profile_pic: avatar2,
-            name: 'James Bennet',
-            city: 'Toronto',
-            country: 'Canada'
-        },
-        {
-            quote: 'Exceptional service! From the initial consultation to the final reveal, your team demonstrated professionalism & a keen eye for design. Highly recommend!',
-            profile_pic: avatar2,
-            name: 'Robert',
-            city: 'New York',
-            country: 'America'
-        },
-        {
-            quote: 'Exceptional service! From the initial consultation to the final reveal, your team demonstrated professionalism & a keen eye for design. Highly recommend!',
-            profile_pic: avatar2,
-            name: 'Robert',
-            city: 'New York',
-            country: 'America'
-        }
-    ]
+    const goPrev = () => {
+        setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+    };
+
+    const goNext = () => {
+        setCurrentIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+    };
 
     const [form, setForm] = useState({
         name: '',
@@ -96,6 +84,8 @@ function Customers() {
         }
     }
 
+    const deleteHandler = () => { }
+
     return (
         <div className='customers'>
             <div className="customer_section">
@@ -104,8 +94,8 @@ function Customers() {
                         <img src={backImage} alt="" />
                     </div>
                     <div className="action_btn">
-                        <button>&larr;</button>
-                        <button>&rarr;</button>
+                        <button onClick={() => goPrev()} >&larr;</button>
+                        <button onClick={() => goNext()}>&rarr;</button>
                     </div>
                 </div>
                 <div className="customer_testimonial_section">
@@ -117,15 +107,15 @@ function Customers() {
 
                         {/* testimonial card 1 */}
 
-
                         <div className="testimonial_card">
+                            {isAdmin && <span style={{ color: 'red' }} onClick={() => deleteHandler()} >Delete</span>}
                             <div className="inverted_comma"> <h1>“</h1> </div>
-                            <p className="customer-card__quote"> {testimonials[0]?.quote} </p>
+                            <p className="customer-card__quote"> {testimonials[currentIndex]?.quote} </p>
                             <footer className="customer-card__footer">
-                                <img className="customer-card__avatar" src={testimonials[0]?.profile_pic} alt="James Bennett" />
+                                <img className="customer-card__avatar" src={testimonials[currentIndex]?.image} alt="James Bennett" />
                                 <div>
-                                    <p className="customer-card__name">{testimonials[0]?.name}</p>
-                                    <p className="customer-card__location">{testimonials[0]?.city}, {testimonials[0]?.country}</p>
+                                    <p className="customer-card__name">{testimonials[currentIndex]?.name}</p>
+                                    <p className="customer-card__location">{testimonials[currentIndex]?.city}, {testimonials[0]?.country}</p>
                                 </div>
                             </footer>
                         </div>
@@ -134,13 +124,15 @@ function Customers() {
                         {/* testimonial card 2 */}
 
                         <div className="testimonial_card">
+                            {isAdmin && <span style={{ color: 'red' }} onClick={() => deleteHandler()} >Delete</span>}
+
                             <div className="inverted_comma"> <h1>“</h1> </div>
-                            <p className="customer-card__quote"> {testimonials[1]?.quote} </p>
+                            <p className="customer-card__quote"> {testimonials[currentIndex + 1]?.quote} </p>
                             <footer className="customer-card__footer">
-                                <img className="customer-card__avatar" src={testimonials[1]?.profile_pic} alt="James Bennett" />
+                                <img className="customer-card__avatar" src={testimonials[currentIndex + 1]?.image} alt="James Bennett" />
                                 <div>
-                                    <p className="customer-card__name">{testimonials[1]?.name}</p>
-                                    <p className="customer-card__location">{testimonials[1]?.city}, {testimonials[1]?.country}</p>
+                                    <p className="customer-card__name">{testimonials[currentIndex + 1]?.name}</p>
+                                    <p className="customer-card__location">{testimonials[currentIndex + 1]?.city}, {testimonials[1]?.country}</p>
                                 </div>
                             </footer>
                         </div>
@@ -149,7 +141,7 @@ function Customers() {
 
                         {isAdmin &&
                             <div className="testimonial_add_section" onClick={() => setDialogue(!dialogue)}>
-                                <h3>+</h3>
+                                <h3 style={{ color: 'white' }}>+</h3>
                             </div>
                         }
 
@@ -216,7 +208,7 @@ function Customers() {
                                 value={form.quote}
                                 onChange={handleChange}
                             />
-                            {isAdmin &
+                            {isAdmin &&
                                 <div className="testimonial_action_btn">
                                     <button onClick={cancelHandler}>Cancel</button>
                                     <button onClick={submitHandler}>Add</button>
