@@ -1,10 +1,11 @@
 import React from 'react'
 import founderImg from './founder.jpg';
+import bgImage from './bg.jpg'
 import './About.css'
 
 function About() {
     return (
-        <div>
+        <div className='about-container'>
             <section className="hero">
                 <div className="overlay"></div>
                 <div className="hero-content">
@@ -14,51 +15,70 @@ function About() {
                 </div>
             </section>
 
-            {/* -------------------- INTRO SECTION ---------------------- */}
+            {/* -------------------- ACHIEVEMENT SECTION ---------------------- */}
 
-            <section class="intro-section">
-                <p class="brand-heading">
-                    <span class="brand-box">"ARCH SPACE INTERIO"</span>
-                    is a leading designer of a multifaceted firm that work across india in architecture, interiors, furniture, lighting, product design with stable design and landscaping & Industrial pre fabrication Work.
-                </p>
-
-                <p>
-                    Design is usually considered as USP of a project, but it does not mean creating beautiful views rather it should create a “Sense of belonging/ act as part of whole” for the user and the cityscapes.
-                </p>
-
-                <p>
-                    ASI has a creative team of Landscape Planners, Architects, Draftsman and technical staff committed to designing of urban spaces and landscape art. With the diverse disciplines in ASI, we create and design in different realms. Our well equipped studio and team of highly qualified professionals are well versed with computer aided design.
-                </p>
-
-                <p>
-                    Any project here is taken up with an intent to suffice the needs of client with keeping in mind the design sensibilities.
-                </p>
+            <section class="achievements-section">
+                <div class="content">
+                    <h2>Our Achievements Speak for Themselves</h2>
+                    <p>
+                        At Arch Space, we pride ourselves on delivering exceptional architectural solutions.
+                        Our commitment to quality and innovation has led to numerous successful projects across various locations.
+                    </p>
+                    <div class="achievements-container">
+                        <div class="image-wrapper">
+                            <img src={bgImage} alt="Interior design" />
+                        </div>
+                        <div class="stats">
+                            <div class="stat">
+                                <h3>15+</h3>
+                                <p>Years of Experience</p>
+                            </div>
+                            <div class="stat">
+                                <h3>99%</h3>
+                                <p>Client Satisfaction</p>
+                            </div>
+                            <div class="stat">
+                                <h3>100+</h3>
+                                <p>Project Completed</p>
+                            </div>
+                            <div class="stat">
+                                <h3>21+</h3>
+                                <p>Awards & Recognitions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             {/* -------------------- VALUE SECTION ---------------------- */}
 
             <section class="values-section">
-                <h2 class="section-title">Our Values</h2>
-
-                <div class="value-card">
-                    <h3 class="value-title">Client-Centric Approach</h3>
-                    <p class="value-description">
-                        We put our clients needs and vision at the heart of every project.
-                    </p>
+                <h2>Our values</h2>
+                <div class="values-text">
+                    <div class="value-item">
+                        <h4>Market Expertise</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>Client First Service</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>Transparency</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>Integrity</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
                 </div>
 
-                <div class="value-card">
-                    <h3 class="value-title">Attention to Detail</h3>
-                    <p class="value-description">
-                        We believe that perfection lies in the details, and we strive for excellence in every aspect of our work.
-                    </p>
-                </div>
-
-                <div class="value-card">
-                    <h3 class="value-title">Attention to Detail</h3>
-                    <p class="value-description">
-                        We believe that perfection lies in the details, and we strive for excellence in every aspect of our work.
-                    </p>
+                <div class="image-row">
+                    <img src={bgImage} alt="img2" class="rounded rounded-left" />
+                    <img src={bgImage} alt="img1" class="rounded rounded-left second-left" />
+                    <img src={bgImage} alt="img3" class="rounded rounded-arch" />
+                    <img src={bgImage} alt="img4" class="rounded rounded-right second-right" />
+                    <img src={bgImage} alt="img5" class="rounded rounded-right" />
                 </div>
             </section>
 
@@ -94,14 +114,7 @@ function About() {
                             <h3 className="member-name">Yash Gupta</h3>
                             <p className="member-role">Architect, Founder</p>
                         </div>
-                    </div>
-                    <div className="member-card">
-                        <img src={founderImg} alt="Yash Gupta" className="member-image" />
-                        <div className="member-info">
-                            <h3 className="member-name">Yash Gupta</h3>
-                            <p className="member-role">Architect, Founder</p>
-                        </div>
-                    </div>
+                    </div>-
                 </div>
             </section>
 
