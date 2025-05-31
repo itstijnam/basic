@@ -73,4 +73,16 @@ export const getAllTestimonial = async (req, res) => {
     }
 }
 
-export const deleteTestimonial = async (req, res) => { }
+export const deleteTestimonial = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const deletedTestimonial = await Testimonial.findByIdAndDelete(id);
+        if (!deletedTestimonial) {
+            return res.status(404).json({ success: false, message: 'Testimonial not found' });
+        }
+        return res.status(200).json({ success: true, message: 'Testimonial deleted' });
+    } catch (error) {
+        console.log(`Error: controller/testimonial_controller/deleteTestimonial: ${error}`);
+        return res.status(500).json({ success: false, message: 'Failed to delete testimonial' });
+    }
+}
