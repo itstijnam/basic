@@ -1,4 +1,4 @@
-.home_main_container{
+.home_main_container {
     // border: 2px solid red;
     // position: absolute;
     height: 100%;
@@ -10,7 +10,34 @@
 }
 
 @media screen and (max-width: 768px) {
-    .home_main_container{
+    .home_main_container {
         padding: 6rem 0.2rem !important;
     }
+}
+
+// @keyframes blackScreenAnimation {
+//     0%{
+//         background: black;
+//     }
+//     99%{
+//         background: black;
+//     }
+// }
+
+// .black_animation{
+//     animation: blackScreenAnimation 2.4s ease forwards;
+// }
+
+.black_out {
+    background: black;
+    min-height: 100vh;
+    position: relative;
+}
+
+.home_items_display {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    position: relative;
 }
