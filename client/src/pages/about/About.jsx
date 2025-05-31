@@ -1,6 +1,9 @@
 import React from 'react'
 import founderImg from './founder.jpg';
 import bgImage from './bg.jpg'
+import quoteImage from './image 2.png'
+import ValuesCarousel from './carousel/ValuesCarousel';
+import { Minus } from 'lucide-react'
 import './About.css'
 
 function About() {
@@ -9,9 +12,15 @@ function About() {
             <section className="hero">
                 <div className="overlay"></div>
                 <div className="hero-content">
-                    <h1>Arch Space Interio</h1>
-                    <p>Ideas become reality. We design elegant spaces with stable design and aesthetics.</p>
-                    <button>Call Now</button>
+                    <div className="hero-content-text">
+                        <h1>Arch <span>space</span></h1>
+                        <p className='sub-text'>Let's create something extraordinary together</p>
+                        <p className='main-text'>Our commitment to precision engineering ensures that every structure we design is not only asthetically striking but also built to stand the test of time.</p>
+                        <button>CALL NOW</button>
+                    </div>
+                    <div className="hero-content-carousel">
+                        <ValuesCarousel />
+                    </div>
                 </div>
             </section>
 
@@ -118,7 +127,18 @@ function About() {
                 </div>
             </section>
 
+            {/* -----------------------QUOTE SECTION --------------------------- */}
 
+            <section className="quote-section">
+                <div className="quote-content">
+                    <h1>Elevate your space with Arch <i>space</i></h1>
+                    <p><span><Minus /></span>let's create something extraordinary together</p>
+                    <button className='quote-btn'>GET YOUR FREE QUOTE!</button>
+                </div>
+                <div className="quote-image">
+                    <img src={quoteImage} alt="" />
+                </div>
+            </section>
         </div >
     )
 }
