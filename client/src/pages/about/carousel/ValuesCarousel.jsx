@@ -47,19 +47,19 @@ export default function ValuesCarousel() {
 
   return (
     <div className="carousel-wrapper">
+      <div className="carousel-track">
+        {getVisibleImages().map((src, idx) => (
+          <div className="pillar-image" key={idx}>
+            <img src={src} alt={`Value ${idx}`} />
+          </div>
+        ))}
+      </div>
+
       <div className="carousel-controls">
-        <div className="carousel-track">
-          {getVisibleImages().map((src, idx) => (
-            <div className="pillar-image" key={idx}>
-              <img src={src} alt={`Value ${idx}`} />
-            </div>
-          ))}
-        </div>
-        <div className="btns">
-          <button onClick={prev} className="carousel-btn"><ArrowLeft /></button>
-          <button onClick={next} className="carousel-btn"><ArrowRight /></button>
-        </div>
+        <button onClick={prev} className="carousel-btn"><ArrowLeft /></button>
+        <button onClick={next} className="carousel-btn"><ArrowRight /></button>
       </div>
     </div>
+
   );
 }
