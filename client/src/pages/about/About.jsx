@@ -256,7 +256,6 @@ function About() {
                     animate={inView4 ? { opacity: 1, scale: 1, x: 0, y: 0 } : {}}
                     transition={{
                         duration: 0.5,
-                        delay: 0.5,
                     }}
                     className="quote-content">
                     <h1>Elevate your space with Arch <i>space</i></h1>
@@ -269,7 +268,6 @@ function About() {
                     animate={inView4 ? { opacity: 1, scale: 1, x: 0, y: 0 } : {}}
                     transition={{
                         duration: 0.5,
-                        delay: 0.5,
                     }} 
                     className="quote-image">
                     <img src={quoteImage} alt="" />
