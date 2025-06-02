@@ -11,7 +11,7 @@ router.route('/get-services').get(allService);
 
 // New routes for edit, delete, and get single service
 router.route('/edit/:id').put(verifyToken, verifyAdmin, cloudUplaod.single('image'), editService);
-router.route('/delete/:id').delete(verifyToken, verifyAdmin, deleteService);
+router.route('/delete/:id').delete(deleteService);
 router.route('/:id').get(getService);
 
 export default router;

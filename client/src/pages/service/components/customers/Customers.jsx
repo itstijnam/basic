@@ -1,18 +1,21 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import '../../style/Customers.scss'
 import backImage from '../assets/house.jpg'
 import avatar2 from '../assets/houseview.jpg'
 import addIcon from '/icon/addImage.png'
 import axios from 'axios';
 import { baseUrl } from '../../../../utils/baseUrl'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import GetAllTestimonials from '../../../../hooks/GetAllTestimonials'
+import { setTestimonials } from '../../../../redux/serviceSlice'
 
 function Customers() {
 
     const { currentAuthUser } = useSelector(store => store.auth)
     const { testimonials } = useSelector(store => store.service)
     const [currentIndex, setCurrentIndex] = useState(1);
+    const [apiMessage, setApiMessage] = useState('')
+    const dispatch = useDispatch();
 
     console.log(testimonials)
     const isAdmin = currentAuthUser?.role === 'admin'
@@ -84,7 +87,26 @@ function Customers() {
         }
     }
 
-    const deleteHandler = () => { }
+    const deleteHandler = async (deletId) => {
+        try {
+            const res = await axios.delete(`${baseUrl}/testimonials/delete/${deletId}`);
+            if (res.data.success) {
+                const updatedTestimonials = testimonials.filter(card => card._id !== deletId);
+                dispatch(setTestimonials(updatedTestimonials));
+                setApiMessage(res.data.message)
+            }
+        } catch (error) {
+            console.error(error?.response?.data?.message || error.message);
+        }
+    };
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setApiMessage('');
+        }, 5000);
+
+        return () => clearInterval(intervalId);
+    }, []);
 
     return (
         <div className='customers'>
@@ -98,17 +120,18 @@ function Customers() {
                         <button onClick={() => goNext()}>&rarr;</button>
                     </div>
                 </div>
-                <div className="customer_testimonial_section">
+                <div className="customer_testimonial_section" style={{ color: 'white' }}>
                     <div className="cutomer_header">
                         <h1>Our Customers</h1>
+                        {apiMessage && <small style={{ color: 'orange' }} >{apiMessage}</small>}
+
                     </div>
                     <div className="customer_testimonial_box">
-
 
                         {/* testimonial card 1 */}
 
                         <div className="testimonial_card">
-                            {isAdmin && <span style={{ color: 'red' }} onClick={() => deleteHandler()} >Delete</span>}
+                            {isAdmin && <span style={{ color: 'red' }} onClick={() => deleteHandler(testimonials[currentIndex]?._id)} >Delete</span>}
                             <div className="inverted_comma"> <h1>“</h1> </div>
                             <p className="customer-card__quote"> {testimonials[currentIndex]?.quote} </p>
                             <footer className="customer-card__footer">
@@ -124,7 +147,7 @@ function Customers() {
                         {/* testimonial card 2 */}
 
                         <div className="testimonial_card">
-                            {isAdmin && <span style={{ color: 'red' }} onClick={() => deleteHandler()} >Delete</span>}
+                            {isAdmin && <span style={{ color: 'red' }} onClick={() => deleteHandler(testimonials[currentIndex + 1]?._id)} >Delete</span>}
 
                             <div className="inverted_comma"> <h1>“</h1> </div>
                             <p className="customer-card__quote"> {testimonials[currentIndex + 1]?.quote} </p>

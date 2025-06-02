@@ -1,16 +1,12 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import '../../style/Caraousel.scss'
-import Interior from '../assets/interior.jpeg';
-import Outdoor from '../assets/houseview.jpg';
-import LightHouse from '../assets/lighthouse.jpeg';
-import backImage from '../assets/houseview.jpg';
-import HouseImage from '../assets/house.jpg'
 import ADDICON from '/icon/addImage.png'
 
 import axios from 'axios'
 import { baseUrl } from '../../../../utils/baseUrl';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import useGetAllServices from '../../../../hooks/GetAllServices';
+import { setServices } from '../../../../redux/serviceSlice';
 
 function Caraousel() {
 
@@ -21,6 +17,9 @@ function Caraousel() {
   const isAdmin = currentAuthUser?.role === 'admin'
 
   const { services } = useSelector(store => store.service)
+  const [apiMessage, setApiMessage] = useState('')
+
+  const dispatch = useDispatch();
 
 
   useGetAllServices()
@@ -128,7 +127,27 @@ function Caraousel() {
     }
   };
 
-  const deleteHandler = () => { }
+  const deleteHandler = async (deletId) => {
+    try {
+      const res = await axios.delete(`${baseUrl}/api/service/delete/${deletId}`);
+      if (res.data.success) {
+        const updatedServices = services.filter(card => card._id !== deletId);
+        dispatch(setServices(updatedServices));
+        setApiMessage(res.data.message)
+      }
+    } catch (error) {
+      console.error(error?.response?.data?.message || error.message);
+    }
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setApiMessage('');
+    }, 5000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
 
     <>
@@ -164,13 +183,14 @@ function Caraousel() {
           onMouseEnter={() => setAddBtn(true)}
           onMouseLeave={() => setAddBtn(false)}
         >
+          {apiMessage && <small style={{ color: 'orange' }} >{apiMessage}</small>}
           {addBtn && isAdmin && (
             <>
 
               <button className="add_caraousel_form_btn" onClick={() => setDialogueBox(!dialogueBox)} >
                 Add +
               </button>
-              <button className="add_caraousel_form_btn" style={{ color: 'red', cursor: 'pointer' }} onClick={() => deleteHandler()} >Delete</button>
+              <button className="add_caraousel_form_btn" style={{ color: 'red', cursor: 'pointer' }} onClick={() => deleteHandler(services[currentIndex]?._id)} >Delete</button>
             </>
           )}
           <div className={`box3_image  ${animating ? 'slide-left-down' : ''} `}>
