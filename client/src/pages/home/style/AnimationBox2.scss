@@ -1,0 +1,64 @@
+.Image_container_animation2 {
+  background-color: #FFEEDB;
+  padding: 4rem 8%;
+}
+
+.Image_content_animation2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.Image1_animation2,
+.Image3_animation2 {
+  max-width: 30rem;
+  height: auto;
+  aspect-ratio: 30 / 26;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.8s ease-in-out;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+}
+
+/* Image1 comes from left to right */
+.Image1_animation2 {
+  transform: translateX(-250px);
+
+  &.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Image3 comes from right to left */
+.Image3_animation2 {
+  transform: translateX(250px);
+
+  &.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Red border spacer between images */
+.Image_spacer_animation {
+  width: 100%;
+  height: 100%;
+  
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
