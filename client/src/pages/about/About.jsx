@@ -2,6 +2,10 @@ import React from 'react'
 import founderImg from './founder.jpg';
 import bgImage from './bg.jpg'
 import quoteImage from './image 2.png'
+import img1 from './1.png'
+import img2 from './2.png'
+import img4 from './4.png'
+import img9 from './9.png'
 import ValuesCarousel from './carousel/ValuesCarousel';
 import { Minus } from 'lucide-react'
 import { useInView } from 'react-intersection-observer';
