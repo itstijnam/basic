@@ -5,7 +5,7 @@ import quoteImage from './image 2.png'
 import img1 from './1.png'
 import img2 from './2.png'
 import img4 from './4.png'
-import img9 from './9.png'
+import img8 from './8.png'
 import ValuesCarousel from './carousel/ValuesCarousel';
 import { Minus } from 'lucide-react'
 import { useInView } from 'react-intersection-observer';
@@ -13,6 +13,10 @@ import { motion } from 'framer-motion';
 import './About.css'
 
 function About() {
+    const [ref0, inView0] = useInView({
+        triggerOnce: true,
+        threshold: 0.2,
+    });
     const [ref1, inView1] = useInView({
         triggerOnce: true,
         threshold: 0.2,
@@ -29,6 +33,29 @@ function About() {
         triggerOnce: true,
         threshold: 0.2,
     });
+    const [ref5, inView5] = useInView({
+        triggerOnce: true,
+        threshold: 0.2,
+    });
+    const [ref6, inView6] = useInView({
+        triggerOnce: true,
+        threshold: 0.2,
+    });
+    const [ref7, inView7] = useInView({
+        triggerOnce: true,
+        threshold: 0.2,
+    });
+    const [ref8, inView8] = useInView({
+        triggerOnce: true,
+        threshold: 0.2,
+    });
+
+    const whatsappNumber = "919999167989"; // No '+' sign, just country code + number
+
+    const handleWhatsAppClick = () => {
+        const url = `https://api.whatsapp.com/send?phone=${whatsappNumber}`;
+        window.open(url, "_blank");
+    };
 
     return (
         <div className='about-container'>
@@ -38,12 +65,17 @@ function About() {
                     <div className="hero-content-text">
                         <h1>Arch <span>space</span></h1>
                         <p className='sub-text'>Let's create something extraordinary together</p>
-                        <p className='main-text'>Our commitment to precision engineering ensures that every structure we design is not only asthetically striking but also built to stand the test of time.</p>
-                        <button>CALL NOW</button>
+                        <p className='main-text'>Our commitment to precision engineering ensures that every structure we design is not only aesthetically striking but also built to stand the test of time.</p>
+                        <button onClick={handleWhatsAppClick}>CALL NOW</button>
                     </div>
-                    <div className="hero-content-carousel">
+                    <motion.div
+                    ref= {ref0}
+                    initial = {{opacity: 0}}
+                    animate = {{opacity: 1}}
+                    transition={{ duration: 1}}
+                    className="hero-content-carousel">
                         <ValuesCarousel />
-                    </div>
+                    </motion.div>
                 </div>
             </section>
 
@@ -73,9 +105,9 @@ function About() {
                         Our commitment to quality and innovation has led to numerous successful projects across various locations.
                     </motion.p>
                     <motion.div
-                        ref={ref1}
+                        ref={ref2}
                         initial={{ opacity: 0, scale: 0, y: 50 }}
-                        animate={inView1 ? { opacity: 1, scale: 1, y: 0 } : {}}
+                        animate={inView2 ? { opacity: 1, scale: 1, y: 0 } : {}}
                         transition={{
                             duration: 0.2,
                             scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
@@ -111,9 +143,9 @@ function About() {
 
             <section class="values-section">
                 <motion.h2
-                    ref={ref2}
+                    ref={ref3}
                     initial={{ x: -400, opacity: 0, scale: 0 }}
-                    animate={inView2 ? { x: 0, opacity: 1, scale: 1, rotate: 360 } : {}}
+                    animate={inView3 ? { x: 0, opacity: 1, scale: 1, rotate: 360 } : {}}
                     transition={{
                         duration: 0.5,
                         scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
@@ -122,9 +154,9 @@ function About() {
                     Our values
                 </motion.h2>
                 <motion.div
-                    ref={ref2}
+                    ref={ref3}
                     initial={{ opacity: 0, y: 50, scale: 0 }}
-                    animate={inView2 ? { opacity: 1, y: 0, scale: 1 } : {}}
+                    animate={inView3 ? { opacity: 1, y: 0, scale: 1 } : {}}
                     transition={{
                         duration: 0.5,
                         scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
@@ -150,20 +182,20 @@ function About() {
                 </motion.div>
 
                 <motion.div
-                    ref={ref2}
+                    ref={ref4}
                     initial={{ opacity: 0, y: 50, scale: 0 }}
-                    animate={inView2 ? { opacity: 1, y: 0, scale: 1 } : {}}
+                    animate={inView4 ? { opacity: 1, y: 0, scale: 1 } : {}}
                     transition={{
                         duration: 0.3,
                         scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
                         delay: 0.6,
                     }}
                     class="image-row">
-                    <img src={bgImage} alt="img2" class="rounded rounded-left" />
-                    <img src={bgImage} alt="img1" class="rounded rounded-left second-left" />
-                    <img src={bgImage} alt="img3" class="rounded rounded-arch" />
+                    <img src={img4} alt="img2" class="rounded rounded-left" />
+                    <img src={img2} alt="img1" class="rounded rounded-left second-left" />
+                    <img src={img1} alt="img3" class="rounded rounded-arch" />
                     <img src={bgImage} alt="img4" class="rounded rounded-right second-right" />
-                    <img src={bgImage} alt="img5" class="rounded rounded-right" />
+                    <img src={img8} alt="img5" class="rounded rounded-right" />
                 </motion.div>
             </section>
 
@@ -171,9 +203,9 @@ function About() {
 
             <section className="team-section">
                 <motion.h1
-                    ref={ref3}
+                    ref={ref5}
                     initial={{ x: -400, opacity: 0, scale: 0 }}
-                    animate={inView3 ? { x: 0, opacity: 1, scale: 1, rotate: 360 } : {}}
+                    animate={inView5 ? { x: 0, opacity: 1, scale: 1, rotate: 360 } : {}}
                     transition={{
                         duration: 0.5,
                         scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
@@ -184,9 +216,9 @@ function About() {
                 </motion.h1>
                 <div className="team-grid">
                     <motion.div
-                        ref={ref3}
+                        ref={ref5}
                         initial={{ opacity: 0, scale: 0, y: 50 }}
-                        animate={inView3 ? { opacity: 1, scale: 1, y: 0 } : {}}
+                        animate={inView5 ? { opacity: 1, scale: 1, y: 0 } : {}}
                         transition={{
                             duration: 0.2,
                             scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
@@ -200,9 +232,9 @@ function About() {
                         </div>
                     </motion.div>
                     <motion.div
-                        ref={ref3}
+                        ref={ref5}
                         initial={{ opacity: 0, scale: 0, y: 50 }}
-                        animate={inView3 ? { opacity: 1, scale: 1, y: 0 } : {}}
+                        animate={inView5 ? { opacity: 1, scale: 1, y: 0 } : {}}
                         transition={{
                             duration: 0.2,
                             scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
@@ -216,9 +248,9 @@ function About() {
                         </div>
                     </motion.div>
                     <motion.div
-                        ref={ref3}
+                        ref={ref6}
                         initial={{ opacity: 0, scale: 0, y: 50 }}
-                        animate={inView3 ? { opacity: 1, scale: 1, y: 0 } : {}}
+                        animate={inView6 ? { opacity: 1, scale: 1, y: 0 } : {}}
                         transition={{
                             duration: 0.2,
                             scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
@@ -232,9 +264,9 @@ function About() {
                         </div>
                     </motion.div>
                     <motion.div
-                        ref={ref3}
+                        ref={ref6}
                         initial={{ opacity: 0, scale: 0, y: 50 }}
-                        animate={inView3 ? { opacity: 1, scale: 1, y: 0 } : {}}
+                        animate={inView6 ? { opacity: 1, scale: 1, y: 0 } : {}}
                         transition={{
                             duration: 0.2,
                             scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
@@ -255,9 +287,9 @@ function About() {
 
             <section className="quote-section">
                 <motion.div
-                    ref={ref4}
+                    ref={ref7}
                     initial={{ opacity: 0, scale: 0, x: -100, y: 100 }}
-                    animate={inView4 ? { opacity: 1, scale: 1, x: 0, y: 0 } : {}}
+                    animate={inView7 ? { opacity: 1, scale: 1, x: 0, y: 0 } : {}}
                     transition={{
                         duration: 0.5,
                     }}
@@ -267,12 +299,12 @@ function About() {
                     <button className='quote-btn'>GET YOUR FREE QUOTE!</button>
                 </motion.div>
                 <motion.div
-                    ref={ref4}
+                    ref={ref8}
                     initial={{ opacity: 0, scale: 0, x: -900, y: 100 }}
-                    animate={inView4 ? { opacity: 1, scale: 1, x: 0, y: 0 } : {}}
+                    animate={inView8 ? { opacity: 1, scale: 1, x: 0, y: 0 } : {}}
                     transition={{
                         duration: 0.5,
-                    }} 
+                    }}
                     className="quote-image">
                     <img src={quoteImage} alt="" />
                 </motion.div>
