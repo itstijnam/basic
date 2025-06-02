@@ -3,7 +3,7 @@ import '../style/AnimationBox4.scss';
 
 // Images
 import IMG1 from '../assets/Landscape.png';
-import IMG3 from '../assets/washroom.png'; // Image 3 only
+import IMG3 from '../assets/Washroom.png'; // Image 3 only
 
 function AnimationBox4() {
   const image1Ref = useRef(null);
