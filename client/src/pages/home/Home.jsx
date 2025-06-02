@@ -7,30 +7,41 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setBlackToggle } from '../../redux/customDesign'
 import { useEffect } from 'react'
+import AnimationBox from './components/AnimationBox'
+import AnimationBox2 from './components/AnimationBox2'
+import AnimationBox3 from './components/AnimationBox3'
+import AnimationMiddleBox1 from './components/AnimationMiddleBox1'
+import AnimationMiddleBox2 from './components/AnimationMiddleBox2'
+import AnimationMiddleBox3 from './components/AnimationMiddleBox3'
+import AnimationBox4 from './components/AnimationBox4'
+import Schedule from './components/Schedule'
+import Marquee from './components/Marquee'
+import Testimonials from './components/Testimonials'
+
 
 function Home() {
 
-  const {blackToggle} = useSelector(store => store.design);
+  const { blackToggle } = useSelector(store => store.design);
   const dispatch = useDispatch();
 
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(setBlackToggle(false))
-  },[])
+  }, [])
 
   return (
     <>
       <div
-        style={ blackToggle? {
+        style={blackToggle ? {
           backgroundImage: `url(${backImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           minHeight: '100vh',
           position: 'relative',
-        } : {background: 'black'}}
+        } : { background: 'black' }}
 
         // className={blackToggle ? 'black_out' : 'home_items_display'}
-        
+
         onClick={() => dispatch(setBlackToggle(true))}
       >
         <div className='home_main_container'>
@@ -38,9 +49,45 @@ function Home() {
         </div>
       </div>
       {blackToggle &&
-        <div className="service_container_homes">
-          <HomeService />
-        </div>
+        <>
+          <div className="service_container_homes">
+            <HomeService />
+          </div>
+          <div className="home_animation_box">
+            <div style={{ borderBottom: '1px solid red', marginBottom: '2px' }}>
+              <AnimationBox />
+            </div>
+            <div style={{ borderTop: '1px solid red', borderBottom: '1px solid red', marginTop: '4px' }}>
+              <AnimationMiddleBox1 />
+            </div>
+            <div style={{ borderBottom: '1px solid red', borderTop: '1px solid red', marginBottom: '2px' }}>
+              <AnimationBox2 />
+            </div>
+            <div style={{ borderTop: '1px solid red', borderBottom: '1px solid red', marginTop: '4px' }}>
+              <AnimationMiddleBox2 />
+            </div>
+            <div style={{ borderTop: '1px solid red', borderBottom: '1px solid red', marginBottom: '2px' }}>
+              <AnimationBox3 />
+            </div>
+            <div style={{ borderTop: '1px solid red', borderBottom: '1px solid red', marginTop: '4px' }}>
+              <AnimationMiddleBox3 />
+            </div>
+            <div style={{ borderTop: '1px solid red', marginBottom: '2px' }}>
+              <AnimationBox4 />
+            </div>
+
+          </div>
+          <div className='Schedule_container'>
+            <Schedule />
+          </div>
+          <div className='Murquee_container'>
+            <Marquee />
+          </div>
+          <div className='Testimonial_container'>
+            <Testimonials />
+          </div>
+        </>
+
       }
     </>
   )
