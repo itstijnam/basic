@@ -4,6 +4,9 @@ import BACKIMAGE from './components/assets/houseview.jpg'
 import Caraousel from './components/caraousel/Caraousel'
 import Subscription from './components/subscription/Subscription'
 import Customers from './components/customers/Customers'
+import ServiceCom from './components/service/ServiceCom'
+import useGetAllServices from '../../hooks/GetAllServices'
+import { useSelector } from 'react-redux'
 
 function Service() {
 
@@ -22,30 +25,44 @@ function Service() {
     },
   ]
 
+
+
   return (
-    <div className="service_container" style={{ backgroundImage: `url(${BACKIMAGE})` }}>
-      <div className='service_page_heading'>
-        <h1>Our Serivices</h1>
-      </div>
+    <>
+      <div
+        style={{
+          backgroundImage: `url(${BACKIMAGE})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          minHeight: '100vh',
+          position: 'relative',
+        }}
+      >
+        
 
-      <div className="service_design_details_sections">
+        {/* i am using home page scss and its component for ease
+        
+          if you are trying to fix this css in future you should go as
+          src >> pages >> home >> style (here u can read the code)
+        */}
 
-        {serviceCategories?.map((cat, i) => (
-          <div className="display_section" key={i}>
-            <h2>{cat?.heading}</h2>
-            <p>{cat?.text}</p>
+        <div className='home_main_container'>
+          <div className='service_page_heading'>
+            <h1>Our Serivices</h1> 
           </div>
-        ))}
+          
+          <ServiceCom />
 
+          <Caraousel />
+        </div>
       </div>
 
-      <Caraousel />
-      
-      <Customers/>
+      <Customers />
 
-      <Subscription/>
+      <Subscription />
 
-    </div>
+    </>
   )
 }
 

@@ -13,6 +13,8 @@ import storage from 'redux-persist/lib/storage'
 
 // slice
 import authSlice from './authSlice.js'
+import serviceSlice from './serviceSlice.js'
+import customDesign from './customDesign.js'
 
 const persistConfig = {
     key: 'root',
@@ -22,7 +24,9 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
     //---------slices----------
-    auth: authSlice
+    auth: authSlice,
+    service: serviceSlice,
+    design: customDesign
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

@@ -37,10 +37,12 @@ $primary_green: rgb(62, 153, 62);
     justify-content: flex-end;
 }
 
+
+
 // Navigation container
 .arch_header_nav {
     @include flexcenter;
-    gap: 92px;
+    gap: 2rem;
 
     .arch_nav_ul {
         @include flexcenter;
@@ -51,7 +53,7 @@ $primary_green: rgb(62, 153, 62);
             cursor: pointer;
             list-style: none;
             padding: 0.5rem 1.4rem;
-            border-radius: 999px;
+            border-radius: 1rem;
             background: rgb(2, 2, 2, 1);
             color: rgba(255, 238, 219, 1);
             font-weight: 600;
@@ -96,4 +98,50 @@ $primary_green: rgb(62, 153, 62);
     }
 }
 
-@media screen and (max-width:768) {}
+@media screen and (max-width:768px) {
+    .header{
+        padding: 0rem 5% !important;
+    }
+
+    .arch_nav_ul{
+        li{
+            font-size: 0.8rem !important;
+            font-weight: 300 !important;
+            padding: 0.1rem 0.8rem !important;
+        }
+    }
+
+    .arch_contact_btn{
+        height: 2rem !important;
+        width: 5rem !important;
+        border-radius: 1rem !important;
+        font-size: 0.8rem !important;
+    }
+}
+
+
+@media screen and (max-width:486px) {
+    .header{
+        padding: 0rem 5% !important;
+    }
+
+    .arch_header_nav{
+        gap: 0.7rem !important;
+    }
+
+    .arch_nav_ul{
+        gap: 0.3rem !important;
+        li{
+            font-size: 0.8rem !important;
+            font-weight: 300 !important;
+            padding: 0.1rem 0.8rem !important;
+        }
+    }
+
+    .arch_contact_btn{
+        height: 1.6rem !important;
+        width: 4.2rem !important;
+        border-radius: 1rem !important;
+        font-size: 0.67rem !important;
+    }
+}
