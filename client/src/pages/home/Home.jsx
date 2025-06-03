@@ -17,13 +17,16 @@ import AnimationBox4 from './components/AnimationBox4'
 import Schedule from './components/Schedule'
 import Marquee from './components/Marquee'
 import Testimonials from './components/Testimonials'
+import GetAllTestimonials from '../../hooks/GetAllTestimonials'
+import useGetAllServices from '../../hooks/GetAllServices'
 
 
 function Home() {
 
   const { blackToggle } = useSelector(store => store.design);
   const dispatch = useDispatch();
-
+  GetAllTestimonials()
+  useGetAllServices()
   useEffect(() => {
     dispatch(setBlackToggle(false))
   }, [])
