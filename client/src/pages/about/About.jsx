@@ -243,8 +243,8 @@ function About() {
                         className="member-card">
                         <img src={founderImg} alt="Yash Gupta" className="member-image" />
                         <div className="member-info">
-                            <h3 className="member-name">Yash Gupta</h3>
-                            <p className="member-role">Architect, Founder</p>
+                            <h3 className="member-name">Himanshu Dhiman</h3>
+                            <p className="member-role">Senior Designer</p>
                         </div>
                     </motion.div>
                     <motion.div
@@ -259,8 +259,8 @@ function About() {
                         className="member-card">
                         <img src={founderImg} alt="Yash Gupta" className="member-image" />
                         <div className="member-info">
-                            <h3 className="member-name">Yash Gupta</h3>
-                            <p className="member-role">Architect, Founder</p>
+                            <h3 className="member-name">Nikita Singh</h3>
+                            <p className="member-role">3d Visualiser</p>
                         </div>
                     </motion.div>
                     <motion.div
@@ -275,8 +275,24 @@ function About() {
                         className="member-card">
                         <img src={founderImg} alt="Yash Gupta" className="member-image" />
                         <div className="member-info">
-                            <h3 className="member-name">Yash Gupta</h3>
-                            <p className="member-role">Architect, Founder</p>
+                            <h3 className="member-name">Nitika Sachdeva</h3>
+                            <p className="member-role">3d Visiualiser</p>
+                        </div>
+                    </motion.div>
+                    <motion.div
+                        ref={ref6}
+                        initial={{ opacity: 0, scale: 0, y: 50 }}
+                        animate={inView6 ? { opacity: 1, scale: 1, y: 0 } : {}}
+                        transition={{
+                            duration: 0.2,
+                            scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+                            delay: 0.5,
+                        }}
+                        className="member-card">
+                        <img src={founderImg} alt="Yash Gupta" className="member-image" />
+                        <div className="member-info">
+                            <h3 className="member-name">Poonam Sharma</h3>
+                            <p className="member-role">Junior Designer</p>
                         </div>
                     </motion.div>
 
