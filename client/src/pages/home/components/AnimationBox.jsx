@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../style/AnimationBox.scss';
-
+// Importing styles for the component
 // Images
 import IMG1 from '../assets/Residential.png';
 import IMG3 from '../assets/Interior.png'; // Image 3 only
