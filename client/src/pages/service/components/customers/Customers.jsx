@@ -137,7 +137,7 @@ function Customers() {
                             <footer className="customer-card__footer">
                                 <img className="customer-card__avatar" src={testimonials[currentIndex]?.image} alt="James Bennett" />
                                 <div>
-                                    <p className="customer-card__name">{testimonials[currentIndex]?.name}</p>
+                                    <p className="customer-card__name">{testimonials[currentIndex]?.testimonial_name}</p>
                                     <p className="customer-card__location">{testimonials[currentIndex]?.city}, {testimonials[0]?.country}</p>
                                 </div>
                             </footer>
