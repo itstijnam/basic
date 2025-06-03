@@ -13,11 +13,7 @@
     "@reduxjs/toolkit": "^2.6.1",
     "axios": "^1.9.0",
     "backend": "file:..",
-<<<<<<< HEAD
     "framer-motion": "^12.15.0",
-=======
-    "framer-motion": "^12.9.7",
->>>>>>> main
     "lucide-react": "^0.511.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
