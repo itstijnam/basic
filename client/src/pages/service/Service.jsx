@@ -49,7 +49,7 @@ function Service() {
 
         <div className='home_main_container'>
           <div className='service_page_heading'>
-            <h1>Our Serivices</h1> 
+            <h1>Our Services</h1> 
           </div>
           
           <ServiceCom />

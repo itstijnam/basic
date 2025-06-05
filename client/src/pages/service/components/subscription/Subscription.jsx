@@ -2,7 +2,7 @@ import React from 'react'
 import './Subscription.scss'
 // import { FaEnvelope } from 'react-icons/fa'
 
-function Subscription() {
+function Subscription() { 
   return (
     <div className="subscription">
       <div className="subscription__container">
