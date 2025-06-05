@@ -72,7 +72,7 @@ function Home() {
           <div className="service_container_homes">
             <HomeService />
           </div>
-          {/* <div className="home_animation_box">
+          <div className="home_animation_box">
             <div style={{ borderBottom: '1px solid red', marginBottom: '2px' }}>
               <AnimationBox />
             </div>
@@ -95,7 +95,7 @@ function Home() {
               <AnimationBox4 />
             </div>
 
-          </div> */}
+          </div>
 
           {/* <div className="home_animation_box2">
             <Animation/>
