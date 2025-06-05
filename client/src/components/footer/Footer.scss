@@ -1,80 +1,95 @@
 .footer {
-  background-color: #121212;
-  color: #e5e5e5;
+  background-color: #0e0e0e;
+  color: #FFEEDB;
   padding: 3rem 2rem;
 
   .footer-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 2rem;
   }
 
   .footer-section {
-    flex: 1;
-    min-width: 200px;
-  }
+    flex: 1 1 220px;
 
-  .footer-logo {
-    width: 60px;
-    margin-bottom: 1rem;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-    color: #e5e5e5;
-
-    span {
-      color: #d9232d;
+    h3 {
+      color: #FFEEDB;
+      margin-bottom: 1rem;
+      font-weight: bold;
     }
-  }
 
-  p {
-    font-size: 0.9rem;
-    margin: 0.3rem 0;
-  }
+    ul {
+      list-style: none;
+      padding: 0;
 
-  h3 {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    color: #e5e5e5;
-  }
+      li {
+        margin-bottom: 0.6rem;
+        display: flex;
+        align-items: center;
 
-  ul {
-    list-style: none;
-    padding: 0;
+        a {
+          color: #FFEEDB;
+          text-decoration: none;
 
-    li {
-      margin-bottom: 0.5rem;
+          &:hover {
+            color: #e63946;
+          }
+        }
 
-      a {
-        color: #e5e5e5;
-        text-decoration: none;
-
-        &:hover {
-          text-decoration: underline;
+        .icon {
+          color: #e63946;
+          margin-right: 0.5rem;
+          font-size: 1.5rem;
         }
       }
-    }
-  }
 
-  .social-icons {
-    margin-top: 1rem;
-
-    a {
-      margin-right: 0.5rem;
-      color: #d9232d;
-      font-size: 1.2rem;
-
-      &:hover {
-        opacity: 0.8;
+      .indent {
+        margin-left: 1.8rem;
       }
     }
+
+    p {
+      margin-bottom: 0.5rem;
+    }
   }
 
-  .contact-section {
-    p {
-      margin: 0.2rem 0;
+  .footer-left {
+    flex: 1 1 300px;
+
+    .footer-logo {
+      max-width: 80px;
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-brand {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #fff;
+
+      span {
+        color: #e63946;
+      }
+    }
+
+    .footer-tagline {
+      color: #1e90ff;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+
+      a {
+        color: #FFEEDB;
+        font-size: 1.2rem;
+
+        &:hover {
+          color: #e63946;
+        }
+      }
     }
   }
 }
