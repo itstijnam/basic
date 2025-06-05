@@ -34,6 +34,9 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
+app.get('/ping', (req, res) => {
+  res.json({ success: true, message: "Pong!" });
+});
 app.use('/api/auth', authRoutes);
 app.use('/api/media', mediaRoutes);
 app.use('/api/service', serviceRoutes);
