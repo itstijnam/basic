@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import '../style/AnimationBox2.scss';
 
 // Images
-import IMG1 from '../assets/kidsRoom.jpg';
+import IMG1 from '../assets/KidsRoom.jpg';
 import IMG3 from '../assets/bedfront.png'; // Image 3 only
 
 function AnimationBox2() {
