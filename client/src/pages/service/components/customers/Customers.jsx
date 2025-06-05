@@ -16,8 +16,6 @@ function Customers() {
     const [currentIndex, setCurrentIndex] = useState(1);
     const [apiMessage, setApiMessage] = useState('')
     const dispatch = useDispatch();
-
-    console.log(testimonials)
     const isAdmin = currentAuthUser?.role === 'admin'
 
     GetAllTestimonials()
@@ -137,7 +135,7 @@ function Customers() {
                             <footer className="customer-card__footer">
                                 <img className="customer-card__avatar" src={testimonials[currentIndex]?.image} alt="James Bennett" />
                                 <div>
-                                    <p className="customer-card__name">{testimonials[currentIndex]?.name}</p>
+                                    <p className="customer-card__name">{testimonials[currentIndex]?.testimonial_name}</p>
                                     <p className="customer-card__location">{testimonials[currentIndex]?.city}, {testimonials[0]?.country}</p>
                                 </div>
                             </footer>
@@ -154,7 +152,7 @@ function Customers() {
                             <footer className="customer-card__footer">
                                 <img className="customer-card__avatar" src={testimonials[currentIndex + 1]?.image} alt="James Bennett" />
                                 <div>
-                                    <p className="customer-card__name">{testimonials[currentIndex + 1]?.name}</p>
+                                    <p className="customer-card__name">{testimonials[currentIndex + 1]?.testimonial_name}</p>
                                     <p className="customer-card__location">{testimonials[currentIndex + 1]?.city}, {testimonials[1]?.country}</p>
                                 </div>
                             </footer>

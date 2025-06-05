@@ -19,6 +19,7 @@ import Marquee from './components/Marquee'
 import Testimonials from './components/Testimonials'
 import GetAllTestimonials from '../../hooks/GetAllTestimonials'
 import useGetAllServices from '../../hooks/GetAllServices'
+import Animation from './animation/Animation'
 
 
 function Home() {
@@ -27,25 +28,40 @@ function Home() {
   const dispatch = useDispatch();
   GetAllTestimonials()
   useGetAllServices()
+
+// A black screen will appear for 2.5 seconds on the initial app load
+// This effect only shows once — to see it again, clear localStorage or browser cache
+
+// If you want the black screen to appear on *every* load and also block scrolling during it,
+// use useEffect and toggle `setBlackToggle(false → true)` accordingly
+
   useEffect(() => {
-    dispatch(setBlackToggle(false))
-  }, [])
+    const timer = setTimeout(() => {
+      dispatch(setBlackToggle(true));
+    }, 2500); 
+    return () => clearTimeout(timer);
+  }, []);
+
 
   return (
     <>
       <div
-        style={blackToggle ? {
+        style={
+          // blackToggle ? 
+          {
           backgroundImage: `url(${backImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          minHeight: '100vh',
-          position: 'relative',
-        } : { background: 'black' }}
+          // backgroundSize: 'cover',
+          // backgroundPosition: 'center',
+          // backgroundRepeat: 'no-repeat',
+          // minHeight: '100vh',
+          // position: 'relative',
+        } 
+        // : { background: 'black' }
+        }
 
-        // className={blackToggle ? 'black_out' : 'home_items_display'}
+        className={!blackToggle ? 'black_out' : 'home_items_display'}
 
-        onClick={() => dispatch(setBlackToggle(true))}
+        // onClick={() => dispatch(setBlackToggle(true))}
       >
         <div className='home_main_container'>
           <Hero />
@@ -80,6 +96,11 @@ function Home() {
             </div>
 
           </div>
+
+          {/* <div className="home_animation_box2">
+            <Animation/>
+          </div> */}
+
           <div className='Schedule_container'>
             <Schedule />
           </div>
