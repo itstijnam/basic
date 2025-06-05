@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../style/AnimationBox.scss';
 
-// Images
-import IMG1 from '../assets/Residential.png';
+// Images 
+import IMG1 from '../assets/BEDROOM1.jpg';
 import IMG3 from '../assets/Interior.png';
 
 function AnimationBox() {

@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import '../style/AnimationBox3.scss';
 
 // Images
-import IMG1 from '../assets/Facade.png';
-import IMG3 from '../assets/PebStructure.png'; // Image 3 only
+import IMG1 from '../assets/mandir.jpg';
+import IMG3 from '../assets/mandirareal.jpg'; // Image 3 only
 
 function AnimationBox3() {
   const image1Ref = useRef(null);

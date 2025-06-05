@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../style/AnimationMiddleBox3.scss';
 // Image Import
-import IMG2 from '../assets/Mandir.png';
+import IMG2 from '../assets/hall2.jpg';
 
 function AnimationMiddleBox3() {
   const imageRef = useRef(null);
