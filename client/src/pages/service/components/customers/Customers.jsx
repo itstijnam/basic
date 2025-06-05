@@ -16,8 +16,6 @@ function Customers() {
     const [currentIndex, setCurrentIndex] = useState(1);
     const [apiMessage, setApiMessage] = useState('')
     const dispatch = useDispatch();
-
-    console.log(testimonials)
     const isAdmin = currentAuthUser?.role === 'admin'
 
     GetAllTestimonials()

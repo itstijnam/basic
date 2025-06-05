@@ -49,10 +49,17 @@ function Header() {
     }
   }
 
+  const whatsappNumber = "919999167989"; // No '+' sign, just country code + number
+
+  const handleClick = () => {
+    const url = `https://api.whatsapp.com/send?phone=${whatsappNumber}`;
+    window.open(url, "_blank");
+  };
+
   return (
     <div className='header'>
       <div className="header_box">
-        
+
         {/* <div className="arch_logo">
           <img src={LOGO} alt="" />
         </div> */}
@@ -62,7 +69,7 @@ function Header() {
               <li key={i} onClick={() => navHandler(arch.text)} >{getCapName(arch.text)}</li>
             ))}
           </ul>
-          <button className='arch_contact_btn'>Contact Us</button>
+          <button onClick={handleClick} className='arch_contact_btn'>Contact Us</button>
         </div>
 
       </div>
