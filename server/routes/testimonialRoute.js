@@ -6,7 +6,7 @@ import cloudUplaod from '../middleware/cloudinaryUpload.js';
 const router = express.Router();
 
 router.route('/create').post(cloudUplaod.single('image'),  createTestimonial);
-router.route('/all-testimonials').get(getAllTestimonial);
+router.route('/alltestimonials').get(getAllTestimonial);
 router.route('/delete/:id').delete(deleteTestimonial);
 
 export default router;

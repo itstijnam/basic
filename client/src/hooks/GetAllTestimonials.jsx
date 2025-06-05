@@ -9,7 +9,7 @@ const GetAllTestimonials = () => {
     useEffect(() => {
         const fetchAllTestimonials = async () => {
             try {
-                const res = await axios.get(`${baseUrl}/testimonials/all-testimonials`);
+                const res = await axios.get(`${baseUrl}/testimonials/alltestimonials`);
                 if (res.data.success) {
                     dispatch(setTestimonials(res.data.testimonials))
                 }
