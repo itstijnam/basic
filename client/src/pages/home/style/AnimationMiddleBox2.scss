@@ -40,7 +40,46 @@
   @media (max-width: 768px) {
     width: 90%;
   }
+  .hover-text1 {
+    position: absolute;
+    bottom: 40%;
+    top:30%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    height: 10%;
+    width: 100%;
+    background-color: rgba(86, 125, 102, 0.8);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 2.2rem;
+    font-family: 'serif';
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    text-align: center;
+    white-space: nowrap;
+    
+    @media (max-width: 768px) {
+      padding: 0.6rem 1rem;
+      max-width: 90%;
+      bottom: 30%;
+      white-space: normal;
+  }
+    @media (max-width: 480px) {
+    bottom: 35%;
+    padding: 0.5rem 1rem;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.2;
+  }
+  }
+
+  &:hover .hover-text1 {
+    opacity: 1;
+  }
 }
+  
 .Image_placeholder2 {
   width: 40%;
   max-width: 30rem;

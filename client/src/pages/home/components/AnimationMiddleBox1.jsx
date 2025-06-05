@@ -33,6 +33,7 @@ function AnimationMiddleBox1() {
         <div className='Image_placeholder2'></div>
         <div ref={imageRef} className={`Image2_animation ${isVisible ? 'show' : ''}`}>
           <img src={IMG2} alt="Interior Design" />
+          <div className="hover-text1">Look our Similar Projects</div>
         </div>
         <div className='Image_placeholder'></div>
       </div>

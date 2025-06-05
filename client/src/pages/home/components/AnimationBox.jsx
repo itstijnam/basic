@@ -3,7 +3,7 @@ import '../style/AnimationBox.scss';
 
 // Images
 import IMG1 from '../assets/Residential.png';
-import IMG3 from '../assets/Interior.png'; // Image 3 only
+import IMG3 from '../assets/Interior.png';
 
 function AnimationBox() {
   const image1Ref = useRef(null);
@@ -39,17 +39,24 @@ function AnimationBox() {
   return (
     <div className="Image_container_animation1">
       <div className="Image_content_animation1">
-        <div ref={image1Ref} className={`Image1_animation1 ${visible.img1 ? 'show' : ''}`}>
+        
+        <div ref={image1Ref} className={`Image1_animation1  ${visible.img1 ? 'show' : ''}`}>
+          {/* <div className="top-label">Residential</div> */}
           <img src={IMG1} alt="Residential" />
+          
+          <div className="hover-text1">Look our Similar Projects</div>
         </div>
-        {/* <div className='Image_spacer'></div> */}
+
         <div className="Image_spacer_animation1" />
+
         <div ref={image3Ref} className={`Image3_animation1 ${visible.img3 ? 'show' : ''}`}>
           <img src={IMG3} alt="Interior" />
+          <div className="hover-text1">Look our Similar Projects</div>
         </div>
+
       </div>
     </div>
   );
 }
-
+    
 export default AnimationBox;

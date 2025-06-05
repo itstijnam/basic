@@ -41,10 +41,12 @@ function AnimationBox2() {
       <div className="Image_content_animation2">
         <div ref={image1Ref} className={`Image1_animation2 ${visible.img1 ? 'show' : ''}`}>
           <img src={IMG1} alt="Residential" />
+          <div className="hover-text2">Look our Similar Projects</div>
         </div>
         <div className="Image_spacer_animation" />
         <div ref={image3Ref} className={`Image3_animation2 ${visible.img3 ? 'show' : ''}`}>
           <img src={IMG3} alt="Washroom" />
+          <div className="hover-text2">Look our Similar Projects</div>
         </div>
       </div>
     </div>
