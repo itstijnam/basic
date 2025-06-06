@@ -59,3 +59,17 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .display_section{
+        max-width: 12 !important;
+
+        h2{
+            font-size: 1.6rem !important;
+        }
+        p{
+            font-size: 0.9rem !important;
+        }
+    }
+    
+}

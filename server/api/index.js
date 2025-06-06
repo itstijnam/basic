@@ -23,9 +23,24 @@ const __dirname = path.dirname(__filename);
 
 app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
 
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  'https://www.archspaceinterio.in',
+  'http://www.archspaceinterio.in',
+  'https://basic-eight-rho.vercel.app',
+  'http://localhost:3000',
+  'http://localhost:5173'
+].filter(Boolean);
+
 const corsOption = {
-  origin: process.env.FRONTEND_URL,
-  methods: ["GET", "POST", "DELETE", "PUT", "PATCH"],
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('CORS not allowed from this origin: ' + origin));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   credentials: true,
 };
 

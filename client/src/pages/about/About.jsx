@@ -259,6 +259,22 @@ function About() {
                             delay: 0.4,
                         }}
                         className="member-card">
+                        <img src={KAMALPRAJAPATI} alt="Yash Gupta" className="member-image" />
+                        <div className="member-info">
+                            <h3 className="member-name">Kamal Prajapati</h3>
+                            <p className="member-role">Chief Financial Officer</p>
+                        </div>
+                    </motion.div>
+                    <motion.div
+                        ref={ref6}
+                        initial={{ opacity: 0, scale: 0, y: 50 }}
+                        animate={inView6 ? { opacity: 1, scale: 1, y: 0 } : {}}
+                        transition={{
+                            duration: 0.2,
+                            scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+                            delay: 0.4,
+                        }}
+                        className="member-card">
                         <img src={founderImg} alt="Yash Gupta" className="member-image" />
                         <div className="member-info">
                             <h3 className="member-name">Nikita Singh</h3>
