@@ -271,7 +271,7 @@ function About() {
                         animate={inView6 ? { opacity: 1, scale: 1, y: 0 } : {}}
                         transition={{
                             duration: 0.2,
-                            scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+                            scale: { type: "spring",  visualDuration: 0.4, bounce: 0.5 },
                             delay: 0.4,
                         }}
                         className="member-card">
