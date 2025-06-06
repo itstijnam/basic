@@ -27,6 +27,8 @@ const allowedOrigins = [
   process.env.FRONTEND_URL,
   'https://www.archspaceinterio.in',
   'http://www.archspaceinterio.in',
+  'https://archspaceinterio.in',
+  'http://archspaceinterio.in',
   'https://www.archspaceinterio.com',
   'https://basic-eight-rho.vercel.app',
   'http://localhost:3000',
