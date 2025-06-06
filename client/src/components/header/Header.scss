@@ -18,6 +18,7 @@ $primary_green: rgb(62, 153, 62);
 // Header container
 .header {
     @include flexspacebetweencenter;
+    position: sticky;
     padding: 0.5rem 5%;
     backdrop-filter: blur(12.7px);
     background: rgb(11, 11, 11, 1);
@@ -37,7 +38,28 @@ $primary_green: rgb(62, 153, 62);
     justify-content: flex-end;
 }
 
+.header_box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.arch_logo{
+    @include flexcenter;
+    height: 3rem;
+    width: 3rem;
+
+    img{
+        height: 100%
+    }
+}
+
+@media screen  and (max-width: 768px) {
+    .arch_logo{
+        display: none !important;
+    }
+}
 
 // Navigation container
 .arch_header_nav {
@@ -80,10 +102,13 @@ $primary_green: rgb(62, 153, 62);
 
 // Contact button
 .arch_contact_btn {
-    height: 2.4rem;
-    width: 6rem;
+    // height: 2.4rem;
+    // width: 6rem;
     border: none;
-    border-radius: 2rem;
+    // border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-weight: 600;
     color: $dark_color;
     background: $white_color;
     cursor: pointer;
@@ -99,19 +124,19 @@ $primary_green: rgb(62, 153, 62);
 }
 
 @media screen and (max-width:768px) {
-    .header{
+    .header {
         padding: 0rem 5% !important;
     }
 
-    .arch_nav_ul{
-        li{
+    .arch_nav_ul {
+        li {
             font-size: 0.8rem !important;
             font-weight: 300 !important;
             padding: 0.1rem 0.8rem !important;
         }
     }
 
-    .arch_contact_btn{
+    .arch_contact_btn {
         height: 2rem !important;
         width: 5rem !important;
         border-radius: 1rem !important;
@@ -121,27 +146,30 @@ $primary_green: rgb(62, 153, 62);
 
 
 @media screen and (max-width:486px) {
-    .header{
+    .header {
         padding: 0rem 5% !important;
     }
 
-    .arch_header_nav{
+    .arch_header_nav {
         gap: 0.7rem !important;
     }
 
-    .arch_nav_ul{
+    .arch_nav_ul {
         gap: 0.3rem !important;
-        li{
+
+        li {
             font-size: 0.8rem !important;
             font-weight: 300 !important;
             padding: 0.1rem 0.8rem !important;
         }
     }
 
-    .arch_contact_btn{
+    .arch_contact_btn {
         height: 1.6rem !important;
         width: 4.2rem !important;
+        padding: 0rem !important;
         border-radius: 1rem !important;
         font-size: 0.67rem !important;
+        font-weight: 400 !important;
     }
 }

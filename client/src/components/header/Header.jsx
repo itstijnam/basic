@@ -28,7 +28,7 @@ function Header() {
     },
   ]
 
-  const getCapName = (text) => {
+  const getCapName = (text) => { 
     return text.charAt(0).toUpperCase() + text.slice(1);
   }
 
@@ -60,16 +60,16 @@ function Header() {
     <div className='header'>
       <div className="header_box">
 
-        {/* <div className="arch_logo">
+        <div className="arch_logo" onClick={()=>navigate('/')}>
           <img src={LOGO} alt="" />
-        </div> */}
+        </div>
         <div className="arch_header_nav">
           <ul className='arch_nav_ul'>
             {archNav.map((arch, i) => (
               <li key={i} onClick={() => navHandler(arch.text)} >{getCapName(arch.text)}</li>
             ))}
           </ul>
-          <button onClick={handleClick} className='arch_contact_btn'>Contact Us</button>
+          <button onClick={handleClick} className='arch_contact_btn'>Enquire Us</button>
         </div>
 
       </div>

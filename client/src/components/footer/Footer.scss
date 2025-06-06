@@ -93,3 +93,15 @@
     }
   }
 }
+
+.houseofmarktech{
+  text-decoration: none;
+  color: white;
+  
+  &:hover{
+    color: #e63946;
+    text-decoration: underline;
+    transition: 0.2s ease;
+  }
+
+}

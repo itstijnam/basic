@@ -67,6 +67,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+      <p style={{marginTop: '2rem'}} >Designed and developed by <a href="https://www.houseofmarktech.com/" className='houseofmarktech' >House Of MarkTech</a> </p>
     </footer>
   );
 };
