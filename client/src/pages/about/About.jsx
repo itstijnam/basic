@@ -1,5 +1,7 @@
 import React from 'react'
 import founderImg from './founder.jpg';
+import hdhiman from './Himanshu-Dhiman.jpeg';
+import kprajapati from './kamal-prajapati.jpeg';
 import bgImage from './bg.jpg'
 import quoteImage from './image 2.png'
 import img1 from './1.png'
@@ -63,17 +65,17 @@ function About() {
                 <div className="overlay"></div>
                 <div className="hero-content">
                     <div className="hero-content-text">
-                        <h1>Arch <span>space</span></h1>
+                        <h1>Arch Space <span>Interio</span></h1>
                         <p className='sub-text'>Let's create something extraordinary together</p>
                         <p className='main-text'>Our commitment to precision engineering ensures that every structure we design is not only aesthetically striking but also built to stand the test of time.</p>
                         <button onClick={handleWhatsAppClick}>CALL NOW</button>
                     </div>
                     <motion.div
-                    ref= {ref0}
-                    initial = {{opacity: 0}}
-                    animate = {{opacity: 1}}
-                    transition={{ duration: 1}}
-                    className="hero-content-carousel">
+                        ref={ref0}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1 }}
+                        className="hero-content-carousel">
                         <ValuesCarousel />
                     </motion.div>
                 </div>
@@ -228,7 +230,7 @@ function About() {
                         <img src={founderImg} alt="Yash Gupta" className="member-image" />
                         <div className="member-info">
                             <h3 className="member-name">Yash Gupta</h3>
-                            <p className="member-role">Architect, Founder</p>
+                            <p className="member-role">Principal Architect</p>
                         </div>
                     </motion.div>
                     <motion.div
@@ -241,10 +243,26 @@ function About() {
                             delay: 0.3,
                         }}
                         className="member-card">
-                        <img src={founderImg} alt="Yash Gupta" className="member-image" />
+                        <img src={hdhiman} alt="Yash Gupta" className="member-image" />
                         <div className="member-info">
                             <h3 className="member-name">Himanshu Dhiman</h3>
-                            <p className="member-role">Senior Designer</p>
+                            <p className="member-role">Senior Architect</p>
+                        </div>
+                    </motion.div>
+                    <motion.div
+                        ref={ref6}
+                        initial={{ opacity: 0, scale: 0, y: 50 }}
+                        animate={inView6 ? { opacity: 1, scale: 1, y: 0 } : {}}
+                        transition={{
+                            duration: 0.2,
+                            scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+                            delay: 0.5,
+                        }}
+                        className="member-card">
+                        <img src={kprajapati} alt="Yash Gupta" className="member-image" />
+                        <div className="member-info">
+                            <h3 className="member-name">Kamal Prajapati</h3>
+                            <p className="member-role">CFO (Chief Financial Officer)</p>
                         </div>
                     </motion.div>
                     <motion.div
@@ -270,13 +288,13 @@ function About() {
                         transition={{
                             duration: 0.2,
                             scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
-                            delay: 0.5,
+                            delay: 0.6,
                         }}
                         className="member-card">
                         <img src={founderImg} alt="Yash Gupta" className="member-image" />
                         <div className="member-info">
-                            <h3 className="member-name">Nitika Sachdeva</h3>
-                            <p className="member-role">3d Visiualiser</p>
+                            <h3 className="member-name">Nitika</h3>
+                            <p className="member-role">3d Visualiser</p>
                         </div>
                     </motion.div>
                     <motion.div
@@ -286,7 +304,7 @@ function About() {
                         transition={{
                             duration: 0.2,
                             scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
-                            delay: 0.5,
+                            delay: 0.7,
                         }}
                         className="member-card">
                         <img src={founderImg} alt="Yash Gupta" className="member-image" />

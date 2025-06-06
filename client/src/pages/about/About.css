@@ -170,7 +170,7 @@
 
 .content h2 {
   font-size: 2rem;
-  color: #7cb896;
+  color:#d9cab3;
   /* muted green */
   margin-bottom: 10px;
   font-family: "Lora", serif;
@@ -388,9 +388,9 @@
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
+  gap: 50px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
 }
 
 .member-card {
