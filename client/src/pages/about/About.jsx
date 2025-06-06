@@ -330,7 +330,7 @@ function About() {
                     className="quote-content">
                     <h1>Elevate your space with Arch <i>space</i></h1>
                     <p><span><Minus /></span>let's create something extraordinary together</p>
-                    <button className='quote-btn'>GET YOUR FREE QUOTE!</button>
+                    <button className='quote-btn' onClick={handleWhatsAppClick}>GET YOUR FREE QUOTE!</button>
                 </motion.div>
                 <motion.div
                     ref={ref8}
