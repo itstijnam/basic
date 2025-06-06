@@ -2,7 +2,7 @@ import React from 'react'
 import './Header.scss'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import LOGO from '../../assets/arch_space.png'
+import LOGO from '/Logo.png'
 
 function Header() {
 
