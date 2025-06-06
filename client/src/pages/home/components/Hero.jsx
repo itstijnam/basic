@@ -3,7 +3,7 @@ import '../style/Hero.scss'
 import KITCHENIMAGE from '../assets/kitchen_home_page.jpg';
 import FOOTERIMAGE from '../assets/footer_image.jpg'
 
-function Hero() {
+function Hero() { 
   return (
     <div className='hero_container'>
       <div className="hero_top">

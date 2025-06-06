@@ -9,7 +9,7 @@ import useGetAllServices from '../../../../hooks/GetAllServices';
 import { setServices } from '../../../../redux/serviceSlice';
 
 function Caraousel() {
-
+ 
 
   const { currentAuthUser } = useSelector(store => store.auth)
 

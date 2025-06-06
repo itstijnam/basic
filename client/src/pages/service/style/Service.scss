@@ -1,7 +1,7 @@
-
 @use '../../../components/ui/variables/Variable.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Indie+Flower&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-.service_container{
+.service_container {
     width: 100%;
     color: white;
     color: $cream;
@@ -10,17 +10,25 @@
 
 }
 
-.service_page_heading{
+.service_page_heading {
     @include flexcenter;
     // border: 2px solid white;
     height: 6rem;
     margin-top: 4rem;
+
+    h1 {
+        color: $cream;
+        font-family: "Crimson Text", serif;
+        font-size: 3.25rem;
+        letter-spacing: 6%;
+    }
+
     // background-color: $dark_cover_color;
 
 
 }
 
-.service_design_details_sections{
+.service_design_details_sections {
     // border: 1px solid red;
     display: flex;
     justify-content: space-around;
@@ -30,9 +38,9 @@
     padding: 1rem 5%;
     // background-color: $dark_cover_color;
 
-    .display_section{
+    .display_section {
         // border: 2px solid yellow;
-        max-width: 14rem;
+        max-width: 18rem;
         height: 7rem;
         display: flex;
         flex-direction: column;
@@ -40,8 +48,14 @@
         color: $cream;
         justify-content: space-between;
 
-        p{
-            font-size: 0.9rem;
+        h2 {
+            font-family: 'Bonita', sans-serif;
+            font-size: 2.4rem;
+        }
+
+        p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.3rem;
         }
     }
 }

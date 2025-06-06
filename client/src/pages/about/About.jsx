@@ -1,5 +1,7 @@
 import React from 'react'
 import founderImg from './founder.jpg';
+import HIMANSHU from './himanshudhiman.jpeg'
+import KAMALPRAJAPATI from './kamalprajapati.jpeg'
 import bgImage from './bg.jpg'
 import quoteImage from './image 2.png'
 import img1 from './1.png'
@@ -241,7 +243,7 @@ function About() {
                             delay: 0.3,
                         }}
                         className="member-card">
-                        <img src={founderImg} alt="Yash Gupta" className="member-image" />
+                        <img src={HIMANSHU} alt="Yash Gupta" className="member-image" />
                         <div className="member-info">
                             <h3 className="member-name">Himanshu Dhiman</h3>
                             <p className="member-role">Senior Designer</p>
