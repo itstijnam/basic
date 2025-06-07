@@ -77,6 +77,10 @@
     transform: translateY(40%);
 }
 
+.subscription__button{
+  font-size: 1.2rem;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .subscription__form {

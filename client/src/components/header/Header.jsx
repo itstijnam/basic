@@ -1,13 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Header.scss'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import LOGO from '/Logo.png'
+import LOGO from '/Arch_spaceLogo.png'
 
 function Header() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [stepCount, setStepCount] = useState(0);
+
+  const countController = ()=>{
+    if(stepCount <=5){
+      setStepCount(prev => prev+1)
+        if(stepCount === 5){
+          navigate('/login')
+        }
+    } else {
+      setStepCount(0)
+    }
+  }
 
   const archNav = [
     {
@@ -26,6 +38,10 @@ function Header() {
       text: 'About',
       url: '',
     },
+    // {
+    //   text: 'Blogs',
+    //   url: '',
+    // },
   ]
 
   const getCapName = (text) => { 
@@ -60,7 +76,10 @@ function Header() {
     <div className='header'>
       <div className="header_box">
 
-        <div className="arch_logo" onClick={()=>navigate('/')}>
+        <div className="arch_logo" onClick={()=>{
+          navigate('/')
+          countController()
+          }}>
           <img src={LOGO} alt="" />
         </div>
         <div className="arch_header_nav">

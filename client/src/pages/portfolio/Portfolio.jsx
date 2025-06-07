@@ -2,7 +2,7 @@ import React from 'react'
 import ArchSpaceInterio from './components/ArchSpaceInterio'
 // import HoverTestimonialForm from './components/HoverTestimonialForm'
 import TestimonialList from './components/TestimonialList'
-import Testimonials from '../home/components/Testimonials'
+import Testimonials from '../../components/testimonials/Testimonials'
 
 function Portfolio() {
     return (
