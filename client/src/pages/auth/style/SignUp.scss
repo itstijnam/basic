@@ -1,0 +1,184 @@
+.signup-container {
+  display: flex;
+  height: 100vh;
+  //   font-family: 'Segoe UI', sans-serif;
+}
+
+.left-pane {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+
+  // Blackish Blur Overlay
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    // background: rgba(8, 8, 8, 0.541); // blackish overlay
+    // backdrop-filter: blur(3px);    // blur effect
+    z-index: 1;
+  }
+
+  .overlay-text {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+    z-index: 2; // To stay on top of overlay
+
+    color: white;
+
+    h1 {
+      font-size: 6rem;
+      line-height: 1.2;
+      font-family: Lora, serif;
+      text-align: center;
+      justify-content: center;
+      //   margin-top: 10rem;
+      margin-left: 5.5rem;
+      color: #aa3d22;
+      background-color: #154a52c5;
+      border-bottom-left-radius: 15rem;
+      border-bottom-right-radius: 15rem;
+    }
+  }
+}
+
+
+.right-pane {
+  flex: 1;
+  background-color: #fff;
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .signup-form {
+    width: 100%;
+    max-width: 400px;
+
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 0.50rem;
+      font-family: Rubik, sans-serif;
+      font-weight: 510;
+      text-align: center;
+      color: white;
+      text-shadow: 2px 2px 8px red;
+    }
+
+    .subtext {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+      span {
+        color: #0d6efd;
+        font-family: Rubik, sans-serif;
+        font-size: 1.40rem;
+        font-weight: 545;
+      }
+    }
+
+    input[type='text'],
+    input[type='email'],
+    input[type='secret_Key'],
+    input[type='confirm_password'],
+    input[type='password'] {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .phone-input {
+      display: flex;
+      gap: 0.5rem;
+
+      .Country_Code {
+        height: 44px; // match input height
+        padding: 0 12px;
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+      }
+
+      input[type='tel'] {
+        height: 44px;
+        padding: 0 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 2rem;
+        flex: 1;
+        box-sizing: border-box;
+      }
+    }
+
+
+
+    .terms {
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .admin_cta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      .btn {
+        background-color: #f7275b;
+        background-color: #0D1F22;
+        color: white;
+        border: none;
+        padding: 0.75rem;
+        // width: 100%;
+        min-width: 5rem;
+        border-radius: 5px;
+        margin-bottom: 1.5rem;
+        cursor: pointer;
+      }
+    }
+
+    .social-text {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        flex: 1;
+        padding: 0.5rem;
+        margin: 0 0.25rem;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+
+        &.facebook {
+          background-color: #3b5998;
+        }
+
+        &.twitter {
+          background-color: #1da1f2;
+        }
+
+        &.google {
+          background-color: #db4437;
+        }
+      }
+    }
+  }
+}

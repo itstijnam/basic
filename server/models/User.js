@@ -1,5 +1,6 @@
 
 import mongoose from 'mongoose';
+import { type } from 'os';
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -21,7 +22,8 @@ const userSchema = new mongoose.Schema({
     type: String,
     enum: ['admin', 'user'],
     default: 'user'
-  }
+  },
+  secret_key: { type: String }
 }, {
   timestamps: true
 });

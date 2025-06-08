@@ -4,15 +4,27 @@ import { User } from '../models/User.js';
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken';
 
-// Register a new user
+// Register a new user  
 export const register = async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
+    const { name, email, password, secret_key } = req.body;
+    let role = req.body.role; // mutable
 
     // Check if user already exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ message: 'User already exists' });
+    }
+
+    // Determine role based on secret_key
+    if (secret_key) {
+      if (secret_key === process.env.ADMIN_SECRET_KEY) {
+        role = 'admin';
+      } else {
+        role = 'user';
+      }
+    } else {
+      role = 'user';
     }
 
     // Hash the password
@@ -23,16 +35,17 @@ export const register = async (req, res) => {
       name,
       email,
       password: hashedPassword,
-      role: role || 'user' // default to 'user' if role not provided
+      role
     });
 
     await newUser.save();
 
-    res.status(201).json({ message: `${role} registered successfully` });
+    return res.status(201).json({ success: true, message: `${role} registered successfully` });
   } catch (error) {
     res.status(500).json({ message: 'Registration failed', error: error.message });
   }
 };
+
 
 // Login user
 export const login = async (req, res) => {
