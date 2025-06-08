@@ -74,3 +74,15 @@ export const login = async (req, res) => {
     return res.status(500).json({ message: 'Login failed', error: error.message });
   }
 };
+
+
+export const logout = async (_, res) => {
+  try {
+    return res.cookie('token', '', { maxAge: 0 }).json({
+      success: true,
+      message: 'Logged Out successfully',
+    })
+  } catch (error) {
+    console.log(`Error: controllers/logout ${error}`);
+  }
+}

@@ -9,7 +9,6 @@ import "./Testimonials.css";
 
 const Testimonials = () => {
   const { testimonials } = useSelector(store => store.service)
-  console.log(testimonials);
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
