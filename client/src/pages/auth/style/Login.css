@@ -1,8 +1,11 @@
 .login-container {
     display: flex;
-    height: 99vh;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
     box-sizing: border-box;
     /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+
 }
 
 .left-container {
@@ -117,4 +120,17 @@ textarea::placeholder {
         font-size: medium;
         padding: 2px 3px;
     }
+}
+
+.backBtn{
+    cursor: pointer;
+    margin-top: 1rem;
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+.backBtn:hover{
+    font-size: 0.9rem;
+    text-shadow: 2px 2px 8px red;
 }

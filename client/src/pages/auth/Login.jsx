@@ -68,6 +68,7 @@ function Login() {
             />
             <button type='submit'>Log In</button>
           </form>
+            <button onClick={()=>navigate(-1)}  className='backBtn'>Back to Home Page</button>
         </div>
       </div>
     </div>
