@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 .hero {
   position: relative;
@@ -12,7 +13,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 20px; /* Small padding on sides */
+  padding: 0 20px;
+  /* Small padding on sides */
 }
 
 .overlay {
@@ -21,7 +23,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* Slightly lighter overlay */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Slightly lighter overlay */
   z-index: 0;
 }
 
@@ -34,12 +37,14 @@
   max-width: 1200px;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap; /* allow wrapping on smaller screens */
+  flex-wrap: wrap;
+  /* allow wrapping on smaller screens */
   margin-top: 80px;
 }
 
 .hero-content-text {
-  flex: 1 1 500px; /* grow/shrink with min 500px */
+  flex: 1 1 500px;
+  /* grow/shrink with min 500px */
   margin-top: 50px;
   padding: 0 20px;
   color: #ffe3c1;
@@ -49,21 +54,28 @@
   font-size: 4em;
   margin-bottom: 20px;
   font-family: "Lora", serif;
+  font-family: 'Bonita', sans-serif;
+
   font-weight: bold;
   color: #f09a5c;
 }
 
 .hero-content-text h1 span {
   font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Bonita', sans-serif;
   font-style: italic;
 }
 
 .sub-text {
-  font-size: 1.1rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  color: white;
 }
 
 .main-text {
-  font-size: 1.2rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  color: white;
 }
 
 .hero-content-text p {
@@ -74,10 +86,12 @@
 .hero-content-text button {
   padding: 10px 20px;
   font-size: 1em;
-  border: 2px solid #f09a5c;
+  border: 2px solid #fd791a;
   border-radius: 20px;
   background: transparent;
+  background: #d4905f9f ;
   color: #f09a5c;
+  color: white;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -128,7 +142,8 @@
     font-size: 2.5em;
   }
 
-  .main-text, .sub-text {
+  .main-text,
+  .sub-text {
     font-size: 1rem;
   }
 }
@@ -142,7 +157,8 @@
     font-size: 2em;
   }
 
-  .main-text, .sub-text {
+  .main-text,
+  .sub-text {
     font-size: 0.9rem;
   }
 
@@ -170,7 +186,7 @@
 
 .content h2 {
   font-size: 2rem;
-  color:#d9cab3;
+  color: #d9cab3;
   /* muted green */
   margin-bottom: 10px;
   font-family: "Lora", serif;
@@ -200,8 +216,10 @@
 }
 
 .image-wrapper img {
-  width: 100%;
-  height: auto;
+  /* width: 100%; */
+  /* height: auto; */
+  width: auto;
+  height: 100%;
   display: block;
 }
 
@@ -213,17 +231,19 @@
 }
 
 .stat h3 {
-  font-size: 2rem;
+  font-size: 3rem;
   color: #f09a5c;
   font-family: "Lora", serif;
   margin: 0;
+
 }
 
 .stat p {
-  color: #e1c4a0;
+  color: rgb(246, 246, 246);
+
   margin: 5px 0 0;
   font-family: "Lora", serif;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 /* *************** VALUE SECTION *************** */
@@ -259,7 +279,8 @@
 }
 
 .value-item p {
-  font-size: 1rem; /* increased slightly for readability */
+  font-size: 1rem;
+  /* increased slightly for readability */
   color: #ccc;
   max-width: 150px;
   margin: 0 auto;
@@ -313,21 +334,26 @@
   .values-text {
     gap: 30px;
   }
+
   .value-item p {
     max-width: 120px;
   }
+
   .image-row {
     min-height: 300px;
     gap: 4px;
   }
+
   .rounded {
     width: 110px;
     height: 250px;
   }
+
   .second-left,
   .second-right {
     top: 40px;
   }
+
   .rounded-arch {
     top: 70px;
   }
@@ -375,7 +401,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #2e2e2e; /* Adjust as needed */
+  background-color: #2e2e2e;
+  /* Adjust as needed */
 }
 
 .team-title {
@@ -473,7 +500,8 @@
   background-image: url('./Vector.png');
   background-repeat: no-repeat;
   padding: 30px 80px;
-  flex-wrap: wrap; /* Allows wrapping on small screens */
+  flex-wrap: wrap;
+  /* Allows wrapping on small screens */
 }
 
 .quote-content {
@@ -588,4 +616,3 @@
     width: 100%;
   }
 }
-
