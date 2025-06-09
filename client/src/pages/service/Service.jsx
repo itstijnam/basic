@@ -7,36 +7,21 @@ import Customers from './components/customers/Customers'
 import ServiceCom from './components/service/ServiceCom'
 import useGetAllServices from '../../hooks/GetAllServices'
 import { useSelector } from 'react-redux'
+import BGIMAGE from './components/assets/ourservice.webp'
 
 function Service() {
-
-  const serviceCategories = [
-    {
-      heading: 'Lighting Design',
-      text: 'Achieve the perfect balance of ambient, task, and accent lighting for a functional atmoshphere'
-    },
-    {
-      heading: 'Interior Design',
-      text: 'From concept to completion, we oversee every detail to bring your vision to the life efficienctly'
-    },
-    {
-      heading: 'Outdoor Design',
-      text: 'Celebrate the changing seasons with our seasonal outdoor decor services'
-    },
-  ]
-
-
 
   return (
     <>
       <div
         style={{
-          backgroundImage: `url(${BACKIMAGE})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          minHeight: '100vh',
-          position: 'relative',
+          // backgroundImage: `url(${BACKIMAGE})`,
+          background: 'white',
+          // backgroundSize: 'cover',
+          // backgroundPosition: 'center',
+          // backgroundRepeat: 'no-repeat',
+          // minHeight: '100vh',
+          // position: 'relative',
         }}
       >
         
@@ -47,16 +32,25 @@ function Service() {
           src >> pages >> home >> style (here u can read the code)
         */}
 
-        <div className='home_main_container'>
+          <div className="service_image">
+            <img src={BGIMAGE} alt="" />
+          </div>
+          <h1 className='background_Arch_heading samehead'>Arch Space Interio</h1> 
+          <small className='sub_heading'> desinged heavens </small>
+          {/* <h1 className='background_image_heading samehead'>Our Services</h1>  */}
+        <div className='service_main_container'>
           <div className='service_page_heading'>
             <h1>Our Services</h1> 
           </div>
           
           <ServiceCom />
 
-          <Caraousel />
+          {/* <Caraousel /> */}
         </div>
       </div>
+        
+
+
 
       <Customers />
 

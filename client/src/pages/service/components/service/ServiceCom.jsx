@@ -15,6 +15,10 @@ function ServiceCom() {
       heading: 'Outdoor Design',
       text: 'Celebrate the changing seasons with our seasonal outdoor decor services'
     },
+    {
+      heading: 'Office Design',
+      text: 'Celebrate the changing seasons with our seasonal outdoor decor services'
+    },
   ]
 
   return (

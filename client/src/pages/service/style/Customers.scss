@@ -318,3 +318,24 @@
         height: 2rem;
     }
 }
+
+
+
+
+// btn
+
+.laptop_action{
+    display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+    .desktop_action{
+        display: none !important;
+    }
+    .laptop_action{
+        display: block !important;
+        display:  flex !important;
+        gap: 2rem !important;
+        gap: 1rem !important;
+    }
+}

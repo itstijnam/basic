@@ -113,7 +113,7 @@ function Customers() {
                     <div className="image_section">
                         <img src={backImage} alt="" />
                     </div>
-                    <div className="action_btn">
+                    <div className="action_btn desktop_action">
                         <button onClick={() => goPrev()} >&larr;</button>
                         <button onClick={() => goNext()}>&rarr;</button>
                     </div>
@@ -156,6 +156,11 @@ function Customers() {
                                     <p className="customer-card__location">{testimonials[currentIndex + 1]?.city}, {testimonials[1]?.country}</p>
                                 </div>
                             </footer>
+                        </div>
+
+                        <div className="action_btn laptop_action">
+                            <button onClick={() => goPrev()} >&larr;</button>
+                            <button onClick={() => goNext()}>&rarr;</button>
                         </div>
 
                         {/* testimonial card 2 end */}

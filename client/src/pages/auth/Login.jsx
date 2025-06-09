@@ -67,6 +67,7 @@ function Login() {
               value={formData.password}
             />
             <button type='submit'>Log In</button>
+            <button onClick={()=>navigate('/signup')}>Create Account</button>
           </form>
             <button onClick={()=>navigate(-1)}  className='backBtn'>Back to Home Page</button>
         </div>
