@@ -8,12 +8,12 @@ function HomeService() {
     return (
         <>
             <h2 className="services_heading">
-                <span className="line"></span>
+                {/* <span className="line"></span> */}
                 <div className="text">
                     Our Services
                 </div>
             </h2>
-            <div className="services_cards">
+            {/* <div className="services_cards">
                 <div className="service_card">
                     <div className="service_top">
                         <img src={lightingIcon} alt="Lighting Design" className="service_icon" />
@@ -35,7 +35,7 @@ function HomeService() {
                     </div>
                     <p>Celebrate the changing seasons with our seasonal outdoor decor services</p>
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }

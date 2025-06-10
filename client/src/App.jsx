@@ -8,6 +8,7 @@ import Service from './pages/service/Service';
 import About from './pages/about/About';
 import Portfolio from './pages/portfolio/Portfolio';
 import Blog from './pages/BlogPage/pages/Blog'; 
+import SubServicePage from './pages/service/SubServicePage';
 
 
 const browserRouter = createBrowserRouter([
@@ -22,6 +23,10 @@ const browserRouter = createBrowserRouter([
       {
         path: '/service',
         element: <Service/>
+      },
+      {
+        path: 'service/p',
+        element: <SubServicePage/>
       },
       {
         path: '/blog',

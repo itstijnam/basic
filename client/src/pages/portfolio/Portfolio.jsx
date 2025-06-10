@@ -3,6 +3,7 @@ import ArchSpaceInterio from './components/ArchSpaceInterio'
 // import HoverTestimonialForm from './components/HoverTestimonialForm'
 import TestimonialList from './components/TestimonialList'
 import Testimonials from '../../components/testimonials/Testimonials'
+import Caraousel from '../service/components/caraousel/Caraousel'
 
 function Portfolio() {
     return (
@@ -11,10 +12,12 @@ function Portfolio() {
 
             {/* Other sections */}
 
+            <Caraousel />
+
 
             {/* <TestimonialList /> */}
             <Testimonials />
-            
+
             {/* Other sections */}
         </div>
     )

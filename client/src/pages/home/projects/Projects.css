@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+.project-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+.project-section h1 {
+  font-size: 3rem;
+  font-family: 'Lora', serif;
+  margin-bottom: 1rem;
+  color: rgb(80, 80, 80);
+  color: white;
+}
+
+.project-section h3 {
+  font-size: 1.25rem;
+  color: rgb(182, 182, 182);
+}
+
+.projects-container {
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: white;
+}
+
+.project {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.project-1 {
+  background: url('./behrore.jpg') center/cover no-repeat;
+}
+
+.project-2 {
+  background: url('./office.jpg') center/cover no-repeat;
+}
+
+.project-3 {
+  background: url('./jaipur.jpeg') center/cover no-repeat;
+}
+
+.project:hover {
+  transform: scale(1.05);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  transition: background-color 0.3s ease;
+  z-index: 1;
+}
+
+.project:hover .project-overlay {
+  background-color: rgba(0,0,0,0.6);
+}
+
+.project::after {
+  content: attr(data-name);
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2;
+}
+

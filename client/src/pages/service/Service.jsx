@@ -36,7 +36,7 @@ function Service() {
             <img src={BGIMAGE} alt="" />
           </div>
           <h1 className='background_Arch_heading samehead'>Arch Space Interio</h1> 
-          <small className='sub_heading'> desinged heavens </small>
+          <small className='sub_heading'> Desinged Heavens </small>
           {/* <h1 className='background_image_heading samehead'>Our Services</h1>  */}
         <div className='service_main_container'>
           <div className='service_page_heading'>

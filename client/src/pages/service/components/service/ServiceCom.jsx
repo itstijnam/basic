@@ -1,23 +1,26 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function ServiceCom() {
+
+  const navigate = useNavigate();
 
   const serviceCategories = [
     {
       heading: 'Lighting Design',
-      text: 'Achieve the perfect balance of ambient, task, and accent lighting for a functional atmoshphere'
+      text: 'Illuminate your spaces with expertly crafted lighting solutions that enhance ambiance, functionality, and energy efficiency for every room in your home.'
     },
     {
       heading: 'Interior Design',
-      text: 'From concept to completion, we oversee every detail to bring your vision to the life efficienctly'
+      text: 'Transform your living spaces with bespoke interior designs that reflect your personality while optimizing comfort, flow, and aesthetic appeal.'
     },
     {
       heading: 'Outdoor Design',
-      text: 'Celebrate the changing seasons with our seasonal outdoor decor services'
+      text: 'Create stunning outdoor living areas with landscape designs that harmonize with nature and extend your home\'s living space to the great outdoors.'
     },
     {
       heading: 'Office Design',
-      text: 'Celebrate the changing seasons with our seasonal outdoor decor services'
+      text: 'Boost productivity and professionalism with ergonomic office designs tailored to your business needs and corporate identity.'
     },
   ]
 
@@ -26,7 +29,7 @@ function ServiceCom() {
       <div className="service_design_details_sections servicepage_ourservice">
 
         {serviceCategories?.map((cat, i) => (
-          <div className="display_section" key={i}>
+          <div className="display_section" key={i} onClick={()=>navigate('/service/p')} >
             <h2>{cat?.heading}</h2>
             <p>{cat?.text}</p>
           </div>

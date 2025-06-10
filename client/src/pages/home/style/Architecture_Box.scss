@@ -1,0 +1,321 @@
+.Architecture_Box_Container  {
+    width: 100%;
+    height: auto;
+    background-color: black;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.One_Architecture_Box {
+    position: absolute;
+    width: 100%;
+    height: 40rem;
+    top: 3rem;
+    background-image: url("../assets/ArcitechtureImg/LightingImg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    box-shadow: 0px 0px 40px rgb(241, 241, 241);
+    overflow: hidden;
+
+    .overlay {
+        width: 97%;
+        height: 100%;
+        top: 0rem;
+        backdrop-filter: blur(0px);
+        background-color: rgba(0, 0, 0, 0.0);
+        display: flex;
+        box-shadow: 0px 0px 40px rgb(255, 255, 255);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        padding: 2rem 3rem 0rem 2rem;
+        opacity: 0;
+        transition: all 0.4s ease;
+
+        h1 {
+            font-size: 6rem;
+            font-family: Rubik, sans-serif;
+            font-weight: 548;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.5rem;
+            font-family: Rubik, sans-serif;
+            color: #d6d1d1;
+            margin: 0;
+            line-height: 2.4rem;
+            margin-top: 2rem;
+        }
+
+        span {
+            font-size: 5rem;
+            font-family: 'Bonita', sans-serif;
+            font-weight: 600;
+            color: rgb(255, 255, 255);
+            margin-top: -1rem; // Optional: bring it closer to heading
+        }
+    }
+
+
+    &:hover .overlay {
+        backdrop-filter: blur(5px);
+        background-color: rgba(0, 0, 0, 0.4);
+        opacity: 1;
+        transition: 0.5s ease;
+    }
+}
+
+
+
+
+.Second_Architecture_Box {
+    width: 97%;
+    height: 40rem;
+    top: 35rem;
+    background-color: rgb(60, 139, 175);
+    position: absolute;
+    border-top-right-radius: 2rem !important;
+    border-top-left-radius: 2rem !important;
+    font-size: 6rem;
+    line-height: 6rem;
+    padding-left: 3rem;
+    padding-top: 2rem;
+    background-image: url("../assets/ArcitechtureImg/InteriorImg.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    box-shadow: 0px 0px 90px rgb(0, 0, 0);
+    border: solid 1px rgba(27, 2, 2, 0.781);
+
+    .overlay {
+        width: 97%;
+        height: 100%;
+        top: 0rem;
+        backdrop-filter: blur(0px);
+        background-color: rgba(0, 0, 0, 0.0);
+        display: flex;
+        box-shadow: 0px 0px 40px rgb(0, 0, 0);
+        flex-direction: column;
+        justify-content: flex-start; // 👈 Top par le jane ke liye
+        align-items: flex-start;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        padding: 2rem 3rem 0rem 2rem; // 👈 Right & top padding
+        opacity: 0;
+        transition: all 0.4s ease;
+
+        h1 {
+            color: rgb(255, 255, 255);
+            font-size: 6rem;
+            font-family: Rubik, sans-serif;
+            font-weight: 100;
+
+        }
+
+        p {
+            font-size: 1.5rem;
+            font-family: Rubik, sans-serif;
+            color: #d6d1d1;
+            margin: 0;
+            line-height: 2.4rem;
+            margin-top: 2rem;
+
+        }
+
+        span {
+            font-family: 'Bonita', sans-serif;
+            color: white;
+            font-weight: 600;
+            font-size: rem;
+        }
+    }
+
+    &:hover .overlay {
+        backdrop-filter: blur(5px);
+        background-color: rgba(0, 0, 0, 0.4);
+        transition: 0.5s ease;
+        opacity: 1;
+    }
+}
+
+
+
+
+
+.Third_Architecture_Box {
+    width: 97%;
+    height: 40rem;
+    top: 68rem;
+    background-color: rgb(108, 226, 210);
+    position: absolute;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+    font-size: 6rem;
+    line-height: 6rem;
+    padding-left: 3rem;
+    padding-top: 2rem;
+    background-image: url("../assets/ArcitechtureImg/OutdoorImg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px 0px 90px rgb(0, 0, 0);
+    border: solid 1px rgba(36, 5, 5, 0.781);
+
+    .overlay {
+        width: 97%;
+        height: 100%;
+        top: 0rem;
+        backdrop-filter: blur(0px);
+        background-color: rgba(0, 0, 0, 0.0);
+        display: flex;
+        box-shadow: 0px 0px 40px rgb(0, 0, 0);
+        flex-direction: column;
+        justify-content: flex-start; // 👈 Top par le jane ke liye
+        align-items: flex-start;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        padding: 2rem 3rem 0rem 2rem; // 👈 Right & top padding
+        opacity: 0;
+        transition: all 0.4s ease;
+
+        h1 {
+            color: rgb(253, 253, 253);
+            font-size: 6rem;
+            font-family: Rubik, sans-serif;
+            font-weight: 100;
+        }
+
+        p {
+            font-size: 1.5rem;
+            font-family: Rubik, sans-serif;
+            color: #d6d1d1;
+            margin: 0;
+            line-height: 2.4rem;
+            margin-top: 2rem;
+        }
+
+        span {
+            font-family: 'Bonita', sans-serif;
+            color: white;
+            font-weight: 600;
+            font-size: 5rem;
+        }
+    }
+
+    &:hover .overlay {
+        backdrop-filter: blur(5px);
+        background-color: rgba(0, 0, 0, 0.4);
+        opacity: 1;
+        transition: 0.5s ease;
+    }
+}
+
+
+.Fourth_Architecture_Box {
+    width: 97%;
+    height: 40rem;
+    top: 102rem;
+    background-color: rgb(88, 126, 184);
+    position: absolute;
+    border-radius: 2rem;
+    font-size: 6rem;
+    line-height: 6rem;
+    padding-left: 3rem;
+    padding-top: 2rem;
+    background-image: url("../assets/ArcitechtureImg/OfficeImg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px 0px 90px rgb(0, 0, 0);
+    border: solid 1px rgba(29, 3, 3, 0.733);
+
+    .overlay {
+        width: 97%;
+        height: 100%;
+        top: 0rem;
+        backdrop-filter: blur(0px);
+        background-color: rgba(0, 0, 0, 0.0);
+        display: flex;
+        box-shadow: 0px 0px 40px rgb(0, 0, 0);
+        flex-direction: column;
+        justify-content: flex-start; // 👈 Top par le jane ke liye
+        align-items: flex-start;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        padding: 2rem 3rem 0rem 2rem; // 👈 Right & top padding
+        opacity: 0;
+        transition: all 0.4s ease;
+
+        h1 {
+            color: rgb(255, 255, 255);
+            font-size: 6rem;
+            font-family: Rubik, sans-serif;
+            font-weight: 100;
+
+        }
+
+        p {
+            font-size: 1.5rem;
+            font-family: Rubik, sans-serif;
+            color: #d6d1d1;
+            margin: 0;
+            line-height: 2.4rem;
+            margin-top: 2rem;
+        }
+
+        span {
+            font-family: 'Bonita', sans-serif;
+            color: white;
+            font-weight: 600;
+            font-size: 5rem;
+        }
+    }
+
+    &:hover .overlay {
+        backdrop-filter: blur(5px);
+        background-color: rgba(0, 0, 0, 0.4);
+        opacity: 1;
+        transition: 0.5s ease;
+    }
+}
+
+.Architecture_Box {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.7s ease-out;
+
+    &.animate-up {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@media screen and (max-width: 486px) {
+    // p {
+    //     display: none;
+    // }
+
+    .One_Architecture_Box {
+        height: 25rem !important;
+    }
+
+    .Second_Architecture_Box {
+        height: 25rem !important;
+    }
+
+    .Third_Architecture_Box {
+        height: 25rem !important;
+    }
+
+    .Fourth_Architecture_Box {
+        height: 25rem !important;
+    }
+}
