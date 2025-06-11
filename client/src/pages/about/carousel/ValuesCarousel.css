@@ -1,6 +1,6 @@
 .carousel-wrapper {
   background: transparent;
-  color: #f5e8d4;
+  color: #d83434;
   padding: 20px 0;
   text-align: center;
   width: 100%;
@@ -47,8 +47,8 @@
   background: none;
   width: 40px;
   height: 40px;
-  border: 2px solid #f09a5c;
-  color: #f09a5c;
+  border: 2px solid #d83434;
+  color: #d83434;
   font-size: 1.3rem;
   padding: 8px;
   cursor: pointer;
@@ -60,7 +60,7 @@
 }
 
 .carousel-btn:hover {
-  background-color: #f09a5c;
+  background-color: #d83434;
   color: black;
 }
 
