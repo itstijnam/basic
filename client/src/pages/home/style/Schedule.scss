@@ -3,8 +3,10 @@
   justify-content: space-between;
   align-items: flex-start;
   padding: 4rem 8%;
-  background-color: #FFEEDB;
+  background-color: white;
   gap: 10rem;
+  
+  padding-left: 2rem;
 
   @media (max-width: 1024px) {
     gap: 5rem;
@@ -24,12 +26,13 @@
   max-width: 600px;
 
   .Schedule_heading {
-    font-size: 43.39px;
+    font-size: 3rem;
     font-family: 'Cormorant Garamond', serif;
     line-height: 100%;
     font-weight: 400;
     margin-bottom: 2rem;
     color: #333;
+    font-family: "Crimson Text", serif;
 
     @media (max-width: 768px) {
       text-align: center;
@@ -60,22 +63,22 @@
       h3 {
         margin: 0;
         margin-top: 20px;
-        font-size: 22.44px;
-        font-family: 'Cormorant Garamond', serif;
+        font-size: 2.5rem;
+        font-family: "Crimson Text", serif;
         color: #000;
       }
 
       p {
-        font-size: 22px;
+        font-size: 1.2rem;
         margin-top: 0.5rem;
         color: #444;
-        font-family: 'Roboto';
+        font-family: 'Roboto',sans-serif;
       }
     }
   }
 
   .Schedule_button {
-    background-color: #4c8f72;
+    background-color: #a51212;
     color: #FFEEDB;
     padding: 0.9rem 2rem;
     border: none;
@@ -85,9 +88,10 @@
     transition: 0.3s ease;
     margin-top: 1rem;
     font-family: 'Roboto';
+    // border: none;
 
     &:hover {
-      background-color: #3b735d;
+      background-color: #ee2525;
     }
   }
 }
@@ -100,12 +104,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
 
   img {
     width: 37rem;
     height: 40rem;
     object-fit: cover;
     image-rendering: auto; /* Ensures smooth scaling */
+    border-radius: 2rem;
   }
 
   @media (max-width: 768px) {

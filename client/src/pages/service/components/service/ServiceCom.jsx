@@ -29,7 +29,7 @@ function ServiceCom() {
       <div className="service_design_details_sections servicepage_ourservice">
 
         {serviceCategories?.map((cat, i) => (
-          <div className="display_section" key={i} onClick={()=>navigate('/service/p')} >
+          <div className="display_section" key={i} onClick={()=>navigate(`/service/${cat.heading}`)} >
             <h2>{cat?.heading}</h2>
             <p>{cat?.text}</p>
           </div>

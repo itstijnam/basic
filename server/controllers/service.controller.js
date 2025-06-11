@@ -52,7 +52,7 @@ export const createService = async (req, res) => {
 
 export const allService = async (req, res) => {
     try {
-
+        const {search} = req.query;
         const services = await Service.find()
             .populate('author');
         

@@ -1,5 +1,5 @@
 .marquee_container {
-  background-color: #FFEEDB;
+  background-color: #ffffff;
   padding: 4rem 8%;
   text-align: center;
 
@@ -7,8 +7,9 @@
     margin-bottom: 2rem;
 
     h1 {
-      font-size: 2rem;
+      font-size: 3rem;
       margin-bottom: 9.2rem;
+      font-family: 'Bonita', sans-serif;
 
       @media (max-width: 768px) {
         font-size: 1.5rem;

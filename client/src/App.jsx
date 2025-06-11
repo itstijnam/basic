@@ -25,7 +25,7 @@ const browserRouter = createBrowserRouter([
         element: <Service/>
       },
       {
-        path: 'service/p',
+        path: 'service/:pagename',
         element: <SubServicePage/>
       },
       {

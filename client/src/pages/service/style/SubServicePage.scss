@@ -47,6 +47,58 @@
   }
 }
 
+
+.service_category {
+  // border: 2px solid black;
+  padding: 2rem 6%;
+
+  .service_item {
+    // border: 2px solid red;
+    padding: 0.4rem 0.8rem;
+    // background: linear-gradient(90deg, rgba(0, 0, 0, 0.099), rgba(0, 0, 0, 0.225), rgba(255, 0, 0, 0.329), red);
+    width: 100%;
+    @include flexcenter;
+    gap: 2rem;
+    overflow-x: auto;
+
+    .cat_card{
+      @include flexcenter;
+      cursor: pointer;
+      flex-direction: column;
+      // border: 2px solid blue;
+      background: black;
+      background: white;
+      border-radius: 0.4rem;
+      min-width: 8rem;
+      height: 4rem;
+      padding: 0.2rem 0.4rem;
+      box-shadow: 0px 0px 10px black;
+
+      .icon{
+        @include flexcenter;
+        // border: 2px solid red;
+        background: white;
+        border-radius: 50%;
+        height: 2rem;
+        width: 2rem;
+      }
+      .cat_text{
+        color: red;
+      }
+
+      &:hover{
+        background: black;
+        transition: 0.3s ease-in-out;
+
+        .cat_text{
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+
 .mid_container {
   background: white;
   padding: 2rem 6%;

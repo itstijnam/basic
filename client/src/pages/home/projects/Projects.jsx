@@ -13,17 +13,16 @@ function Projects() {
             <div className='projects-container'>
                 <div className="project project-1">
                     <div className="project-overlay"></div>
-                    <div className="project-name">
-                        Behrore Project
-                    </div>
+                    
+                        <h4>Behrore Project</h4>
                 </div>
                 <div className="project project-2">
                     <div className="project-overlay"></div>
-                    Office Project
+                    <h4>Office Project</h4>
                 </div>
                 <div className="project project-3">
                     <div className="project-overlay"></div>
-                    Jaipur, Mahima Fluenza
+                    <h4>Jaipur, Mahima Fluenza</h4>
                 </div>
             </div>
         </div>

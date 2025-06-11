@@ -26,7 +26,6 @@
     .overlay {
         width: 97%;
         height: 100%;
-        top: 0rem;
         backdrop-filter: blur(0px);
         background-color: rgba(0, 0, 0, 0.0);
         display: flex;
@@ -48,7 +47,7 @@
             margin: 0;
         }
 
-        p {
+        .architecture_content {
             font-size: 1.5rem;
             font-family: Rubik, sans-serif;
             color: #d6d1d1;
@@ -122,7 +121,7 @@
 
         }
 
-        p {
+        .architecture_content {
             font-size: 1.5rem;
             font-family: Rubik, sans-serif;
             color: #d6d1d1;
@@ -194,7 +193,7 @@
             font-weight: 100;
         }
 
-        p {
+        .architecture_content {
             font-size: 1.5rem;
             font-family: Rubik, sans-serif;
             color: #d6d1d1;
@@ -262,7 +261,7 @@
 
         }
 
-        p {
+        .architecture_content{
             font-size: 1.5rem;
             font-family: Rubik, sans-serif;
             color: #d6d1d1;
@@ -299,9 +298,9 @@
 }
 
 @media screen and (max-width: 486px) {
-    // p {
-    //     display: none;
-    // }
+    .architecture_content {
+        display: none;
+    }
 
     .One_Architecture_Box {
         height: 25rem !important;

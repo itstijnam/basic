@@ -3,6 +3,7 @@ import '../style/HomeService.scss'
 import lightingIcon from '../assets/icons/Lighting.png';
 import interiorIcon from '../assets/icons/Interior.png';
 import outdoorIcon from '../assets/icons/Outdoor.png';
+import Line from '../assets/icons/LineImg.png';
 
 function HomeService() {
     return (
@@ -11,6 +12,7 @@ function HomeService() {
                 {/* <span className="line"></span> */}
                 <div className="text">
                     Our Services
+                    <img src={Line} alt="LineImg" />
                 </div>
             </h2>
             {/* <div className="services_cards">

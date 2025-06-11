@@ -1,6 +1,7 @@
 .service_container_homes {
   background-color: #FFEEDB;
   padding: 4rem 6rem;
+  background-color: rgb(255, 255, 255);
 
   .services_heading {
     display: flex;
@@ -18,7 +19,9 @@
       font-size: 2rem;
       font-size: 4rem;
       font-family: "Crimson Text", serif;
-
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -75,5 +78,9 @@
         }
       }
     }
+  }
+  img{
+    width: 23rem;
+    
   }
 }
