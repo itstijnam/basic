@@ -7,7 +7,7 @@ import { FaBars, FaTimes } from 'react-icons/fa'
 import axios from 'axios'
 import { baseUrl } from '../../utils/baseUrl'
 import { setAuthUser } from '../../redux/authSlice'
-
+ 
 function Header() {
 
     const navigate = useNavigate();

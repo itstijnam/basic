@@ -9,7 +9,7 @@ import useGetAllServices from '../../../../hooks/GetAllServices';
 import { setServices } from '../../../../redux/serviceSlice';
 
 function Caraousel() {
- 
+
 
   const { currentAuthUser } = useSelector(store => store.auth)
 
@@ -32,10 +32,29 @@ function Caraousel() {
     title: '',
     image: '',
     short_desc: '',
-    desc: ''
+    desc: '',
+    type: '',
+    subcat: '',
+    plot_area: '',
+    build_up_area: '',
+    completed_in: ''
   })
   const ref = useRef();
 
+  const serviceCat = ["Interior Design", "Lighting Design", "Outdoor Design", "Office Design"]
+  const subCat = [
+    "WC Design",
+    "Kitchen",
+    "Commercial Design",
+    "Residential Work",
+    "Mandir",
+    "Corporate Work",
+    "Pre Fabrication",
+    "Facade",
+    "Cottage Work",
+    "Walkin Closet",
+    "Entrance Lobby"
+  ]
 
   const triggerAnimation = (callback) => {
     setAnimating(true);
@@ -108,7 +127,12 @@ function Caraousel() {
     formData.append('heading', form.title);
     formData.append('short_desc', form.short_desc);
     formData.append('desc', form.desc);
-    formData.append('image', form.image);  // very important!
+    formData.append('image', form.image);
+    formData.append('type', form.type);
+    formData.append('subcat', form.subcat);
+    formData.append('plot_area', form.plot_area);
+    formData.append('build_up_area', form.build_up_area);
+    formData.append('completed_in', form.completed_in);
 
     try {
       const res = await axios.post(`${baseUrl}/api/service/add`, formData, {
@@ -120,7 +144,8 @@ function Caraousel() {
 
       if (res.data.success) {
         cancelHandler();
-        console.log(res.data.message);
+        setApiMessage(res.data.message);
+        useGetAllServices(); // optional: force refresh if not auto-updating
       }
     } catch (error) {
       console.log(error?.response?.data?.message || 'Error occurred');
@@ -245,6 +270,47 @@ function Caraousel() {
                   onChange={(e) => setForm(prev => ({ ...prev, desc: e.target.value }))}
                 />
               </div>
+
+              <select
+                value={form.type}
+                onChange={(e) => setForm(prev => ({ ...prev, type: e.target.value }))}
+              >
+                <option disabled value="">Select Type</option>
+                {serviceCat.map((c, i) => (
+                  <option key={i} value={c}>{c}</option>
+                ))}
+              </select>
+
+              <select
+                value={form.subcat}
+                onChange={(e) => setForm(prev => ({ ...prev, subcat: e.target.value }))}
+              >
+                <option disabled value="">Select Sub Category</option>
+                {subCat.map((c, i) => (
+                  <option key={i} value={c}>{c}</option>
+                ))}
+              </select>
+
+              <textarea
+                placeholder="Plot Area"
+                value={form.plot_area}
+                onChange={(e) => setForm(prev => ({ ...prev, plot_area: e.target.value }))}
+              />
+
+              <textarea
+                placeholder="Build Area"
+                value={form.build_up_area}
+                onChange={(e) => setForm(prev => ({ ...prev, build_up_area: e.target.value }))}
+              />
+
+              <input
+                type='number'
+                placeholder="Completed In"
+                value={form.completed_in}
+                onChange={(e) => setForm(prev => ({ ...prev, completed_in: e.target.value }))}
+              />
+
+
               {isAdmin &&
                 <div className="form_action_btn">
                   <button className='action_cancel' onClick={() => cancelHandler()} >Cancel</button>

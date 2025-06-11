@@ -1,14 +1,30 @@
-import React from 'react'
-import './style/SubServicePage.scss'
-import BGIMAGE from "./components/assets/ourservice.webp"
-// import BGIMAGE from "./components/assets/houseview.jpg"
+import React, { useEffect, useState } from 'react';
+import './style/SubServicePage.scss';
+import BGIMAGE from "./components/assets/ourservice.webp";
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import archspacedata from './sample_api';
 
 function SubServicePage() {
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    const navigate = useNavigate();
     const { services } = useSelector(store => store.service);
-const {pagename} = useParams();
+
+    console.log(services)
+    const { pagename } = useParams();
+
+    const [selectedSubCat, setSelectedSubCat] = useState('All');
+
+    useEffect(() => {
+        const isValid = services.some(c => c.type.toLowerCase() === pagename.toLowerCase());
+        if (!isValid) {
+            navigate('/service');
+        }
+    }, [pagename, navigate]);
 
     const subCategory = [
         { text: 'All', icon: '' },
@@ -18,19 +34,37 @@ const {pagename} = useParams();
         { text: 'Residential Work', icon: '' },
         { text: 'Mandir', icon: '' },
         { text: 'Corporate Work', icon: '' },
-        { text: 'pre Fabrication', icon: '' },
+        { text: 'Pre Fabrication', icon: '' },
         { text: 'Facade', icon: '' },
         { text: 'Cottage Work', icon: '' },
         { text: 'Walkin Closet', icon: '' },
         { text: 'Entrance Lobby', icon: '' },
-    ]
+    ];
+
+    // Improved filtering logic with case-insensitive partial matching
+    const filteredProjects = services?.filter(c => {
+        const typeMatch = c?.type?.toLowerCase() === pagename.toLowerCase();
+
+        if (selectedSubCat === 'All') return typeMatch;
+
+        if (!c.subcat) return false;
+
+        // Check if any word in the subcategory includes the selected text
+        const subcatWords = c?.subcat?.toLowerCase()?.split(/\s+/);
+        const searchWords = selectedSubCat?.toLowerCase().split(/\s+/);
+
+        return typeMatch && searchWords?.some(word =>
+            subcatWords?.some(subcatWord => subcatWord?.includes(word))
+        );
+    });
 
     return (
-
         <div className='subservicepage'>
             <div className="subservicepageimagecontainer">
                 <div className="image_container">
-                    <div className="servimage"> <img src={BGIMAGE} alt="" /> </div>
+                    <div className="servimage">
+                        <img src={BGIMAGE} alt="" />
+                    </div>
                 </div>
                 <div className="container_content">
                     <h1>{pagename}</h1>
@@ -38,82 +72,42 @@ const {pagename} = useParams();
                 </div>
             </div>
 
-
             <div className="service_category">
                 <div className="service_item">
-
                     {subCategory.map((cat, i) => (
-                        <div className="cat_card" key={i}>
+                        <div
+                            className={`cat_card ${selectedSubCat === cat.text ? 'active' : ''}`}
+                            key={i}
+                            onClick={() => setSelectedSubCat(cat.text)}
+                        >
                             <div className="icon">
                                 <p className='cat_icon'>🥘</p>
                             </div>
                             <p className='cat_text'>{cat.text}</p>
                         </div>
                     ))}
-               
                 </div>
-
             </div>
 
-            <hr />
-            <hr />
-            <hr />
-            <hr />
-            <hr />
-            <hr />
-            <hr />
-
-            <div className="mid_container">
-
-                {services?.map((service, i) => (
-
-
-
-                    <div className={(i % 2 === 0) ? "MC_container" : "MC_container makeflexrowreverse"} key={i} >
-                        <div className="leftBox">
-                            <div className='projectHeading'>
-                                <div className="heading">
-                                    <h2>{service?.heading}</h2>
-                                    <span>{service?.short_desc}</span>
-                                </div>
-                                <div className="about_project">
-                                    {service?.desc}
-                                </div>
-                                {/* <div className="line"><hr /></div> */}
-                            </div>
-                            {/* <div className="project_infra">
-                                <div className="about_tag">
-                                    <h2>Type</h2>
-                                    <p>Residential</p>
-                                </div>
-                                <div className="about_tag">
-                                    <h2>Service Offered</h2>
-                                    <p>Architecture Design & Interior</p>
-                                </div>
-                                <div className="about_tag">
-                                    <h2>Plot Area</h2>
-                                    <p>936 Square Feet</p>
-                                </div>
-                            </div> */}
-                        </div>
-                        <div className="rightBox">
-                            <div className="projectImages">
-                                <img src={service?.image} alt="" />
-                            </div>
-                            {/* <div className="project_action_btn">
-                                <button>left</button>
-                                <button>right</button>
-                            </div> */}
-                        </div>
+            <div className="filtered_projects">
+                {filteredProjects?.map((c, i) => (
+                    <div className="filtered_project_card" key={i}>
+                        <img src={c?.image} style={{ height: '6rem', width: '6rem', borderRadius: '8px' }} alt={c.projectName} />
+                        <h3>{c?.heading}</h3>
+                        <p><strong>Type:</strong> {c?.type}</p>
+                        <p><strong>Subcategory:</strong> {c?.subcat}</p>
+                        <p><strong>Plot Area:</strong> {c?.plot_area}</p>
+                        <p><strong>Completed in:</strong> {c?.completed_in}</p>
                     </div>
                 ))}
-            </div>
-            <div className="back_btn_from_projects_page">
-                <button>back</button>
+                {filteredProjects.length === 0 && (
+                    <p style={{ textAlign: 'center', marginTop: '2rem', fontWeight: 'bold' }}>
+                        No projects found for selected subcategory.
+                    </p>
+                )}
             </div>
         </div>
-
-    )
+    );
 }
 
-export default SubServicePage
+export default SubServicePage;

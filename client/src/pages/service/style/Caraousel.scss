@@ -207,6 +207,7 @@ $cream : #FFEEDB;
     justify-content: space-between;
     align-items: center;
     padding: 0.6rem 2%;
+    // gap: 1rem;
 
     .add_craousel_image {
         // border: 2px solid red;
@@ -237,10 +238,16 @@ $cream : #FFEEDB;
         height: 20rem;
         width: 50%;
         padding: 0rem 2%;
+        gap: 0.2rem;
 
         .text_desc {
             display: flex;
             flex-direction: column;
+            gap: 0.2rem ;
+
+            textarea{
+                padding: 0rem 0.5rem;
+            }
         }
     }
 
@@ -274,4 +281,15 @@ $cream : #FFEEDB;
     .CB13 {
         display: none;
     }
+}
+
+select{
+    height: 2.2rem;
+}
+
+input{
+    padding: 0rem 0.2rem;
+}
+textarea{
+    padding: 0rem 0.2rem;
 }

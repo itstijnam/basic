@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="footer-section footer-left">
           <img src={logo} alt="Logo" className="footer-logo" />
           <h2 className="footer-brand">
-            Arch <span>Space Interio</span>
+            Arch <span> Space Interio</span>
           </h2>
           <p className="footer-tagline">Where Dimension Take Shapes...</p>
           <div className="social-icons">
@@ -67,7 +67,12 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <p style={{marginTop: '2rem'}} >Designed and developed by <a href="https://www.houseofmarktech.com/" className='houseofmarktech' >House Of MarkTech</a> </p>
+      <div className='footer-bottom'>
+        <div className='line'></div>
+        <p>Designed and developed by <a href="https://www.houseofmarktech.com/" className='houseofmarktech' >House Of MarkTech ❤️</a> </p>
+      </div>
+      
+      
     </footer>
   );
 };

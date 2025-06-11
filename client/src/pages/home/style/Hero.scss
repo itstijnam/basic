@@ -20,6 +20,12 @@
     animation: headingAnimation 2s ease forwards;
 }
 
+@media screen and (max-width: 768px) {
+    .head_animation {
+        animation: none !important;
+        transform: none !important;
+    }
+}
 
 @keyframes hallanimation {
     0% {
@@ -45,22 +51,24 @@
 }
 
 @keyframes popupanimation {
-    
-    0%{
+
+    0% {
         opacity: 0;
         transform: scale(0.4);
     }
-    90%{
+
+    90% {
         opacity: 0;
         transform: scale(0.4);
     }
-    100%{
+
+    100% {
         transform: scale(1);
     }
 
 }
 
-.pop_up{
+.pop_up {
     transform: scale(1);
     animation-delay: 1.6s;
     animation: popupanimation 2s ease forwards;
@@ -109,7 +117,7 @@
 
             .hero_content {
                 width: 90%;
-                font-size: 1.5vw; 
+                font-size: 1.5vw;
                 line-height: 1.5;
                 font-family: 'Roboto', sans-serif;
                 max-font-size: 1.5rem;
@@ -117,10 +125,10 @@
         }
 
         .hero_image_section {
-            width: 40%; 
+            width: 40%;
             max-width: 30rem;
             height: auto;
-            aspect-ratio: 30/26; 
+            aspect-ratio: 30/26;
             overflow: hidden;
 
             img {

@@ -54,14 +54,14 @@
 
   .service_item {
     // border: 2px solid red;
-    padding: 0.4rem 0.8rem;
+    padding: 1.4rem 0.8rem;
     // background: linear-gradient(90deg, rgba(0, 0, 0, 0.099), rgba(0, 0, 0, 0.225), rgba(255, 0, 0, 0.329), red);
     width: 100%;
     @include flexcenter;
     gap: 2rem;
     overflow-x: auto;
 
-    .cat_card{
+    .cat_card {
       @include flexcenter;
       cursor: pointer;
       flex-direction: column;
@@ -72,9 +72,9 @@
       min-width: 8rem;
       height: 4rem;
       padding: 0.2rem 0.4rem;
-      box-shadow: 0px 0px 10px black;
+      box-shadow: 0px 0px 7px rgba(144, 143, 143, 0.375);
 
-      .icon{
+      .icon {
         @include flexcenter;
         // border: 2px solid red;
         background: white;
@@ -82,15 +82,16 @@
         height: 2rem;
         width: 2rem;
       }
-      .cat_text{
-        color: red;
+
+      .cat_text {
+        color: #d83434;
       }
 
-      &:hover{
+      &:hover {
         background: black;
         transition: 0.3s ease-in-out;
 
-        .cat_text{
+        .cat_text {
           color: white;
         }
       }
@@ -216,5 +217,114 @@
     &:hover {
       background: #f0f0f0;
     }
+  }
+}
+
+
+
+///
+/// 
+/// 
+
+.filtered_project_card {
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  margin: 1.5rem 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  transition: all 0.3s ease-in-out;
+
+  img {
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: 'Bonita', serif;
+    color: #333;
+    margin-top: 0.5rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    font-family: "Roboto", sans-serif;
+    color: #555;
+
+    strong {
+      color: #000;
+      font-weight: 600;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+
+    img {
+      width: 8rem;
+      height: 8rem;
+    }
+
+    flex-wrap: wrap;
+  }
+}
+
+
+
+.cat_card {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+
+  &.active {
+    background-color: #3b82f6;
+    color: white;
+    font-weight: bold;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.project_footer_section {
+  text-align: center;
+  margin: 2rem 0;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
 }

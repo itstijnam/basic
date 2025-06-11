@@ -6,6 +6,15 @@ import Idea from '../../home/assets/icons/Idea.png'
 import Rocket from '../../home/assets/icons/Rocket.png'
 
 function Schedule() {
+
+  const whatsappNumber = "919999167989"; // No '+' sign, just country code + number
+
+  const handleClick = () => {
+    const url = `https://api.whatsapp.com/send?phone=${whatsappNumber}`;
+    window.open(url, "_blank");
+  };
+
+
   return (
     <div className='Schedule_container'>
       <div className='Schedule_content'>
@@ -49,7 +58,7 @@ function Schedule() {
           </div>
         </div>
 
-        <button className="Schedule_button">Schedule For Consultation</button>
+        <button className="Schedule_button" onClick={()=>handleClick()} >Schedule For Consultation</button>
       </div>
 
       <div className='Schedule_image'>

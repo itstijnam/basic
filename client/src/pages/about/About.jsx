@@ -2,6 +2,7 @@ import React from 'react'
 import founderImg from './founder.jpg';
 import hdhiman from './Himanshu-Dhiman.jpeg';
 import kprajapati from './kamal-prajapati.jpeg';
+import YASHGUPTA from './yashgupta.png'
 import bgImage from './bg.jpg'
 import quoteImage from './image 2.png'
 import img1 from './1.png'
@@ -13,8 +14,14 @@ import { Minus } from 'lucide-react'
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import './About.css'
+import { useEffect } from 'react';
 
 function About() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const [ref0, inView0] = useInView({
         triggerOnce: true,
         threshold: 0.2,
@@ -65,7 +72,7 @@ function About() {
                 <div className="overlay"></div>
                 <div className="hero-content">
                     <div className="hero-content-text">
-                        <h1>Arch Space <span>Interio</span></h1>
+                        <h1>Arch Space Interio</h1>
                         <p className='sub-text'>Let's create something extraordinary together</p>
                         <p className='main-text'>Our commitment to precision engineering ensures that every structure we design is not only aesthetically striking but also built to stand the test of time.</p>
                         <button onClick={handleWhatsAppClick}>CALL NOW</button>
@@ -227,7 +234,7 @@ function About() {
                             delay: 0.2,
                         }}
                         className="member-card">
-                        <img src={founderImg} alt="Yash Gupta" className="member-image" />
+                        <img src={YASHGUPTA} alt="Yash Gupta" className="member-image" />
                         <div className="member-info">
                             <h3 className="member-name">Yash Gupta</h3>
                             <p className="member-role">Principal Architect</p>
@@ -265,7 +272,7 @@ function About() {
                             <p className="member-role">CFO (Chief Financial Officer)</p>
                         </div>
                     </motion.div>
-                    <motion.div
+                    {/* <motion.div
                         ref={ref6}
                         initial={{ opacity: 0, scale: 0, y: 50 }}
                         animate={inView6 ? { opacity: 1, scale: 1, y: 0 } : {}}
@@ -312,7 +319,7 @@ function About() {
                             <h3 className="member-name">Poonam Sharma</h3>
                             <p className="member-role">Junior Designer</p>
                         </div>
-                    </motion.div>
+                    </motion.div> */}
 
                 </div>
             </section>

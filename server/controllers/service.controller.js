@@ -7,12 +7,14 @@ import cloudinary from "../utils/cloudinary.js";
 export const createService = async (req, res) => {
     try {
 
-        const { heading, short_desc, desc } = req.body;
+        const { heading, short_desc, desc, type, subcat, plot_area, build_up_area, completed_in } = req.body;
         const  image  = req.file;
         // const { id } = req.user;
 
         if (!heading) return res.status(400).json({ success: false, message: 'image required' })
         if (!short_desc) return res.status(400).json({ success: false, message: 'Quick Lines are required' });
+        if (!type) return res.status(400).json({ success: false, message: 'Type is required' });
+        if (!subcat) return res.status(400).json({ success: false, message: 'Category is required' });
 
         if (!image) return res.status(400).json({ success: false, message: 'Image is requried' });
 
@@ -32,6 +34,11 @@ export const createService = async (req, res) => {
             image: cloudResponse.secure_url,
             short_desc,
             // author: id,
+            type,
+            subcat,
+            plot_area,
+            build_up_area,
+            completed_in,
             desc
         })
 
@@ -76,7 +83,7 @@ export const editService = async (req, res) => {
     try {
         const { id } = req.params;
         const { heading, short_desc, desc } = req.body;
-        let updateData = { heading, short_desc, desc };
+        let updateData = { heading, short_desc, desc, type, subcat, plot_area, build_up_area, completed_in };
 
         // If image is provided (e.g., via multer), handle image update
         if (req.file) {

@@ -29,6 +29,9 @@ function Home() {
   // use useEffect and toggle `setBlackToggle(false → true)` accordingly
 
   useEffect(() => {
+
+      window.scrollTo(0, 0);
+
     const timer = setTimeout(() => {
       dispatch(setBlackToggle(true));
     }, 2500);

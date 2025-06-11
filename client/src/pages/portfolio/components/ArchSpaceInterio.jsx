@@ -1,9 +1,11 @@
 import React from 'react';
 import './ArchSpaceInterio.scss';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const ArchSpaceInterio = () => {
   const { services } = useSelector(store => store.service);
+  const navigate = useNavigate();
 
   return (
     <div className="arch-space-interio">
@@ -18,7 +20,7 @@ const ArchSpaceInterio = () => {
             </p>
             {/* <div className="placeholder-boxes">
               {[...Array(5)].map((_, index) => (
-                <div key={index} className="box"></div>
+                <div key={index} className="box"></div> 
               ))}
             </div> */}
           </div>
@@ -29,13 +31,17 @@ const ArchSpaceInterio = () => {
         <div className="container">
           <div className="image-gallery">
             {services?.map((s, index) => (
-              <div className="hover-image-container" key={index}>
-                <img
-                  src={s?.image}
-                  alt={s?.heading}
-                  className="gallery-image"
-                />
-
+              <div key={index} onClick={()=>navigate(`/service/${s?.type}`)} >
+                <div className="hover-image-container">
+                  <div>
+                    <img
+                      src={s?.image}
+                      alt={s?.heading}
+                      className="gallery-image"
+                    />
+                  </div>
+                  <div className="overlay_text">{s?.heading}</div>
+                </div>
               </div>
             ))}
           </div>
