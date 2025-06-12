@@ -4,9 +4,9 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import './VideoCarousel.css';
-import testimonial1 from './Videos/v4.mp4';
-import testimonial2 from './Videos/v2.mp4';
-import testimonial3 from './Videos/v3.mp4';
+import testimonial1 from './videos/v4.mp4';
+import testimonial2 from './videos/v2.mp4';
+import testimonial3 from './videos/v3.mp4';
 const videos = [
     {
         id: 1,
