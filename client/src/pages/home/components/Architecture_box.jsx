@@ -33,7 +33,7 @@ function Architecture_box() {
             <div
                 className="One_Architecture_Box Architecture_Box AB"
                 ref={(el) => (boxRefs.current[0] = el)}
-                // onClick={()=>navigate('/service')}
+                onClick={()=>navigate('/service')}
             >
                 <div className="overlay">
                     <h1 className="overlayText">Lighting</h1>
@@ -47,7 +47,7 @@ function Architecture_box() {
             <div
                 className="Second_Architecture_Box Architecture_Box AB"
                 ref={(el) => (boxRefs.current[1] = el)}
-                // onClick={()=>navigate('/service')}
+                onClick={()=>navigate('/service')}
             >
                 <div className="overlay">
                     <h1 className="overlayText">Interior</h1>
@@ -61,7 +61,7 @@ function Architecture_box() {
             <div
                 className="Third_Architecture_Box Architecture_Box AB"
                 ref={(el) => (boxRefs.current[2] = el)}
-                // onClick={()=>navigate('/service')}
+                onClick={()=>navigate('/service')}
             >
                 <div className="overlay">
                     <h1 className="overlayText">Outdoor</h1> 
@@ -75,7 +75,7 @@ function Architecture_box() {
             <div
                 className="Fourth_Architecture_Box Architecture_Box AB"
                 ref={(el) => (boxRefs.current[3] = el)}
-                // onClick={()=>navigate('/service')}
+                onClick={()=>navigate('/service')}
             >
                 <div className="overlay">
                     <h1 className="overlayText">Office</h1>
