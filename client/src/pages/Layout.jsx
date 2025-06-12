@@ -12,7 +12,7 @@ function Layout() {
       <div className="layout_header">
         <Header />
       </div>
-      <div className="layout_header_outlet">
+      <div className="layout_header_outlet"> 
         <Outlet />
       </div>
       {blackToggle &&

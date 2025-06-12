@@ -131,3 +131,16 @@
   // margin-left: 50rem;
 }
 }
+
+
+@media screen and (max-width: 486px) {
+  .footer-bottom{
+    p{
+      font-size: 0.9rem !important;
+
+      a{
+        font-size: 0.9rem !important;
+      }
+    }
+  }
+}

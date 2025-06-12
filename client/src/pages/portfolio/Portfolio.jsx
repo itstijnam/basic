@@ -5,6 +5,8 @@ import TestimonialList from './components/TestimonialList'
 import Testimonials from '../../components/testimonials/Testimonials'
 import Caraousel from '../service/components/caraousel/Caraousel'
 import { useEffect } from 'react'
+import VideoCarousel from '../../components/videoCaraousel/VideoCarousel'
+import './Portfolio.scss'
 
 function Portfolio() {
 
@@ -21,7 +23,17 @@ function Portfolio() {
             <Caraousel />
 
 
+
+            {/* video testimonial  */}
+            <div className='video_caraousel' >
+                <div className='testimonial_video_content'>
+                    Our valuable customers
+                </div>
+                <VideoCarousel />
+            </div>
+
             {/* <TestimonialList /> */}
+
             <Testimonials />
 
             {/* Other sections */}

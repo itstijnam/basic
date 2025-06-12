@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import '../../style/Customers.scss'
 import backImage from '../assets/house.jpg'
-import avatar2 from '../assets/houseview.jpg'
+import avatar2 from '../assets/houseview.jpg' 
 import addIcon from '/icon/addImage.png'
 import axios from 'axios';
 import { baseUrl } from '../../../../utils/baseUrl'
@@ -144,7 +144,7 @@ function Customers() {
 
                         {/* testimonial card 2 */}
 
-                        <div className="testimonial_card">
+                        <div className="testimonial_card TCPhoneview">
                             {isAdmin && <span style={{ color: 'red' }} onClick={() => deleteHandler(testimonials[currentIndex + 1]?._id)} >Delete</span>}
 
                             <div className="inverted_comma"> <h1>“</h1> </div>
