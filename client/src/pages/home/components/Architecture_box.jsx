@@ -33,11 +33,11 @@ function Architecture_box() {
             <div
                 className="One_Architecture_Box Architecture_Box AB"
                 ref={(el) => (boxRefs.current[0] = el)}
-                onClick={()=>navigate('/service')}
+                // onClick={()=>navigate('/service')}
             >
                 <div className="overlay">
-                    <h1>Lighting</h1>
-                    <span>Design</span>
+                    <h1 className="overlayText">Lighting</h1>
+                    <span className="overlayText">Design</span>
                     <p className="architecture_content">Lighting design is the art and science of illuminating spaces to enhance their beauty, functionality, and emotional impact. Beyond mere brightness, it involves strategically placing fixtures, selecting appropriate light temperatures, and controlling intensity to sculpt
                         atmosphere and highlight architectural features. Effective lighting can transform a room,
                         influence mood, and improve usability, ensuring every corner feels welcoming and purposeful. We craft bespoke lighting schemes that bring your vision to light, literally.</p>
@@ -47,7 +47,7 @@ function Architecture_box() {
             <div
                 className="Second_Architecture_Box Architecture_Box AB"
                 ref={(el) => (boxRefs.current[1] = el)}
-                onClick={()=>navigate('/service')}
+                // onClick={()=>navigate('/service')}
             >
                 <div className="overlay">
                     <h1 className="overlayText">Interior</h1>
@@ -61,11 +61,11 @@ function Architecture_box() {
             <div
                 className="Third_Architecture_Box Architecture_Box AB"
                 ref={(el) => (boxRefs.current[2] = el)}
-                onClick={()=>navigate('/service')}
+                // onClick={()=>navigate('/service')}
             >
                 <div className="overlay">
-                    <h1>Outdoor</h1>
-                    <span>Design</span>
+                    <h1 className="overlayText">Outdoor</h1> 
+                    <span className="overlayText">Design</span>
                     <p className="architecture_content">Outdoor design transforms your exterior areas into a seamless extension of your indoor living space.
                         It's about creating functional, beautiful, and inviting environments right outside your doors. From meticulously planned patios and vibrant gardens to thoughtful lighting and comfortable furnishings, we curate every element to enhance your lifestyle. Discover how a well-designed
                         outdoor space can add value, beauty, and endless possibilities for relaxation and entertainment.</p>
@@ -75,11 +75,11 @@ function Architecture_box() {
             <div
                 className="Fourth_Architecture_Box Architecture_Box AB"
                 ref={(el) => (boxRefs.current[3] = el)}
-                onClick={()=>navigate('/service')}
+                // onClick={()=>navigate('/service')}
             >
                 <div className="overlay">
-                    <h1>Office</h1>
-                    <span>Design</span>
+                    <h1 className="overlayText">Office</h1>
+                    <span className="overlayText">Design</span>
                     <p className="architecture_content">Office design goes beyond aesthetics; it's about crafting environments that foster productivity,
                         collaboration, and employee well-being. We specialize in creating dynamic workspaces that optimize flow, provide ergonomic comfort, and integrate inspiring elements. From efficient layouts and flexible work zones to thoughtful lighting and acoustics, our designs aim to reduce stress, boost creativity, and ultimately, enhance the overall success and
                         satisfaction of your team. Transform your office into a place where work thrives.</p>

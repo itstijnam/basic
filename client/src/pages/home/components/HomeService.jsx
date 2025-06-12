@@ -1,8 +1,5 @@
 import React from 'react'
 import '../style/HomeService.scss'
-import lightingIcon from '../assets/icons/Lighting.png';
-import interiorIcon from '../assets/icons/Interior.png';
-import outdoorIcon from '../assets/icons/Outdoor.png';
 import Line from '../assets/icons/LineImg.png';
 
 function HomeService() {
