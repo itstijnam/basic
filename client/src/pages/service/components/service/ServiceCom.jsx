@@ -22,7 +22,7 @@ function ServiceCom() {
       heading: 'Office Design',
       text: 'Boost productivity and professionalism with ergonomic office designs tailored to your business needs and corporate identity.'
     },
-  ]
+  ] 
 
   return (
     <>

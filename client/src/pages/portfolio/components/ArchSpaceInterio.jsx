@@ -12,7 +12,7 @@ const ArchSpaceInterio = () => {
       <section id="home" className="hero">
         <div className="hero-overlay">
           <div className="hero-content">
-            <h1>ARCH SPACE INTERIO</h1>
+            <h1>Arch Space Interio</h1>
             <p className="hero-subtitle">Where Ideas Become Reality</p>
             <p className="hero-description">
               Transform your space into a masterpiece with our innovative interior design solutions.

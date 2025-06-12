@@ -49,6 +49,7 @@
   height: 40px;
   border: 2px solid #d83434;
   color: #d83434;
+  color: white;
   font-size: 1.3rem;
   padding: 8px;
   cursor: pointer;
@@ -62,6 +63,7 @@
 .carousel-btn:hover {
   background-color: #d83434;
   color: black;
+  color: white;
 }
 
 /* Responsive adjustments */
