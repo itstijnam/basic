@@ -341,13 +341,12 @@ function About() {
                 </motion.div>
                 <motion.div
                     ref={ref8}
-                    initial={{ opacity: 0, scale: 0, x: -900, y: 100 }}
+                    initial={{ opacity: 0, scale: 0.8, x: 0, y: 50 }} // Reduced initial movement for mobile
                     animate={inView8 ? { opacity: 1, scale: 1, x: 0, y: 0 } : {}}
-                    transition={{
-                        duration: 0.5,
-                    }}
-                    className="quote-image">
-                    <img src={quoteImage} alt="" />
+                    transition={{ duration: 0.5 }}
+                    className="quote-image"
+                >
+                    <img src={quoteImage} alt="Arch Space Quote" />
                 </motion.div>
             </section>
         </div >

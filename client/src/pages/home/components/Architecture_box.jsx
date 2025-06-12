@@ -26,12 +26,12 @@ function Architecture_box() {
                 if (ref) observer.unobserve(ref);
             });
         };
-    }, []);
+    }, []); 
 
     return (
         <div className="Architecture_Box_Container">
             <div
-                className="One_Architecture_Box Architecture_Box"
+                className="One_Architecture_Box Architecture_Box AB"
                 ref={(el) => (boxRefs.current[0] = el)}
                 onClick={()=>navigate('/service')}
             >
@@ -45,13 +45,13 @@ function Architecture_box() {
             </div>
 
             <div
-                className="Second_Architecture_Box Architecture_Box"
+                className="Second_Architecture_Box Architecture_Box AB"
                 ref={(el) => (boxRefs.current[1] = el)}
                 onClick={()=>navigate('/service')}
             >
                 <div className="overlay">
-                    <h1>Interior</h1>
-                    <span>Design</span>
+                    <h1 className="overlayText">Interior</h1>
+                    <span className="overlayText">Design</span>
                     <p className="architecture_content">Transform your living spaces into havens of comfort and style with our expert
                         interior design services. We believe your home should reflect your unique personality and cater to your lifestyle. From conceptualization to flawless execution, we meticulously craft designs that blend aesthetics with functionality, making every corner a true reflection of
                         you. Let us bring your vision to life, creating spaces you'll love to live in.</p>
@@ -59,7 +59,7 @@ function Architecture_box() {
             </div>
 
             <div
-                className="Third_Architecture_Box Architecture_Box"
+                className="Third_Architecture_Box Architecture_Box AB"
                 ref={(el) => (boxRefs.current[2] = el)}
                 onClick={()=>navigate('/service')}
             >
@@ -73,7 +73,7 @@ function Architecture_box() {
             </div>
 
             <div
-                className="Fourth_Architecture_Box Architecture_Box"
+                className="Fourth_Architecture_Box Architecture_Box AB"
                 ref={(el) => (boxRefs.current[3] = el)}
                 onClick={()=>navigate('/service')}
             >

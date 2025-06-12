@@ -1,12 +1,8 @@
 import React from 'react'
 import './style/Service.scss'
-import BACKIMAGE from './components/assets/houseview.jpg'
-import Caraousel from './components/caraousel/Caraousel'
 import Subscription from './components/subscription/Subscription'
 import Customers from './components/customers/Customers'
 import ServiceCom from './components/service/ServiceCom'
-import useGetAllServices from '../../hooks/GetAllServices'
-import { useSelector } from 'react-redux'
 import BGIMAGE from './components/assets/ourservice.webp'
 import { useEffect } from 'react'
 
@@ -18,16 +14,7 @@ function Service() {
   return (
     <>
       <div
-        style={{
-          // backgroundImage: `url(${BACKIMAGE})`,
-          background: 'white',
-          // backgroundSize: 'cover',
-          // backgroundPosition: 'center',
-          // backgroundRepeat: 'no-repeat',
-          // minHeight: '100vh',
-          // position: 'relative',
-        }}
-      >
+        style={{ background: 'white' }} >
 
 
         {/* i am using home page scss and its component for ease
@@ -36,12 +23,22 @@ function Service() {
           src >> pages >> home >> style (here u can read the code)
         */}
 
+        {/* ------------------ top image heading -------------------  */}
+
         <div className="service_image">
-          <img src={BGIMAGE} alt="" />
+          <div className="serv_image">
+            <img src={BGIMAGE} alt="" />
+          </div>
+          <div className="serv_text">
+            <h1 className='background_Arch_heading samehead'>Arch Space Interio</h1>
+            <small className='sub_heading'> Desinged Heavens </small>
+          </div>
         </div>
-        <h1 className='background_Arch_heading samehead'>Arch Space Interio</h1>
-        <small className='sub_heading'> Desinged Heavens </small>
-        {/* <h1 className='background_image_heading samehead'>Our Services</h1>  */}
+
+
+
+        {/* ------------------------ our section ---------------------------- */}
+
         <div className='service_main_container'>
           <div className='service_page_heading'>
             <h1>Our Services</h1>
@@ -49,7 +46,6 @@ function Service() {
 
           <ServiceCom />
 
-          {/* <Caraousel /> */}
         </div>
       </div>
 

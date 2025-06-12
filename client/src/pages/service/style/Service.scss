@@ -126,56 +126,62 @@
 
 .service_image {
     // border: 2px solid red;
-    // height: 40rem;
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
+    height: 46rem;
 
-    img {
+    .serv_image {
         // width: 100%;
         height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .serv_text {
+        // border: 2px solid green;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $cream;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        width: 90%;
+
+        .samehead {
+            font-size: 8rem;
+            font-family: 'Bonita', sans-serif;
+            color: $cream;
+        }
+
+        .sub_heading {
+            font-size: 4rem;
+            font-family: 'Bonita', sans-serif;
+            color: $cream;
+        }
     }
 }
 
-.samehead {
-    position: absolute;
-    top: 40%;
-    left: 15%;
-    font-size: 8rem;
-    font-family: 'Bonita', sans-serif;
-    color: $cream;
-}
 
-.sub_heading {
-    position: absolute;
-    top: 60%;
-    left: 33%;
-    font-size: 4rem;
-    font-family: 'Bonita', sans-serif;
-    color: $cream;
-    // color: white;
-    // text-shadow: 2px 2px 8px red;
 
-}
 
 @media screen and (max-width: 1248px) {
     .samehead {
-        position: absolute;
-        top: 40%;
-        left: 14%;
         font-size: 5rem;
         font-family: 'Bonita', sans-serif;
         color: $cream;
     }
 
     .sub_heading {
-        position: absolute;
-        top: 60%;
-        left: 26%;
         font-size: 3rem;
         font-family: 'Bonita', sans-serif;
         color: $cream;
-        // color: white;
-        // text-shadow: 2px 2px 8px red;
 
     }
 
@@ -183,14 +189,10 @@
 
 @media screen and (max-width: 768px) {
     .samehead {
-        top: 35% !important;
-        left: 15% !important;
         font-size: 4rem !important;
     }
 
     .sub_heading {
-        top: 60% !important;
-        left: 16% !important;
         font-size: 2.5rem !important;
 
     }
@@ -199,15 +201,19 @@
 
 @media screen and (max-width: 486px) {
 
+    .service_image{
+        height: 30rem !important;
+    }
+
+    .serv_text{
+        top: 45% !important;
+    }
+
     .samehead {
-        top: 30% !important;
-        left: 2% !important;
         font-size: 3rem !important;
     }
 
     .sub_heading {
-        top: 40% !important;
-        left: 18% !important;
         font-size: 2rem !important;
     }
 }

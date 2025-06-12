@@ -298,23 +298,38 @@
 }
 
 @media screen and (max-width: 486px) {
+    
+    // .Architecture_Box_Container{
+    //     border: 2px solid red;
+    //     height: 3rem !important;
+    // }
     .architecture_content {
-        display: none;
+        display: none !important;
     }
 
-    .One_Architecture_Box {
-        height: 25rem !important;
-    }
+    
+    .AB {
+        height: 20rem !important;
+        width: 89% !important;
 
-    .Second_Architecture_Box {
-        height: 25rem !important;
+        .overlay{
+            flex-direction: row !important;
+            gap: 0.5rem !important;
+            .overlayText{
+                font-size: 2rem !important;
+            }
+        }
     }
-
-    .Third_Architecture_Box {
-        height: 25rem !important;
+    .One_Architecture_Box{
+        width: 100vw !important;
     }
-
-    .Fourth_Architecture_Box {
-        height: 25rem !important;
+    .Second_Architecture_Box{
+        top: 12rem !important;
+    }
+    .Third_Architecture_Box{
+        top: 22rem !important;
+    }
+    .Fourth_Architecture_Box{
+        top: 32rem !important
     }
 }
