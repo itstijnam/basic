@@ -174,19 +174,19 @@ function About() {
                     class="values-text">
                     <div class="value-item">
                         <h4>Market Expertise</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Deep knowledge of architectural trends and technologies.</p>
                     </div>
                     <div class="value-item">
                         <h4>Client First Service</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Your vision drives our creative solutions.</p>
                     </div>
                     <div class="value-item">
                         <h4>Transparency</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Clear communication at every project stage.</p>
                     </div>
                     <div class="value-item">
                         <h4>Integrity</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Ethical practices guide all our decisions.</p>
                     </div>
                 </motion.div>
 
