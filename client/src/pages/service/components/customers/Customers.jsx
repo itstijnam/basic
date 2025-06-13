@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import '../../style/Customers.scss'
 import backImage from '../assets/house.jpg'
-import avatar2 from '../assets/houseview.jpg' 
+import avatar2 from '../assets/houseview.jpg'
 import addIcon from '/icon/addImage.png'
 import axios from 'axios';
 import { baseUrl } from '../../../../utils/baseUrl'
@@ -14,7 +14,8 @@ function Customers() {
     const { currentAuthUser } = useSelector(store => store.auth)
     const { testimonials } = useSelector(store => store.service)
     const [currentIndex, setCurrentIndex] = useState(1);
-    const [apiMessage, setApiMessage] = useState('')
+    const [apiMessage, setApiMessage] = useState('');
+    const [message, setMessage] = useState('');
     const dispatch = useDispatch();
     const isAdmin = currentAuthUser?.role === 'admin'
 
@@ -75,9 +76,20 @@ function Customers() {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setForm((prev) => ({ ...prev, [name]: value }));
-    }
 
+        if (name === "quote") {
+            const wordCount = value.trim().split(/\s+/).filter(Boolean).length;
+
+            if (wordCount > 25) {
+                setMessage("Only 25 words are allowed.");
+                return;
+            } else {
+                setMessage("");
+            }
+        }
+
+        setForm((prev) => ({ ...prev, [name]: value }));
+    };
     const handleFileChange = (e) => {
         const file = e.target.files[0];
         if (file) {
@@ -101,6 +113,7 @@ function Customers() {
     useEffect(() => {
         const intervalId = setInterval(() => {
             setApiMessage('');
+            setMessage('');
         }, 5000);
 
         return () => clearInterval(intervalId);
@@ -145,18 +158,28 @@ function Customers() {
                         {/* testimonial card 2 */}
 
                         <div className="testimonial_card TCPhoneview">
-                            {isAdmin && <span style={{ color: 'red' }} onClick={() => deleteHandler(testimonials[currentIndex + 1]?._id)} >Delete</span>}
+                            {isAdmin &&
+                                <span style={{ color: 'red' }} onClick={() =>
+                                    deleteHandler(testimonials[(currentIndex + 1) % testimonials.length]?._id)
+                                }>
+                                    Delete
+                                </span>
+                            }
 
-                            <div className="inverted_comma"> <h1>“</h1> </div>
-                            <p className="customer-card__quote"> {testimonials[currentIndex + 1]?.quote} </p>
+                            <div className="inverted_comma"><h1>“</h1></div>
+                            <p className="customer-card__quote">{testimonials[(currentIndex + 1) % testimonials.length]?.quote}</p>
                             <footer className="customer-card__footer">
-                                <img className="customer-card__avatar" src={testimonials[currentIndex + 1]?.image} alt="James Bennett" />
+                                <img className="customer-card__avatar"
+                                    src={testimonials[(currentIndex + 1) % testimonials.length]?.image}
+                                    alt="Customer"
+                                />
                                 <div>
-                                    <p className="customer-card__name">{testimonials[currentIndex + 1]?.testimonial_name}</p>
-                                    <p className="customer-card__location">{testimonials[currentIndex + 1]?.city}, {testimonials[1]?.country}</p>
+                                    <p className="customer-card__name">{testimonials[(currentIndex + 1) % testimonials.length]?.testimonial_name}</p>
+                                    <p className="customer-card__location">{testimonials[(currentIndex + 1) % testimonials.length]?.city}, {testimonials[(currentIndex + 1) % testimonials.length]?.country}</p>
                                 </div>
                             </footer>
                         </div>
+
 
                         <div className="action_btn laptop_action">
                             <button onClick={() => goPrev()} >&larr;</button>
@@ -234,6 +257,8 @@ function Customers() {
                                 value={form.quote}
                                 onChange={handleChange}
                             />
+                            <small style={{ color: 'red' }}>{message}</small>
+                            {/* {message && <small style={{ color: 'red' }}>{message}</small>} */}
                             {isAdmin &&
                                 <div className="testimonial_action_btn">
                                     <button onClick={cancelHandler}>Cancel</button>

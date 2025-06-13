@@ -6,7 +6,7 @@ import axios from 'axios';
 import { baseUrl } from '../../utils/baseUrl';
 
 const Signup = () => {
-  
+
   const navigate = useNavigate();
   const [stepCount, setStepCount] = useState(0);
   const [fieldState, setFieldState] = useState(false);
@@ -46,7 +46,6 @@ const Signup = () => {
       );
 
       if (res.data.success) {
-        console.log(res.data.message);
         navigate('/login');
       }
     } catch (error) {
@@ -65,6 +64,7 @@ const Signup = () => {
         if (prev <= 1) {
           clearInterval(interval);
           setFieldState(false);
+          setForm(prevForm => ({ ...prevForm, secret_key: '' }));
           return 30;
         }
         return prev - 1;
@@ -73,6 +73,7 @@ const Signup = () => {
 
     return () => clearInterval(interval);
   }, [fieldState]);
+
 
   return (
     <div className="signup-container">

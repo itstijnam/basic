@@ -8,7 +8,7 @@ export const createService = async (req, res) => {
     try {
 
         const { heading, short_desc, desc, type, subcat, plot_area, build_up_area, completed_in } = req.body;
-        const  image  = req.file;
+        const image = req.file;
         // const { id } = req.user;
 
         if (!heading) return res.status(400).json({ success: false, message: 'image required' })
@@ -59,10 +59,10 @@ export const createService = async (req, res) => {
 
 export const allService = async (req, res) => {
     try {
-        const {search} = req.query;
+        const { search } = req.query;
         const services = await Service.find()
             .populate('author');
-        
+
         return res.status(200).json({
             success: true,
             services
@@ -77,7 +77,7 @@ export const allService = async (req, res) => {
     }
 }
 
-export const getService = async(req, res)=>{}
+export const getService = async (req, res) => { }
 
 export const editService = async (req, res) => {
     try {
@@ -109,11 +109,31 @@ export const editService = async (req, res) => {
 export const deleteService = async (req, res) => {
     try {
         const { id } = req.params;
-        const deletedService = await Service.findByIdAndDelete(id);
-        if (!deletedService) {
+
+        // First find the service to get the image details
+        const service = await Service.findById(id);
+        if (!service) {
             return res.status(404).json({ success: false, message: 'Service not found' });
         }
-        return res.status(200).json({ success: true, message: 'Service deleted' });
+
+        // Extract public ID from Cloudinary URL
+        if (service.image) {
+            // Cloudinary URL
+            const urlParts = service.image.split('/');
+            const publicIdWithExtension = urlParts.slice(urlParts.indexOf('upload') + 1).join('/');
+            const publicId = publicIdWithExtension.split('.')[0];
+
+            try {
+                await cloudinary.uploader.destroy(publicId);
+            } catch (cloudinaryError) {
+                console.log(`Cloudinary deletion error: ${cloudinaryError}`);
+            }
+        }
+
+        // Now delete the service from database
+        await Service.findByIdAndDelete(id);
+
+        return res.status(200).json({ success: true, message: 'Service and associated image deleted' });
     } catch (error) {
         console.log(`Error: controller/service_controller/deleteService: ${error}`);
         return res.status(500).json({ success: false, message: 'Failed to delete service' });

@@ -59,7 +59,7 @@ function Home() {
 
       // onClick={() => dispatch(setBlackToggle(true))}
       >
-        <div className='home_main_container'>
+        <div className='home_main_container' style={{background: 'linear-gradient(rgba(0, 0, 0, 0.641))'}} >
           <Hero />
         </div>
       </div>

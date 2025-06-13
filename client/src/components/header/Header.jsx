@@ -7,7 +7,7 @@ import { FaBars, FaTimes } from 'react-icons/fa'
 import axios from 'axios'
 import { baseUrl } from '../../utils/baseUrl'
 import { setAuthUser } from '../../redux/authSlice'
- 
+
 function Header() {
 
     const navigate = useNavigate();
@@ -35,6 +35,7 @@ function Header() {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [isMobileMenuOpen]);
+
 
     const countController = () => {
         if (stepCount <= 5) {
@@ -103,17 +104,17 @@ function Header() {
         try {
             const res = await axios.post(`${baseUrl}/api/auth/logout`, {}, { withCredentials: true });
 
-            if(res.data.success){
+            if (res.data.success) {
 
-                dispatch(setAuthUser(null) );
+                dispatch(setAuthUser(null));
                 navigate('/');
             }
         } catch (error) {
             console.error('Logout failed:', error.message);
         }
     };
-
-
+    
+    
     return (
         <>
             <div className='header'>
@@ -124,7 +125,7 @@ function Header() {
                     }}>
                         <img src={LOGO} alt="" />
                     </div>
-
+            
                     {/* desktop nav */}
                     <div className="arch_header_nav">
                         <ul className='arch_nav_ul'>
@@ -134,7 +135,7 @@ function Header() {
                         </ul>
                         {isAdmin ?
                             <button onClick={logoutHandler} className='arch_contact_btn'>Log Out</button> :
-
+                            
                             <button onClick={handleClick} className='arch_contact_btn'>Enquire Us</button>
                         }
                     </div>
