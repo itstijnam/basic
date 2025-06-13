@@ -7,6 +7,7 @@ function Projects() {
     const navigate = useNavigate();
 
     return (
+        <>
         <div className='project-section'>
             <h1>Our Best Projects</h1>
             <h3>Our top picks because you deserve nothing but the best</h3>
@@ -14,7 +15,7 @@ function Projects() {
                 <div className="project project-1">
                     <div className="project-overlay"></div>
                     
-                        <h4>Behrore Project</h4>
+                        <h4>Behror Project</h4>
                 </div>
                 <div className="project project-2">
                     <div className="project-overlay"></div>
@@ -22,10 +23,12 @@ function Projects() {
                 </div>
                 <div className="project project-3">
                     <div className="project-overlay"></div>
-                    <h4>Jaipur, Mahima Fluenza</h4>
+                    <h4>Jaipur, Mahima Florenza</h4>
                 </div>
             </div>
+        <button className='projects_explore_btn' onClick={()=>navigate('/portfolio')}>Explore All Projects</button>
         </div>
+        </>
     )
 }
 

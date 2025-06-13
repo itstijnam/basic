@@ -4,9 +4,10 @@ import logo from '../../assets/logo/FooterLogo.png';
 import { FaFacebook, FaLinkedin, FaInstagram, FaBehance, FaWhatsapp } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import { GoLocation } from "react-icons/go";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -14,7 +15,7 @@ const Footer = () => {
         <div className="footer-section footer-left">
           <img src={logo} alt="Logo" className="footer-logo" />
           <h2 className="footer-brand">
-            Arch <span> Space Interio</span>
+            Arch <span> Space </span> Interio
           </h2>
           <p className="footer-tagline">Where Dimension Take Shapes...</p>
           <div className="social-icons">
@@ -29,10 +30,10 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Our Services</h3>
           <ul>
-            <li>Interior design</li>
-            <li>Outdoor design</li>
-            <li>Lighting design</li>
-            <li>Office design</li>
+            <li onClick={()=>navigate(`/service/Interior Design`)} >Interior design</li>
+            <li onClick={()=>navigate(`/service/Outdoor Design`)}>Outdoor design</li>
+            <li onClick={()=>navigate(`/service/Lighting Design`)}>Lighting design</li>
+            <li onClick={()=>navigate(`/service/Office Design`)}>Office design</li>
           </ul>
         </div>
 
