@@ -59,7 +59,7 @@ function About() {
         threshold: 0.2,
     });
 
-    const whatsappNumber = "919999167989"; // No '+' sign, just country code + number
+    const whatsappNumber = "918287108009"; // No '+' sign, just country code + number
 
     const handleWhatsAppClick = () => {
         const url = `https://api.whatsapp.com/send?phone=${whatsappNumber}`;

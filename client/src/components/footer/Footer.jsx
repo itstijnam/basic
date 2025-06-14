@@ -63,7 +63,7 @@ const Footer = () => {
             <li className="indent">Station Road, Alwar, Raj, 301001</li>
             <li>
               <FaWhatsapp className="icon" />
-              <a href="https://wa.me/+919999167989">+91 9999167989</a>
+              <a href="https://wa.me/+918287108009">+91 9999167989</a>
             </li>
           </ul>
         </div>

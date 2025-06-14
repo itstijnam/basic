@@ -7,7 +7,7 @@ import Rocket from '../../home/assets/icons/Rocket.png'
 
 function Schedule() {
 
-  const whatsappNumber = "919999167989"; // No '+' sign, just country code + number
+  const whatsappNumber = "918287108009"; // No '+' sign, just country code + number
 
   const handleClick = () => {
     const url = `https://api.whatsapp.com/send?phone=${whatsappNumber}`;
