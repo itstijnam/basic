@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 function ProjectDisplay() {
   const { selectedService } = useSelector(store => store.service);
   const navigate = useNavigate();
+  console.log(selectedService)
 
   useEffect(() => {
     window.scrollTo(0, 0);
