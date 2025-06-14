@@ -236,14 +236,13 @@ function Caraousel() {
               ) : (
                 <img src={ADDICON} alt="Add icon" />
               )}
-
               <input
                 ref={ref}
                 type="file"
                 name="image"
                 hidden
                 onChange={handleFileChange}
-              />
+                />
             </div>
             <div className="add_caraousel_details">
               <input

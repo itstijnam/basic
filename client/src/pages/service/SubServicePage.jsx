@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './style/SubServicePage.scss';
 import BGIMAGE from "./components/assets/ourservice.webp";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import archspacedata from './sample_api';
+import { setSelectedService } from '../../redux/serviceSlice';
 
 function SubServicePage() {
 
@@ -12,9 +13,8 @@ function SubServicePage() {
     }, []);
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const { services } = useSelector(store => store.service);
-
-    console.log(services)
     const { pagename } = useParams();
 
     const [selectedSubCat, setSelectedSubCat] = useState('All');
@@ -91,7 +91,10 @@ function SubServicePage() {
 
             <div className="filtered_projects">
                 {filteredProjects?.map((c, i) => (
-                    <div className="filtered_project_card" key={i}>
+                    <div className="filtered_project_card" key={i} onClick={()=>{
+                        dispatch(setSelectedService(c))
+                        navigate(`/portfolio/view`)
+                    }} >
                         <img src={c?.image} style={{ height: '6rem', width: '6rem', borderRadius: '8px' }} alt={c.projectName} />
                         <h3>{c?.heading}</h3>
                         <p><strong>Type:</strong> {c?.type}</p>

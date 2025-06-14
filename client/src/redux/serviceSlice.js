@@ -4,7 +4,8 @@ const serviceSlice = createSlice({
     name: 'auth',
     initialState: {
         services: [],
-        testimonials: []
+        testimonials: [],
+        selectedService: null,
     },
     reducers: {
         setServices: (state, action)=>{
@@ -12,9 +13,12 @@ const serviceSlice = createSlice({
         },
         setTestimonials: (state, action)=>{
             state.testimonials = action.payload
+        },
+        setSelectedService: (state, action)=>{
+            state.selectedService = action.payload
         }
     }
 });
 
-export const {setServices, setTestimonials} = serviceSlice.actions;
+export const {setServices, setTestimonials, setSelectedService} = serviceSlice.actions;
 export default serviceSlice.reducer;

@@ -1,11 +1,13 @@
 import React from 'react';
 import './ArchSpaceInterio.scss';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { setSelectedService } from '../../../redux/serviceSlice';
 
 const ArchSpaceInterio = () => {
   const { services } = useSelector(store => store.service);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     <div className="arch-space-interio">
@@ -31,7 +33,10 @@ const ArchSpaceInterio = () => {
         <div className="container">
           <div className="image-gallery">
             {services?.map((s, index) => (
-              <div key={index} onClick={()=>navigate(`/service/${s?.type}`)} >
+              <div key={index} onClick={()=>{
+                dispatch(setSelectedService(s))
+                navigate(`/portfolio/view`)
+              }} >
                 <div className="hover-image-container">
                   <div>
                     <img

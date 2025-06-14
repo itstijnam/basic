@@ -9,6 +9,7 @@ import About from './pages/about/About';
 import Portfolio from './pages/portfolio/Portfolio';
 import Blog from './pages/BlogPage/pages/Blog'; 
 import SubServicePage from './pages/service/SubServicePage';
+import ProjectDisplay from './components/projectDisplay/ProjectDisplay';
 
 
 const browserRouter = createBrowserRouter([
@@ -39,6 +40,10 @@ const browserRouter = createBrowserRouter([
       {
         path: '/portfolio',
         element: <Portfolio/>
+      },
+      {
+        path: 'portfolio/view',
+        element: <ProjectDisplay/>
       }
     ]
   },
